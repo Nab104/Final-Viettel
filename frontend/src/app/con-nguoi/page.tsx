@@ -33,6 +33,46 @@ interface SelectedDept {
   details: DeptDetail;
 }
 
+interface Director {
+  name: string;
+  role: string;
+  period: string;
+  description: string;
+  img: string;
+}
+
+interface Honoree {
+  name: string;
+  years: number;
+  dept: string;
+  date: string;
+  img: string;
+}
+
+interface Store {
+  id: string;
+  img: string;
+  objectPosition?: string;
+  scale?: string;
+  objectFit?: string;
+}
+
+interface Province {
+  name: string;
+  map: string;
+  mapWithText: string;
+  stores: Store[];
+}
+
+interface Branch {
+  name: string;
+  details: {
+    leader: { img: string; name: string; role: string };
+    group: { img: string; name: string; subName: string };
+    deputy?: { img: string; name: string; role: string };
+  };
+}
+
 const WavyBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.1] z-0">
     <svg 
@@ -1137,15 +1177,15 @@ export default function ConNguoiPage() {
   }, []);
   const [activeDeptPage, setActiveDeptPage] = useState(0);
   const [activeBranchPage, setActiveBranchPage] = useState(0);
-  const [selectedDirector, setSelectedDirector] = useState<unknown>(null);
+  const [selectedDirector, setSelectedDirector] = useState<Director | null>(null);
   const [selectedDept, setSelectedDept] = useState<SelectedDept | null>(null);
-  const [selectedBranch, setSelectedBranch] = useState<unknown>(null);
+  const [selectedBranch, setSelectedBranch] = useState<Branch | null>(null);
   const [activeProvince, setActiveProvince] = useState(2);
   const [activeStoreIndex, setActiveStoreIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState(0);
   const [vdIndex, setVdIndex] = useState(0);
-  const [selectedHonoree, setSelectedHonoree] = useState<unknown>(null);
-  const [selectedProvince, setSelectedProvince] = useState<unknown>(null);
+  const [selectedHonoree, setSelectedHonoree] = useState<Honoree | null>(null);
+  const [selectedProvince, setSelectedProvince] = useState<Province | null>(null);
   const [deptPopupPage, setDeptPopupPage] = useState(0);
   const [mounted, setMounted] = useState(false);
   const [isAnyModalOpen, setIsAnyModalOpen] = useState(false);
