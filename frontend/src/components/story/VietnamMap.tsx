@@ -215,7 +215,7 @@ export const VietnamMap = () => {
             opacity: hoveredProvinceId === null || hoveredProvinceId === province.id ? 1 : 0.6 
           }}
           transition={{ duration: 0.2, ease: "easeOut" }}
-          className={`absolute hover:z-[110] group province-group ${["da-nang", "tay-ninh"].includes(province.id) ? "" : "cursor-pointer"}`}
+          className={`absolute hover:z-[110] group province-group ${["da-nang", "tay-ninh", "lai-chau", "dien-bien", "cao-bang", "hung-yen", "lang-son"].includes(province.id) ? "" : "cursor-pointer"}`}
           style={{
             width: province.width,
             height: province.height,
@@ -234,7 +234,7 @@ export const VietnamMap = () => {
                   onMouseLeave: () => setHoveredProvinceId(null),
                   onClick: (e: any) => {
                     e.stopPropagation();
-                    if (["da-nang", "tay-ninh"].includes(province.id)) return;
+                    if (["da-nang", "tay-ninh", "lai-chau", "dien-bien", "cao-bang", "hung-yen", "lang-son"].includes(province.id)) return;
                     setSelectedProvinceId(province.id);
                   },
                   style: { 

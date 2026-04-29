@@ -3,23 +3,27 @@ import { Target, Compass, Users, UserCheck } from "lucide-react";
 
 type AboutTile = {
   id: string;
-  nodeId: string;
+  nodeId?: string;
   image?: string;
   alt?: string;
   isRed?: boolean;
+  redType?: 'bright' | 'dark';
+  colSpan?: number;
+  isSpacer?: boolean;
 };
 
 const aboutTiles: AboutTile[] = [
   // row 1
-  { id: "r1c1", nodeId: "2474:2404", isRed: true },
-  { id: "r1c2", nodeId: "2462:2511", image: "/images/about/2.jpg", alt: "Nhân viên tư vấn" },
-  { id: "r1c3", nodeId: "2474:2405", isRed: true },
-  { id: "r1c4", nodeId: "2530:1811", image: "/images/about/4.jpg", alt: "Đội ngũ nhân viên" },
+  { id: "r1c1", isRed: true, redType: 'dark', colSpan: 4 }, // Extended to the left
+  { id: "r1c2", image: "/images/about/2.jpg", alt: "Nhân viên tư vấn" },
+  { id: "r1c3", isRed: true, redType: 'bright' },
+  { id: "r1c4", image: "/images/about/4.jpg", alt: "Đội ngũ nhân viên" },
   // row 2
-  { id: "r2c1", nodeId: "2462:2458", image: "/images/about/1.jpg", alt: "Cửa hàng Viettel" },
-  { id: "r2c2", nodeId: "extra-red-1", isRed: true },
-  { id: "r2c3", nodeId: "2462:2521", image: "/images/about/3.jpg", alt: "Trải nghiệm khách hàng" },
-  { id: "r2c4", nodeId: "extra-red-2", isRed: true },
+  { id: "spacer", isSpacer: true, colSpan: 3 }, // Spacer to push the rest to the right
+  { id: "r2c1", image: "/images/about/1.jpg", alt: "Cửa hàng Viettel" },
+  { id: "r2c2", isRed: true, redType: 'bright' },
+  { id: "r2c3", image: "/images/about/3.jpg", alt: "Trải nghiệm khách hàng" },
+  { id: "r2c4", isRed: true, redType: 'dark' },
 ];
 
 const valueItems = [
@@ -86,7 +90,7 @@ const valueItems = [
     content: (
       <div
         style={{
-          width: '320px',
+          width: '240px',
           height: 'auto',
           fontFamily: 'Roboto',
           fontSize: '16px',
@@ -130,7 +134,7 @@ export function AboutUsRedSection() {
     <section
       data-node-id="2246:1112"
       className="relative w-full bg-[#EE0033] text-white overflow-hidden"
-      style={{ minHeight: '1723px' }}
+      style={{ minHeight: '1600px' }}
     >
       {/* Subtle terrain background pattern - Left */}
       <div 
@@ -196,40 +200,12 @@ export function AboutUsRedSection() {
         >
           Viettel Store được thành lập ngày 03/05/2006 với siêu thị điện thoại đầu tiên tại Hà Nội, là đơn vị nòng cốt thuộc Viettel Commerce.Từ con số 0, Viettel Store đã phát triển trở thành chuỗi bán lẻ thiết bị viễn thông và công nghệ hàng đầu Việt Nam, giữ vững vị thế Top 3 thị trường.
         </p>
-        {/* Collage Grid to the right of the paragraph */}
-        <div 
-          className="absolute flex flex-wrap"
-          style={{
-            top: '0',
-            right: '0',
-            width: '720px',
-            height: '362px',
-          }}
-        >
-          {aboutTiles.map((tile) => (
-            <div 
-              key={tile.id}
-              className="relative overflow-hidden"
-              style={{ width: '180px', height: '181px' }}
-            >
-              {tile.isRed ? (
-                <div className="w-full h-full bg-[#EE0033]" />
-              ) : (
-                <Image 
-                  src={tile.image || ""} 
-                  alt={tile.alt || ""} 
-                  fill 
-                  className="object-cover transition-transform duration-700 hover:scale-110"
-                />
-              )}
-            </div>
-          ))}
-        </div>
+
 
         {/* Bottom Values Section: aligned with icons at top 700px */}
         <div
-          className="absolute w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-20 text-white items-start"
-          style={{ top: '700px', paddingLeft: '207px', paddingRight: '207px' }}
+          className="absolute w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-32 text-white items-start"
+          style={{ top: '700px', paddingLeft: '140px', paddingRight: '140px' }}
         >
           {valueItems.map((item, index) => (
             <div key={index} className="flex flex-col items-center text-center">
@@ -255,6 +231,53 @@ export function AboutUsRedSection() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Collage Grid to the right of the paragraph - moved to right edge of page */}
+      <div 
+        className="absolute grid z-[2]"
+        style={{
+          top: '0',
+          right: '0',
+          width: '1260px', // 7 units * 180px
+          height: '362px',
+          gridTemplateColumns: 'repeat(7, 180px)',
+          gridTemplateRows: 'repeat(2, 181px)',
+        }}
+      >
+        {aboutTiles.map((tile) => {
+          if (tile.isSpacer) {
+            return <div key={tile.id} style={{ gridColumn: `span ${tile.colSpan || 1}` }} />;
+          }
+          return (
+            <div 
+              key={tile.id}
+              className="relative overflow-hidden"
+              style={{ 
+                height: '181px',
+                gridColumn: `span ${tile.colSpan || 1}`
+              }}
+            >
+              {tile.isRed ? (
+                <div 
+                  className="w-full h-full" 
+                  style={{ 
+                    background: tile.id === 'r1c1' 
+                      ? 'linear-gradient(to right, transparent, #CE0730)' 
+                      : (tile.redType === 'dark' ? '#CE0730' : '#EE0033') 
+                  }}
+                />
+              ) : (
+                <Image 
+                  src={tile.image || ""} 
+                  alt={tile.alt || ""} 
+                  fill 
+                  className="object-cover"
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

@@ -5,20 +5,13 @@ import { JourneyGrid } from "./JourneyGrid";
 export const JourneySection = () => {
   return (
     <section 
-      className="relative bg-[#F2F2F2] mt-32"
+      className="relative bg-[#F2F2F2]"
       style={{ 
-        paddingTop: "260px",
-        paddingBottom: "260px",
+        paddingTop: "220px",
+        paddingBottom: "160px",
       }}
     >
-      <div className="absolute inset-x-0 top-[135px] h-[620px] z-0 opacity-[0.1] pointer-events-none">
-        <Image
-          src="/images/diahinh1.1.png"
-          alt=""
-          fill
-          className="object-cover object-center"
-        />
-      </div>
+
 
       <div className="relative z-10 container mx-auto px-4">
         <div className="mb-8 text-center">

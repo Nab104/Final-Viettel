@@ -183,7 +183,7 @@ export default function ProudJourneyPage() {
   return (
     <main className="flex flex-col font-sans bg-white min-h-screen">
       <HonorsStyles />
-      
+
       {/* 1. HERO */}
       <ProudJourneySection />
 
@@ -191,12 +191,10 @@ export default function ProudJourneyPage() {
       <AboutUsRedSection />
 
       {/* 3. HÀNH TRÌNH TỰ HÀO */}
-      <div className="mt-16">
-        <JourneySection />
-      </div>
+      <JourneySection />
 
       {/* 4. THÀNH TỰU */}
-      <section 
+      <section
         className="relative overflow-hidden bg-[#F2F2F2] py-24 mt-16"
         style={{ minHeight: "800px" }}
       >
@@ -224,7 +222,7 @@ export default function ProudJourneyPage() {
         {/* content */}
         <div className="relative z-10 max-w-[1200px] mx-auto px-6">
           <div className="mx-auto" style={{ width: '1152px', paddingLeft: '30px' }}>
-            <h2 
+            <h2
               className="uppercase relative z-10 mb-16"
               style={{
                 color: '#44494D',
@@ -243,7 +241,7 @@ export default function ProudJourneyPage() {
 
 
           {/* Vị thế thị trường grid */}
-          <div 
+          <div
             className={`shadow-2xl relative mb-16 mx-auto transition-all duration-300 ${isMarketHovered ? "" : "grid"}`}
             onMouseEnter={() => setIsMarketHovered(true)}
             onMouseLeave={() => setIsMarketHovered(false)}
@@ -259,7 +257,7 @@ export default function ProudJourneyPage() {
             }}
           >
             {isMarketHovered ? (
-              <div 
+              <div
                 style={{
                   width: '919px',
                   height: '114px',
@@ -294,10 +292,10 @@ export default function ProudJourneyPage() {
                   {["Top 3 bán lẻ Việt Nam", "Top 2 Đông Nam Á", "Doanh thu TMĐT dẫn đầu", "Tỷ trọng online cao nhất", "Top 3 thương hiệu uy tín"].map((text, i) => (
                     <div key={i} className="flex items-center gap-3 group">
                       <div className="w-3 h-3 bg-viettel rounded-full group-hover:scale-150 transition-transform"></div>
-                      <span 
-                        style={{ 
+                      <span
+                        style={{
                           width: '354px',
-                          color: '#000', 
+                          color: '#000',
                           fontFamily: 'var(--font-beausans)',
                           fontSize: '20px',
                           fontStyle: 'normal',
@@ -311,26 +309,26 @@ export default function ProudJourneyPage() {
                     </div>
                   ))}
                 </div>
-                <div 
-                  style={{ 
+                <div
+                  style={{
                     display: "flex",
                     justifyContent: "flex-start",
                     paddingLeft: "180px"
                   }}
                 >
-                  <h3 
-                  className="uppercase leading-none"
-                  style={{ 
-                    color: '#44494D', 
-                    fontSize: '40px', 
-                    fontFamily: 'var(--font-beausans)',
-                    fontWeight: 700,
-                    fontStyle: 'normal',
-                    lineHeight: 'normal'
-                  }}
-                >
-                  VỊ THẾ THỊ TRƯỜNG
-                </h3>
+                  <h3
+                    className="uppercase leading-none"
+                    style={{
+                      color: '#44494D',
+                      fontSize: '40px',
+                      fontFamily: 'var(--font-beausans)',
+                      fontWeight: 700,
+                      fontStyle: 'normal',
+                      lineHeight: 'normal'
+                    }}
+                  >
+                    VỊ THẾ THỊ TRƯỜNG
+                  </h3>
                 </div>
               </>
             )}
@@ -338,8 +336,8 @@ export default function ProudJourneyPage() {
 
           <div className="flex flex-wrap justify-center gap-8 mx-auto" style={{ width: '1152px' }}>
             {[
-              { 
-                title: <>HỆ THỐNG <br /> & ĐỔI MỚI</>, 
+              {
+                title: <>HỆ THỐNG <br /> & ĐỔI MỚI</>,
                 items: ["Hệ sinh thái đa kênh", "Phủ sóng toàn quốc", "Tiên phong bán lẻ", "Tích hợp tài chính", "Mở rộng kinh doanh"],
                 hoverItems: [
                   "Hệ sinh thái bán lẻ “1 điểm đến, đa dịch vụ”",
@@ -349,8 +347,8 @@ export default function ProudJourneyPage() {
                   "Thích ứng linh hoạt, tăng trưởng bền vững"
                 ]
               },
-              { 
-                title: <span className="whitespace-nowrap">KHÁCH HÀNG</span>, 
+              {
+                title: <span className="whitespace-nowrap">KHÁCH HÀNG</span>,
                 items: ["Tiên phong bán lẻ ĐTDĐ (2006)", "20 triệu khách/năm", "Phân phối toàn quốc", "Cửa hàng trải nghiệm chuẩn"],
                 hoverItems: [
                   "Khai trương siêu thị điện thoại đầu tiên tại Hà Nội & miền Bắc (2006)",
@@ -360,8 +358,8 @@ export default function ProudJourneyPage() {
                   "Điểm trải nghiệm sản phẩm lớn nhất của Viettel tại Việt Nam"
                 ]
               },
-              { 
-                title: <><span className="whitespace-nowrap">ĐỐI TÁC - XÃ HỘI</span> <br /> NHÂN SỰ</>, 
+              {
+                title: <><span className="whitespace-nowrap">ĐỐI TÁC - XÃ HỘI</span> <br /> NHÂN SỰ</>,
                 items: ["Đối tác công nghệ lớn", "2.000+ nhân sự", "Môi trường chuyên nghiệp", "Hoạt động cộng đồng", "Chuyển đổi số quốc gia"],
                 hoverItems: [
                   "Đối tác chiến lược của các thương hiệu công nghệ lớn",
@@ -372,8 +370,8 @@ export default function ProudJourneyPage() {
                 ]
               }
             ].map((card, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="shadow-xl border border-gray-100 transition-all p-8 flex flex-col items-center text-center"
                 onMouseEnter={() => setHoveredCardIndex(idx)}
                 onMouseLeave={() => setHoveredCardIndex(null)}
@@ -386,7 +384,7 @@ export default function ProudJourneyPage() {
                 }}
               >
                 {hoveredCardIndex === idx && card.hoverItems ? (
-                  <div 
+                  <div
                     style={{
                       width: '239px',
                       color: '#FFF',
@@ -413,7 +411,7 @@ export default function ProudJourneyPage() {
                   </div>
                 ) : (
                   <>
-                    <h4 
+                    <h4
                       className="mb-6 uppercase tracking-tight text-center"
                       style={{
                         color: '#ED1C24',
@@ -430,7 +428,7 @@ export default function ProudJourneyPage() {
                       {card.items.map((item, i) => (
                         <li key={i} className="flex items-center gap-3">
                           <span className="w-1.5 h-1.5 bg-viettel rounded-full shrink-0"></span>
-                          <span 
+                          <span
                             style={{
                               color: '#000',
                               fontFamily: 'var(--font-beausans)',
@@ -472,7 +470,7 @@ export default function ProudJourneyPage() {
               let relDiff = diff;
               if (relDiff > total / 2) relDiff -= total;
 
-              if (relDiff === 0) { } 
+              if (relDiff === 0) { }
               else if (relDiff === 1) positionClass = "right-near";
               else if (relDiff === 2) positionClass = "right-mid";
               else if (relDiff === 3) positionClass = "right-far";

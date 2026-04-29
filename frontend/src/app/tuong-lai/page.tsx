@@ -19,6 +19,27 @@ import {
   ArrowRight
 } from "lucide-react";
 
+const WavyBackground = () => (
+  <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.15] z-0">
+    <svg 
+      className="absolute w-full h-full" 
+      viewBox="0 0 1440 1000" 
+      preserveAspectRatio="none"
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {[...Array(25)].map((_, i) => (
+        <path 
+          key={i}
+          d={`M-100 ${50 + i * 40}C${200 + (i % 2) * 100} ${i * 40} ${400 + (i % 3) * 100} ${100 + i * 40} ${720} ${50 + i * 40}C${1040} ${i * 40} ${1240} ${100 + i * 40} 1540 ${50 + i * 40}`} 
+          stroke="white" 
+          strokeWidth="1" 
+        />
+      ))}
+    </svg>
+  </div>
+);
+
 const strategicPillars = [
   {
     id: "01",
@@ -31,14 +52,14 @@ const strategicPillars = [
     id: "02",
     title: "CÔNG NGHỆ & BÁN LẺ MỚI",
     content: "Dẫn đầu ứng dụng AI, Big Data và phát triển hệ sinh thái đa dịch vụ.",
-    color: "#004B8D",
+    color: "#EE0033",
     icon: <Cpu size={32} />
   },
   {
     id: "03",
     title: "TỔ CHỨC VỮNG MẠNH",
     content: "Xây dựng bộ máy tinh gọn, nhân sự chuyên nghiệp và Đảng bộ trong sạch.",
-    color: "#2D6B3F",
+    color: "#EE0033",
     icon: <Users size={32} />
   }
 ];
@@ -141,8 +162,25 @@ const focusGoals = [
   }
 ];
 
+const heroSlides = [
+  "/images/tuong-lai/slideshow/s1.png",
+  "/images/tuong-lai/slideshow/s2.png",
+  "/images/tuong-lai/slideshow/s3.png",
+  "/images/tuong-lai/slideshow/s4.png",
+  "/images/tuong-lai/slideshow/s5.png",
+  "/images/tuong-lai/slideshow/s6.png",
+];
+
 export default function TuongLaiPage() {
   const [expandedIds, setExpandedIds] = React.useState<string[]>([]);
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const toggleGoal = (id: string) => {
     setExpandedIds(prev => 
@@ -152,11 +190,12 @@ export default function TuongLaiPage() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white">
-      {/* Main Future Vision Section */}
+      {/* 1. Main Future Vision Section */}
       <section 
         className="relative h-screen flex items-center justify-end overflow-hidden"
         style={{ background: 'rgba(0, 0, 0, 0.85)' }}
       >
+        <WavyBackground />
         {/* Red Box Overlay - Now filling the section */}
         <div 
           style={{ 
@@ -167,13 +206,25 @@ export default function TuongLaiPage() {
             pointerEvents: 'none'
           }}
         />
-        <div className="absolute inset-0 opacity-60">
-          <Image 
-            src="/images/tuong-lai/TuongLaiHead.png" 
-            alt="Future Vision" 
-            fill 
-            className="object-cover"
-          />
+        <div className="absolute inset-0">
+          <AnimatePresence>
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.6 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5 }}
+              className="absolute inset-0"
+            >
+              <Image 
+                src={heroSlides[currentSlide]} 
+                alt="Future Vision" 
+                fill 
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
         <div className="relative z-10 flex flex-col items-end text-right pr-24" style={{ transform: 'translateY(-150px)' }}>
           <div style={{ marginRight: '300px', display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
@@ -227,7 +278,7 @@ export default function TuongLaiPage() {
                 fontWeight: 400,
                 lineHeight: 'normal'
               }}>
-                Những câu chuyện nhỏ, những con người thật góp phần tạo nên hành trình Viettel Store
+                Từ những nỗ lực mỗi ngày, Viettel Store đang từng bước kiến tạo một tương lai phát triển vững chắc và khác biệt
               </p>
               <div style={{ width: '2px', height: '63px', background: '#E03' }}></div>
             </div>
@@ -237,6 +288,7 @@ export default function TuongLaiPage() {
 
       {/* 2. TẦM NHÌN 2030 SECTION */}
       <section className="relative w-full bg-[#F8F9FA] overflow-hidden py-24">
+        <WavyBackground />
         {/* Topographic Background Pattern */}
         <div 
           className="absolute inset-0 pointer-events-none"
@@ -260,27 +312,14 @@ export default function TuongLaiPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            {/* Ripple Pattern Decoration */}
-            <motion.div
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] z-[-1] opacity-[0.2]"
-              animate={{ 
-                rotate: 360,
-                scale: [1, 1.05, 1]
-              }}
-              transition={{ 
-                rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                scale: { duration: 8, repeat: Infinity, ease: "easeInOut" }
-              }}
-            >
-              <RipplePattern className="w-full h-full" />
-            </motion.div>
+
 
             <h3 className="text-[#EE0033] text-xl font-bold tracking-[0.2em] mb-4 uppercase">
               MỤC TIÊU ĐẾN NĂM 2030
             </h3>
             <h2 className="text-5xl md:text-7xl font-black mb-8 leading-tight relative z-10">
-              TRỞ THÀNH <span className="text-[#EE0033]">TOP 3</span><br/>
-              CHUỖI BÁN LẺ LỚN NHẤT VIỆT NAM
+              TRỞ THÀNH <span className="text-[#EE0033]">TOP 3</span> CHUỖI BÁN LẺ<br/>
+              LỚN NHẤT VIỆT NAM
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12" style={{ fontFamily: 'var(--font-beausans)' }}>
               Dẫn đầu về công nghệ, khác biệt về trải nghiệm và bứt phá về tăng trưởng.
@@ -453,6 +492,7 @@ export default function TuongLaiPage() {
         <div 
           className="absolute inset-0 bg-[#EE0033] opacity-40 z-[1]"
         />
+        <WavyBackground />
 
         {/* Content Wrapper */}
         <motion.div 
