@@ -363,7 +363,8 @@ export default function TuongLaiPage() {
                   transition={{ 
                     duration: 0.8, 
                     delay: idx * 0.15,
-                    ease: [0.21, 1.11, 0.81, 0.99] // Smooth spring-like ease
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    ease: [0.21, 1.11, 0.81, 0.99] as any // Smooth spring-like ease
                   }}
                   whileHover={{ 
                     y: -15,

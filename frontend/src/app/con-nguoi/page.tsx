@@ -20,8 +20,8 @@ interface DeptDetail {
   deputies?: DeptDetailItem[];
   layoutOnMain?: string;
   useStaggeredOnMain?: boolean;
-  mainItems: DeptDetailItem[];
-  extraPages: {
+  mainItems?: DeptDetailItem[];
+  extraPages?: {
     title?: string;
     layout?: string;
     items: DeptDetailItem[];
@@ -37,7 +37,7 @@ interface Director {
   name: string;
   role: string;
   period: string;
-  description: string;
+  description: React.ReactNode;
   img: string;
 }
 
@@ -1104,12 +1104,12 @@ const provinces = [
 
 console.log("COMPONENT RENDERED - VERSION 3");
 
-const ChevronLeft = ({ size = 36, className = "" }: { size?: number, className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+const ChevronLeft = ({ size = 36, className = "", strokeWidth = 2 }: { size?: number, className?: string, strokeWidth?: number }) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
 );
 
-const ChevronRight = ({ size = 36, className = "" }: { size?: number, className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+const ChevronRight = ({ size = 36, className = "", strokeWidth = 2 }: { size?: number, className?: string, strokeWidth?: number }) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
 );
 
 
@@ -1184,7 +1184,7 @@ export default function ConNguoiPage() {
   const [activeStoreIndex, setActiveStoreIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState(0);
   const [vdIndex, setVdIndex] = useState(0);
-  const [selectedHonoree, setSelectedHonoree] = useState<Honoree | null>(null);
+  const [selectedHonoree, setSelectedHonoree] = useState<number | null>(null);
   const [selectedProvince, setSelectedProvince] = useState<Province | null>(null);
   const [deptPopupPage, setDeptPopupPage] = useState(0);
   const [mounted, setMounted] = useState(false);
@@ -1365,9 +1365,9 @@ export default function ConNguoiPage() {
               <h2 className="relative z-50 font-beausans font-black text-2xl md:text-4xl uppercase tracking-[0.15em] text-center" style={{ color: '#FFFFFF' }}>
                 {selectedDept.name}
               </h2>
-              {deptPopupPage > 0 && selectedDept.details.extraPages[deptPopupPage - 1]?.title && (
+              {deptPopupPage > 0 && selectedDept.details.extraPages?.[deptPopupPage - 1]?.title && (
                 <h3 className="relative z-50 font-beausans font-black text-xl md:text-3xl uppercase tracking-[0.15em] text-center mt-2" style={{ color: '#FFFFFF' }}>
-                  {selectedDept.details.extraPages[deptPopupPage - 1].title}
+                  {selectedDept.details.extraPages?.[deptPopupPage - 1].title}
                 </h3>
               )}
             </div>
@@ -1379,10 +1379,10 @@ export default function ConNguoiPage() {
                     {/* Left side: Image 0 (Narrower) */}
                     <div className="md:col-span-1 relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl h-[400px] md:h-full bg-white/10 group">
                       <Image
-                        src={selectedDept.details.mainItems[0].img}
+                        src={selectedDept.details.mainItems?.[0].img || ""}
                         fill
                         className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                        style={{ objectPosition: selectedDept.details.mainItems[0].objectPosition || "center" }}
+                        style={{ objectPosition: selectedDept.details.mainItems?.[0].objectPosition || "center" }}
                         alt="Main"
                         unoptimized
                         priority
@@ -1396,7 +1396,7 @@ export default function ConNguoiPage() {
                       <div className="grid grid-cols-2 gap-6 h-[200px] md:h-full">
                         <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-full group">
                           <Image
-                            src={selectedDept.details.mainItems[1].img}
+                            src={selectedDept.details.mainItems?.[1].img || ""}
                             fill
                             className="object-cover transition-transform duration-1000 group-hover:scale-110"
                             alt="Item 1"
@@ -1406,7 +1406,7 @@ export default function ConNguoiPage() {
                         </div>
                         <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-full group">
                           <Image
-                            src={selectedDept.details.mainItems[2].img}
+                            src={selectedDept.details.mainItems?.[2].img || ""}
                             fill
                             className="object-cover transition-transform duration-1000 group-hover:scale-110"
                             alt="Item 2"
@@ -1418,7 +1418,7 @@ export default function ConNguoiPage() {
                       {/* Bottom row: 3 */}
                       <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-[200px] md:h-full group">
                         <Image
-                          src={selectedDept.details.mainItems[3].img}
+                          src={selectedDept.details.mainItems?.[3].img || ""}
                           fill
                           className="object-cover transition-transform duration-1000 group-hover:scale-110"
                           alt="Item 3"
@@ -1432,7 +1432,7 @@ export default function ConNguoiPage() {
               ) : selectedDept.details.useStaggeredOnMain ? (
                 <div className="w-full flex flex-col items-center justify-center px-4 md:px-10 animate-in fade-in zoom-in-95 duration-500">
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-7xl">
-                    {selectedDept.details.mainItems.map((item, idx: number) => {
+                    {selectedDept.details.mainItems?.map((item, idx: number) => {
                         const isWide = idx === 0 || idx === 4;
                         return (
                           <div
@@ -1574,15 +1574,15 @@ export default function ConNguoiPage() {
               ) : (
                 <div className="w-full flex flex-col items-center justify-center px-4 md:px-10 animate-in fade-in zoom-in-95 duration-500">
                   {/* Extra Pages Rendering */}
-                  {selectedDept.details.extraPages[deptPopupPage - 1]?.layout === "page2-special" ? (
+                  {selectedDept.details.extraPages?.[deptPopupPage - 1]?.layout === "page2-special" ? (
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-7xl md:h-[450px] mx-auto">
                       {/* Left side: Image 7 (Narrower) */}
                       <div className="md:col-span-1 relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl h-[400px] md:h-full bg-white/10">
                         <Image
-                          src={selectedDept.details.extraPages[deptPopupPage - 1].items[0].img}
+                          src={selectedDept.details.extraPages?.[deptPopupPage - 1]?.items[0].img || ""}
                           fill
                           className="object-cover"
-                          style={{ objectPosition: selectedDept.details.extraPages[deptPopupPage - 1].items[0].objectPosition || "center" }}
+                          style={{ objectPosition: selectedDept.details.extraPages?.[deptPopupPage - 1]?.items[0].objectPosition || "center" }}
                           alt="anh 7"
                           unoptimized
                           priority
@@ -1595,7 +1595,7 @@ export default function ConNguoiPage() {
                         <div className="grid grid-cols-2 gap-6 h-[200px] md:h-full">
                           <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-full">
                             <Image
-                              src={selectedDept.details.extraPages[deptPopupPage - 1].items[1].img}
+                              src={selectedDept.details.extraPages?.[deptPopupPage - 1]?.items[1].img || ""}
                               fill
                               className="object-cover"
                               alt="anh 8"
@@ -1604,7 +1604,7 @@ export default function ConNguoiPage() {
                           </div>
                           <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-full">
                             <Image
-                              src={selectedDept.details.extraPages[deptPopupPage - 1].items[2].img}
+                              src={selectedDept.details.extraPages?.[deptPopupPage - 1]?.items[2].img || ""}
                               fill
                               className="object-cover"
                               alt="anh 9"
@@ -1615,7 +1615,7 @@ export default function ConNguoiPage() {
                         {/* Bottom row: 10 */}
                         <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-[200px] md:h-full">
                           <Image
-                            src={selectedDept.details.extraPages[deptPopupPage - 1].items[3].img}
+                            src={selectedDept.details.extraPages?.[deptPopupPage - 1]?.items[3].img || ""}
                             fill
                             className="object-cover"
                             alt="anh 10"
@@ -1624,9 +1624,9 @@ export default function ConNguoiPage() {
                         </div>
                       </div>
                     </div>
-                  ) : selectedDept.details.extraPages[deptPopupPage - 1]?.layout === "staggered" ? (
+                  ) : selectedDept.details.extraPages?.[deptPopupPage - 1]?.layout === "staggered" ? (
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-7xl">
-                      {selectedDept.details.extraPages[deptPopupPage - 1]?.items.map((item, idx: number) => {
+                      {selectedDept.details.extraPages?.[deptPopupPage - 1]?.items.map((item, idx: number) => {
                         const isWide = idx === 0 || idx === 4;
                         return (
                           <div
@@ -1657,7 +1657,7 @@ export default function ConNguoiPage() {
                     </div>
                   ) : (
                     <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 w-full max-w-7xl">
-                      {selectedDept.details.extraPages[deptPopupPage - 1]?.items.map((item, idx: number) => (
+                      {selectedDept.details.extraPages?.[deptPopupPage - 1]?.items.map((item, idx: number) => (
                         <div
                           key={idx}
                           className="flex flex-col items-center group w-full shrink-0 animate-in fade-in slide-in-from-bottom-8 duration-700"
@@ -1693,7 +1693,7 @@ export default function ConNguoiPage() {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      const totalPages = 1 + selectedDept.details.extraPages.length;
+                      const totalPages = 1 + (selectedDept.details.extraPages?.length || 0);
                       setDeptPopupPage(prev => (prev - 1 + totalPages) % totalPages);
                     }}
                     className="text-white/40 hover:text-white transition-all transform hover:scale-125 active:scale-95"
@@ -1703,7 +1703,7 @@ export default function ConNguoiPage() {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      const totalPages = 1 + selectedDept.details.extraPages.length;
+                      const totalPages = 1 + (selectedDept.details.extraPages?.length || 0);
                       setDeptPopupPage(prev => (prev + 1) % totalPages);
                     }}
                     className="text-white/40 hover:text-white transition-all transform hover:scale-125 active:scale-95"

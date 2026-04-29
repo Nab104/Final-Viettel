@@ -23,7 +23,8 @@ const fadeInUp = {
   viewport: { once: true, amount: 0.15 },
   transition: { 
     duration: 1.0, 
-    ease: [0.22, 1, 0.36, 1] 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ease: [0.22, 1, 0.36, 1] as any
   }
 };
 const HonorsStyles = () => (
