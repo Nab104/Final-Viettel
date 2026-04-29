@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { JourneyGrid } from "./JourneyGrid";
 
 export const JourneySection = () => {

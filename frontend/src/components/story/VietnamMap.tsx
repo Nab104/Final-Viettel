@@ -227,12 +227,19 @@ export const VietnamMap = () => {
           <div className="w-full h-full relative">
             {/* We ensure the SVG takes up the full container space */}
             {React.isValidElement(province.svg) 
-              ? React.cloneElement(province.svg as React.ReactElement<any>, { 
+              ? React.cloneElement(province.svg as React.ReactElement<{
+                  width: string;
+                  height: string;
+                  onMouseEnter: () => void;
+                  onMouseLeave: () => void;
+                  onClick: (e: React.MouseEvent) => void;
+                  style: React.CSSProperties;
+                }>, { 
                   width: "100%", 
                   height: "100%",
                   onMouseEnter: () => setHoveredProvinceId(province.id),
                   onMouseLeave: () => setHoveredProvinceId(null),
-                  onClick: (e: any) => {
+                  onClick: (e: React.MouseEvent) => {
                     e.stopPropagation();
                     if (["da-nang", "tay-ninh", "lai-chau", "dien-bien", "cao-bang", "hung-yen", "lang-son"].includes(province.id)) return;
                     setSelectedProvinceId(province.id);

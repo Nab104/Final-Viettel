@@ -8,7 +8,15 @@ export const LoadingIntro = () => {
   const [isMoving, setIsMoving] = useState(false);
   const [isDone, setIsDone] = useState(false);
 
-  const [particles, setParticles] = useState<any[]>([]);
+  interface Particle {
+    id: number;
+    left: string;
+    top: string;
+    duration: string;
+    delay: string;
+  }
+
+  const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
     // Generate particles only on client

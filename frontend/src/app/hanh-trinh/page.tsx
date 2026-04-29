@@ -1,15 +1,15 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Roboto } from 'next/font/google';
-import useEmblaCarousel from "embla-carousel-react";
+
 
 const roboto = Roboto({
   weight: ['400', '700'],
   subsets: ['latin', 'vietnamese'],
   display: 'swap',
 });
-import { ChevronLeft, ChevronRight, Target, Compass, Users, UserCheck } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { TrophyAwardsSection } from "@/components/journey/TrophyAwardsSection";
 import { AboutUsRedSection } from "@/components/journey/AboutUsRedSection";
 import { ProudJourneySection } from "@/components/journey/ProudJourneySection";
@@ -502,7 +502,7 @@ export default function HanhTrinhPage() {
               const diff = (i - awardsActiveIndex + total) % total;
 
               let positionClass = "";
-              let isMain = diff === 0;
+              const isMain = diff === 0;
 
               // Normalized relative diff (-total/2 to total/2)
               let relDiff = diff;

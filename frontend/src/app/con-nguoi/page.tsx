@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { createPortal } from "react-dom";
-import useEmblaCarousel from 'embla-carousel-react';
 import { motion, AnimatePresence } from "framer-motion";
 import { RipplePattern } from "@/components/journey/RipplePattern";
 
@@ -327,7 +326,7 @@ const organizations = [
   },
 ];
 
-const branches = [
+// const branches = [
   {
     name: "Chi nhánh Bình Dương",
     img: "/images/bình dương.jpg",
@@ -1086,6 +1085,7 @@ export default function ConNguoiPage() {
 
   // Tự động reset Ban Giám đốc về mặc định khi kéo qua (ra khỏi tầm mắt)
   useEffect(() => {
+    const currentRef = leadersSectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         // Nếu không còn ở trong khung hình thì reset về mặc định (index 1 là Thiếu tá Đinh Thị Dung ở giữa)
@@ -1096,26 +1096,26 @@ export default function ConNguoiPage() {
       { threshold: 0 }
     );
 
-    if (leadersSectionRef.current) {
-      observer.observe(leadersSectionRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (leadersSectionRef.current) {
-        observer.unobserve(leadersSectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
   const [activeDeptPage, setActiveDeptPage] = useState(0);
   const [activeBranchPage, setActiveBranchPage] = useState(0);
-  const [selectedDirector, setSelectedDirector] = useState<any>(null);
+  const [selectedDirector, setSelectedDirector] = useState<unknown>(null);
   const [selectedDept, setSelectedDept] = useState<any>(null);
-  const [selectedBranch, setSelectedBranch] = useState<any>(null);
+  const [selectedBranch, setSelectedBranch] = useState<unknown>(null);
   const [activeProvince, setActiveProvince] = useState(2);
   const [activeStoreIndex, setActiveStoreIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState(0);
   const [vdIndex, setVdIndex] = useState(0);
-  const [selectedHonoree, setSelectedHonoree] = useState<any>(null);
+  const [selectedHonoree, setSelectedHonoree] = useState<unknown>(null);
   const [selectedProvince, setSelectedProvince] = useState<any>(null);
   const [deptPopupPage, setDeptPopupPage] = useState(0);
   const [mounted, setMounted] = useState(false);
@@ -1217,10 +1217,10 @@ export default function ConNguoiPage() {
         <>
           <p className="mb-2 text-[#333333]">Đồng chí đã dẫn dắt Trung tâm qua các giai đoạn chuyển dịch chiến lược quan trọng:</p>
           <ul className="space-y-2 text-[#333333]">
-            <li>- <strong>Chiến lược "Rộng - Trẻ - Rẻ"</strong>: Xác định định hướng phát triển giai đoạn mới, tập trung vào việc tối ưu nhân lực trẻ và tạo lợi thế cạnh tranh về&nbsp;giá.</li>
+            <li>- <strong>Chiến lược &quot;Rộng - Trẻ - Rẻ&quot;</strong>: Xác định định hướng phát triển giai đoạn mới, tập trung vào việc tối ưu nhân lực trẻ và tạo lợi thế cạnh tranh về&nbsp;giá.</li>
             <li>- <strong>Vận hành mô hình BU</strong>: Kiện toàn Trung tâm Bán lẻ thành một Đơn vị kinh doanh độc lập (BU), tự chịu trách nhiệm toàn trình về hiệu quả kinh doanh và hạch toán.</li>
             <li>- <strong>Ứng dụng công nghệ</strong>: Triển khai hệ thống phần mềm quản lý <span className="text-[#EE0033] font-bold">ERP</span> trên toàn quốc và đưa ứng dụng chăm sóc khách hàng vào vận hành.</li>
-            <li>- <strong>Xử lý tồn đọng</strong>: Quyết liệt trong việc xử lý dứt điểm hàng tồn xấu cũ và công nợ xấu, giúp hệ thống tài chính "sạch" hơn để phát triển bền&nbsp;vững.</li>
+            <li>- <strong>Xử lý tồn đọng</strong>: Quyết liệt trong việc xử lý dứt điểm hàng tồn xấu cũ và công nợ xấu, giúp hệ thống tài chính &quot;sạch&quot; hơn để phát triển bền&nbsp;vững.</li>
           </ul>
         </>
       )
@@ -1247,7 +1247,7 @@ export default function ConNguoiPage() {
       period: "09/2015 - 11/2015",
       description: (
         <>
-          <p className="text-[#333333]">- Trong thời gian ngắn kiêm nhiệm, đồng chí đã tập trung vào việc đẩy mạnh các chương trình truyền thông khuyến mại lớn, đặc biệt là chiến dịch <span className="text-[#EE0033] font-bold">"Back to School"</span> và các gói bundle dịch vụ viễn thông đi kèm thiết bị.</p>
+          <p className="text-[#333333]">- Trong thời gian ngắn kiêm nhiệm, đồng chí đã tập trung vào việc đẩy mạnh các chương trình truyền thông khuyến mại lớn, đặc biệt là chiến dịch <span className="text-[#EE0033] font-bold">&quot;Back to School&quot;</span> và các gói bundle dịch vụ viễn thông đi kèm thiết bị.</p>
         </>
       )
     },
@@ -1260,7 +1260,7 @@ export default function ConNguoiPage() {
         <>
           <p className="mb-2 text-[#333333]">Trên cương vị Giám đốc Công ty kiêm phụ trách Trung tâm, đồng chí đã có những đóng góp trong việc thay đổi tư duy quản trị:</p>
           <ul className="space-y-2 text-[#333333]">
-            <li>- <strong>Đối thoại dân chủ</strong>: Tổ chức các buổi hội thảo <span className="text-[#EE0033] font-bold">"Hội nghị Diên hồng"</span> để lắng nghe ý kiến từ nhân viên trực tiếp, tìm ra nguyên nhân yếu kém trong sản xuất kinh doanh.</li>
+            <li>- <strong>Đối thoại dân chủ</strong>: Tổ chức các buổi hội thảo <span className="text-[#EE0033] font-bold">&quot;Hội nghị Diên hồng&quot;</span> để lắng nghe ý kiến từ nhân viên trực tiếp, tìm ra nguyên nhân yếu kém trong sản xuất kinh doanh.</li>
             <li>- <strong>Tối ưu hóa hệ thống</strong>: Kiên quyết dừng hoạt động các siêu thị lỗ kéo dài, tập trung nguồn lực để tối ưu hóa các vị trí hiện có thay vì mở rộng ồ ạt.</li>
           </ul>
         </>

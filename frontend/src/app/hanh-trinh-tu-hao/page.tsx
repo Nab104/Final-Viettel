@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Roboto } from 'next/font/google';
 import useEmblaCarousel from "embla-carousel-react";
@@ -166,7 +166,7 @@ export default function ProudJourneyPage() {
   const [awardsActiveIndex, setAwardsActiveIndex] = useState(0);
   const [isMarketHovered, setIsMarketHovered] = useState(false);
   const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+  // const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
 
 
   const awards = [
@@ -466,7 +466,7 @@ export default function ProudJourneyPage() {
               const total = awards.length;
               const diff = (i - awardsActiveIndex + total) % total;
               let positionClass = "";
-              let isMain = diff === 0;
+              const isMain = diff === 0;
               let relDiff = diff;
               if (relDiff > total / 2) relDiff -= total;
 
