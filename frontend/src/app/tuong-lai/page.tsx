@@ -142,7 +142,13 @@ const focusGoals = [
 ];
 
 export default function TuongLaiPage() {
-  const [expandedId, setExpandedId] = React.useState<string | null>(null);
+  const [expandedIds, setExpandedIds] = React.useState<string[]>([]);
+
+  const toggleGoal = (id: string) => {
+    setExpandedIds(prev => 
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    );
+  };
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white">
@@ -369,12 +375,13 @@ export default function TuongLaiPage() {
               <p className="text-xl text-gray-500 italic" style={{ fontFamily: 'var(--font-beausans)' }}>Hệ thống mục tiêu được nhóm theo 3 trụ cột chiến lược</p>
             </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
               {focusGoals.map((goal, idx) => {
-                const isExpanded = expandedId === goal.id;
+                const isExpanded = expandedIds.includes(goal.id);
                 return (
                   <motion.div
                     key={goal.id}
+                    layout
                     className={`bg-white/60 backdrop-blur-sm border border-white rounded-[26px] p-10 transition-all duration-500 cursor-pointer overflow-hidden ${
                       isExpanded ? "shadow-2xl shadow-[#EE0033]/10 bg-white scale-[1.02]" : "hover:bg-white hover:shadow-lg"
                     }`}
@@ -386,7 +393,7 @@ export default function TuongLaiPage() {
                       delay: idx * 0.08,
                       ease: "easeOut"
                     }}
-                    onClick={() => setExpandedId(isExpanded ? null : goal.id)}
+                    onClick={() => toggleGoal(goal.id)}
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-5">

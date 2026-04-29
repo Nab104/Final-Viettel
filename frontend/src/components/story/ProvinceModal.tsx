@@ -25,12 +25,30 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
     setMounted(true);
   }, []);
 
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+
   // Reset index when opening modal for a new province
   useEffect(() => {
     if (isOpen) {
       setCurrentIndex(0);
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
   }, [isOpen, provinceName]);
+
+  // Reset scroll position when story changes
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = 0;
+    }
+  }, [currentIndex]);
 
   if (!mounted) return null;
 
@@ -155,8 +173,9 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
 
                 {/* Paragraph */}
                 <div 
+                  ref={scrollRef}
                   className="custom-scrollbar overflow-y-auto pr-4 mt-6"
-                  style={{ maxHeight: "380px" }}
+                  style={{ height: "380px" }}
                 >
                   <p
                     style={{
