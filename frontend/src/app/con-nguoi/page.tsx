@@ -1493,7 +1493,7 @@ export default function ConNguoiPage() {
                     {selectedDept.details.deputies && selectedDept.details.deputies.length > 0 && (
                       <div className="flex flex-col gap-6 shrink-0" style={{ width: popupConfig.deputy.containerMaxWidth, maxWidth: popupConfig.deputy.containerMaxWidth }}>
                         {selectedDept.details.deputies.map((deputy, index: number) => {
-                          const isTwoDeputies = selectedDept.details.deputies.length === 2;
+                          const isTwoDeputies = selectedDept.details.deputies!.length === 2;
                           return (
                             <div
                               key={index}
