@@ -6,6 +6,33 @@ import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { RipplePattern } from "@/components/journey/RipplePattern";
 
+interface DeptDetailItem {
+  img: string;
+  name?: string;
+  role?: string;
+  scale?: number;
+  objectPosition?: string;
+}
+
+interface DeptDetail {
+  leader: DeptDetailItem;
+  group: { name: string; subName?: string; img: string };
+  deputies?: DeptDetailItem[];
+  layoutOnMain?: string;
+  useStaggeredOnMain?: boolean;
+  mainItems: DeptDetailItem[];
+  extraPages: {
+    title?: string;
+    layout?: string;
+    items: DeptDetailItem[];
+  }[];
+}
+
+interface SelectedDept {
+  name: string;
+  details: DeptDetail;
+}
+
 const WavyBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.1] z-0">
     <svg 
@@ -1111,14 +1138,14 @@ export default function ConNguoiPage() {
   const [activeDeptPage, setActiveDeptPage] = useState(0);
   const [activeBranchPage, setActiveBranchPage] = useState(0);
   const [selectedDirector, setSelectedDirector] = useState<unknown>(null);
-  const [selectedDept, setSelectedDept] = useState<any>(null);
+  const [selectedDept, setSelectedDept] = useState<SelectedDept | null>(null);
   const [selectedBranch, setSelectedBranch] = useState<unknown>(null);
   const [activeProvince, setActiveProvince] = useState(2);
   const [activeStoreIndex, setActiveStoreIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState(0);
   const [vdIndex, setVdIndex] = useState(0);
   const [selectedHonoree, setSelectedHonoree] = useState<unknown>(null);
-  const [selectedProvince, setSelectedProvince] = useState<any>(null);
+  const [selectedProvince, setSelectedProvince] = useState<unknown>(null);
   const [deptPopupPage, setDeptPopupPage] = useState(0);
   const [mounted, setMounted] = useState(false);
   const [isAnyModalOpen, setIsAnyModalOpen] = useState(false);
@@ -1204,7 +1231,7 @@ export default function ConNguoiPage() {
           <p className="mb-2 text-[#333333]">Trong nhiệm kỳ của mình, đồng chí tập trung vào việc chuyên nghiệp hóa và mở rộng kênh bán hàng:</p>
           <ul className="space-y-2 text-[#333333]">
             <li>- <strong>Đẩy mạnh kênh Online</strong>: Bắt đầu đầu tư mạnh cho kênh bán hàng trực tuyến từ quý 2/2012, cử nhân sự chuyên trách truyền thông cho website và triển khai gian hàng trên các trang thương mại điện tử.</li>
-            <li>- <strong>Cải thiện hình ảnh và dịch vụ</strong>: Triển khai chương trình nâng cao hình ảnh siêu thị "<span className="text-[#EE0033] font-bold">5S</span>", ban hành bộ tài liệu cẩm nang và tổ chức đào tạo trực tiếp cho khối siêu thị.</li>
+            <li>- <strong>Cải thiện hình ảnh và dịch vụ</strong>: Triển khai chương trình nâng cao hình ảnh siêu thị &quot;<span className="text-[#EE0033] font-bold">5S</span>&quot;, ban hành bộ tài liệu cẩm nang và tổ chức đào tạo trực tiếp cho khối siêu thị.</li>
             <li>- <strong>Tiếp nhận hệ thống cửa hàng</strong>: Chỉ đạo trực tiếp việc tiếp nhận và quản lý tài sản, trang thiết bị của hệ thống <span className="text-[#EE0033] font-bold">807 cửa hàng Viettel</span> điều chuyển từ Viettel Telecom sang.</li>
           </ul>
         </>
@@ -1293,79 +1320,79 @@ export default function ConNguoiPage() {
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
             </button>
 
-            <div className="relative w-full max-w-[95vw] flex flex-col items-center">
-              <div className="flex flex-col items-center mb-12">
-                <h2 className="relative z-50 font-beausans font-black text-2xl md:text-4xl uppercase tracking-[0.15em] text-center" style={{ color: '#FFFFFF' }}>
-                  {selectedDept.name}
-                </h2>
-                {deptPopupPage > 0 && selectedDept.details.extraPages[deptPopupPage - 1]?.title && (
-                  <h3 className="relative z-50 font-beausans font-black text-xl md:text-3xl uppercase tracking-[0.15em] text-center mt-2" style={{ color: '#FFFFFF' }}>
-                    {selectedDept.details.extraPages[deptPopupPage - 1].title}
-                  </h3>
-                )}
-              </div>
+          <div className="relative w-full max-w-[95vw] flex flex-col items-center">
+            <div className="flex flex-col items-center mb-12">
+              <h2 className="relative z-50 font-beausans font-black text-2xl md:text-4xl uppercase tracking-[0.15em] text-center" style={{ color: '#FFFFFF' }}>
+                {selectedDept.name}
+              </h2>
+              {deptPopupPage > 0 && selectedDept.details.extraPages[deptPopupPage - 1]?.title && (
+                <h3 className="relative z-50 font-beausans font-black text-xl md:text-3xl uppercase tracking-[0.15em] text-center mt-2" style={{ color: '#FFFFFF' }}>
+                  {selectedDept.details.extraPages[deptPopupPage - 1].title}
+                </h3>
+              )}
+            </div>
 
-              {deptPopupPage === 0 ? (
-                selectedDept.details.layoutOnMain === "page2-special" ? (
-                  <div className="w-full flex flex-col items-center justify-center px-4 md:px-10 animate-in fade-in zoom-in-95 duration-500">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-7xl md:h-[450px] mx-auto">
-                      {/* Left side: Image 0 (Narrower) */}
-                      <div className="md:col-span-1 relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl h-[400px] md:h-full bg-white/10 group">
-                        <Image
-                          src={selectedDept.details.mainItems[0].img}
-                          fill
-                          className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                          style={{ objectPosition: selectedDept.details.mainItems[0].objectPosition || "center" }}
-                          alt="Main"
-                          unoptimized
-                          priority
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      </div>
+            {deptPopupPage === 0 ? (
+              selectedDept.details.layoutOnMain === "page2-special" ? (
+                <div className="w-full flex flex-col items-center justify-center px-4 md:px-10 animate-in fade-in zoom-in-95 duration-500">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-7xl md:h-[450px] mx-auto">
+                    {/* Left side: Image 0 (Narrower) */}
+                    <div className="md:col-span-1 relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl h-[400px] md:h-full bg-white/10 group">
+                      <Image
+                        src={selectedDept.details.mainItems[0].img}
+                        fill
+                        className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                        style={{ objectPosition: selectedDept.details.mainItems[0].objectPosition || "center" }}
+                        alt="Main"
+                        unoptimized
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
 
-                      {/* Right side: Nested Grid (Wider) */}
-                      <div className="md:col-span-2 grid grid-rows-2 gap-6 h-auto md:h-full">
-                        {/* Top row: 1 and 2 */}
-                        <div className="grid grid-cols-2 gap-6 h-[200px] md:h-full">
-                          <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-full group">
-                            <Image
-                              src={selectedDept.details.mainItems[1].img}
-                              fill
-                              className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                              alt="Item 1"
-                              unoptimized
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                          </div>
-                          <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-full group">
-                            <Image
-                              src={selectedDept.details.mainItems[2].img}
-                              fill
-                              className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                              alt="Item 2"
-                              unoptimized
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                          </div>
-                        </div>
-                        {/* Bottom row: 3 */}
-                        <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-[200px] md:h-full group">
+                    {/* Right side: Nested Grid (Wider) */}
+                    <div className="md:col-span-2 grid grid-rows-2 gap-6 h-auto md:h-full">
+                      {/* Top row: 1 and 2 */}
+                      <div className="grid grid-cols-2 gap-6 h-[200px] md:h-full">
+                        <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-full group">
                           <Image
-                            src={selectedDept.details.mainItems[3].img}
+                            src={selectedDept.details.mainItems[1].img}
                             fill
                             className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                            alt="Item 3"
+                            alt="Item 1"
+                            unoptimized
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        </div>
+                        <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-full group">
+                          <Image
+                            src={selectedDept.details.mainItems[2].img}
+                            fill
+                            className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                            alt="Item 2"
                             unoptimized
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                         </div>
                       </div>
+                      {/* Bottom row: 3 */}
+                      <div className="relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-xl bg-white/10 h-[200px] md:h-full group">
+                        <Image
+                          src={selectedDept.details.mainItems[3].img}
+                          fill
+                          className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                          alt="Item 3"
+                          unoptimized
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      </div>
                     </div>
                   </div>
-                ) : selectedDept.details.useStaggeredOnMain ? (
-                  <div className="w-full flex flex-col items-center justify-center px-4 md:px-10 animate-in fade-in zoom-in-95 duration-500">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-7xl">
-                      {selectedDept.details.mainItems.map((item: any, idx: number) => {
+                </div>
+              ) : selectedDept.details.useStaggeredOnMain ? (
+                <div className="w-full flex flex-col items-center justify-center px-4 md:px-10 animate-in fade-in zoom-in-95 duration-500">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-7xl">
+                    {selectedDept.details.mainItems.map((item, idx: number) => {
                         const isWide = idx === 0 || idx === 4;
                         return (
                           <div
@@ -1465,7 +1492,7 @@ export default function ConNguoiPage() {
                     {/* Phó phòng */}
                     {selectedDept.details.deputies && selectedDept.details.deputies.length > 0 && (
                       <div className="flex flex-col gap-6 shrink-0" style={{ width: popupConfig.deputy.containerMaxWidth, maxWidth: popupConfig.deputy.containerMaxWidth }}>
-                        {selectedDept.details.deputies.map((deputy: any, index: number) => {
+                        {selectedDept.details.deputies.map((deputy, index: number) => {
                           const isTwoDeputies = selectedDept.details.deputies.length === 2;
                           return (
                             <div
@@ -1559,7 +1586,7 @@ export default function ConNguoiPage() {
                     </div>
                   ) : selectedDept.details.extraPages[deptPopupPage - 1]?.layout === "staggered" ? (
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-7xl">
-                      {selectedDept.details.extraPages[deptPopupPage - 1]?.items.map((item: any, idx: number) => {
+                      {selectedDept.details.extraPages[deptPopupPage - 1]?.items.map((item, idx: number) => {
                         const isWide = idx === 0 || idx === 4;
                         return (
                           <div
@@ -1590,7 +1617,7 @@ export default function ConNguoiPage() {
                     </div>
                   ) : (
                     <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 w-full max-w-7xl">
-                      {selectedDept.details.extraPages[deptPopupPage - 1]?.items.map((item: any, idx: number) => (
+                      {selectedDept.details.extraPages[deptPopupPage - 1]?.items.map((item, idx: number) => (
                         <div
                           key={idx}
                           className="flex flex-col items-center group w-full shrink-0 animate-in fade-in slide-in-from-bottom-8 duration-700"

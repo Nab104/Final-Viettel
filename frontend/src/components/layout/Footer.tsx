@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { Facebook, Youtube, Globe } from "lucide-react";
 
 export const Footer = () => {

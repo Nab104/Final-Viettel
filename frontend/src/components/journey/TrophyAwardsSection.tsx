@@ -2,7 +2,7 @@
 
 import React from "react";
 import { TrophyGridOrCarousel } from "./TrophyGridOrCarousel";
-import { RipplePattern } from "./RipplePattern";
+
 
 export const TrophyAwardsSection: React.FC = () => {
   return (

@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
+
 import { Roboto } from 'next/font/google';
-import useEmblaCarousel from "embla-carousel-react";
+
 
 const roboto = Roboto({
   weight: ['400', '700'],

@@ -14,8 +14,7 @@ const provinces = [
   ...batch3
 ];
 
-const hoangSaAssetUrl = "/images/story-map/hoang-sa.svg";
-const truongSaAssetUrl = "/images/story-map/truong-sa.svg";
+
 
 export const VietnamMap = () => {
   const [hoveredProvinceId, setHoveredProvinceId] = useState<string | null>(null);
