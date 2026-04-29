@@ -1682,7 +1682,10 @@ export default function ConNguoiPage() {
             <div className="relative bg-white w-full max-w-4xl rounded-[2rem] overflow-hidden shadow-2xl flex flex-col md:flex-row min-h-[450px]">
               <button onClick={() => setSelectedDirector(null)} className="absolute right-6 top-6 z-10 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg></button>
               <div className="w-full md:w-2/5 p-8 flex items-center justify-center">
-                <div className="relative w-full aspect-[4/5] rounded-[40px] overflow-hidden shadow-lg"><Image src={selectedDirector.img} fill className="object-cover object-top" alt="director" priority /></div>
+                <div className="relative w-full aspect-[4/5] rounded-[40px] overflow-hidden shadow-lg">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={selectedDirector.img} className="w-full h-full object-cover object-top" alt="director" />
+                </div>
               </div>
               <div className="p-8 md:pl-0 md:pr-12 flex-1 flex flex-col justify-center">
                 <div className="mb-6 font-beausans">
@@ -1717,7 +1720,8 @@ export default function ConNguoiPage() {
               <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-end">
                 <div className="flex flex-col items-center group">
                   <div className="relative w-full aspect-[3/4] max-w-[280px] rounded-[2rem] overflow-hidden shadow-2xl border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500">
-                    <Image src={selectedBranch.details.leader.img} fill className="object-cover" alt="leader" onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={selectedBranch.details.leader.img} className="w-full h-full object-cover" alt="leader" onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
                   <div className="mt-6 text-center">
@@ -1728,12 +1732,11 @@ export default function ConNguoiPage() {
 
                 <div className="flex flex-col items-center group order-first md:order-none">
                   <div className="relative w-full aspect-[16/10] rounded-[40px] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border-4 border-white/20 group-hover:border-white/40 transition-all duration-500">
-                    <Image
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src={selectedBranch.details.group.img}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                       alt="group"
-                      priority
                       onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-6 md:p-10">
@@ -1746,7 +1749,8 @@ export default function ConNguoiPage() {
                 {selectedBranch.details.deputy && (
                   <div className="flex flex-col items-center group">
                     <div className="relative w-full aspect-[3/4] max-w-[280px] rounded-[2rem] overflow-hidden shadow-2xl border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500">
-                      <Image src={selectedBranch.details.deputy.img} fill className="object-cover" alt="deputy" onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={selectedBranch.details.deputy.img} className="w-full h-full object-cover" alt="deputy" onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div className="mt-6 text-center">
@@ -1790,11 +1794,11 @@ export default function ConNguoiPage() {
 
                     <div className={`relative aspect-square overflow-hidden shadow-2xl transition-all duration-[1500ms] ${style.brightness}`} style={{ borderRadius: style.borderRadius, width: '100%', backgroundColor: '#fff', padding: '0', borderWidth: isCenter ? '6px' : '2px', borderStyle: 'solid', borderColor: isCenter ? '#EE0033' : 'rgba(0,0,0,0.05)', boxShadow: isCenter ? '0 15px 45px rgba(238,0,51,0.2)' : 'none', transition: 'all 1500ms cubic-bezier(0.25, 1, 0.5, 1)' }}>
                       <div className="w-full h-full relative overflow-hidden transition-all duration-[1500ms]" style={{ borderRadius: style.borderRadius, transition: 'all 1500ms cubic-bezier(0.25, 1, 0.5, 1)' }}>
-                        <Image
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                           src={leader.img}
                           alt={leader.name}
-                          fill
-                          className="object-cover transform transition-all duration-[1500ms]"
+                          className="w-full h-full object-cover transform transition-all duration-[1500ms]"
                           style={{
                             transition: 'all 1500ms cubic-bezier(0.25, 1, 0.5, 1)',
                             objectPosition: leader.objectPosition || 'top',
@@ -1821,7 +1825,8 @@ export default function ConNguoiPage() {
               {formerDirectorsData.map((director, idx) => (
                 <div key={idx} className="group flex flex-col bg-white shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer hover:-translate-y-2 rounded-2xl overflow-hidden" onClick={() => setSelectedDirector(director)}>
                   <div className="relative w-full aspect-[4/5] bg-white overflow-hidden">
-                    <Image src={director.img} alt={director.name} fill className="object-cover object-top transition-transform duration-1000 group-hover:scale-110" onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={director.img} alt={director.name} className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110" onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
                   </div>
                   <div className="bg-[#D9D9D9] group-hover:bg-[#EE0033] p-4 text-center min-h-[4.5rem] flex flex-col items-center justify-center transition-colors duration-500">
@@ -1846,14 +1851,18 @@ export default function ConNguoiPage() {
                       <div key={idx} onClick={() => setSelectedHonoree(isFlipped ? null : idx)} className="w-[calc(100%/1-1rem)] sm:w-[calc(100%/2-1.5rem)] md:w-[calc(100%/3-2rem)] lg:w-[calc(100%/4-2rem)] h-96 md:h-[480px] shrink-0 relative group transition-all duration-500 cursor-pointer" style={{ opacity: (idx >= vdIndex && idx < vdIndex + 4) ? 1 : 0.4, scale: (idx >= vdIndex && idx < vdIndex + 4) ? '1' : '0.9', perspective: '1500px' }}>
                         <div className="w-full h-full relative transition-all duration-1000" style={{ transformStyle: 'preserve-3d', transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}>
                           <div className="absolute inset-0 w-full h-full z-20 rounded-[40px] overflow-hidden shadow-2xl bg-transparent" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
-                            <Image src={person.img} fill className="object-cover transition-transform duration-1000 group-hover:scale-105 rounded-[40px]" alt={person.name} onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} />
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={person.img} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 rounded-[40px]" alt={person.name} onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} />
                             <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 flex items-end p-6 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}><p className="text-white font-beausans font-black text-lg md:text-xl uppercase tracking-tight leading-tight drop-shadow-md whitespace-pre-line">{person.name.replace('ĐỒNG CHÍ ', 'ĐỒNG CHÍ\n')}</p></div>
                           </div>
                           <div className="absolute inset-0 w-full h-full z-10 rounded-[40px] overflow-hidden shadow-2xl bg-[#EE0033] flex flex-col items-center justify-center p-6 text-center border-4 border-white/20" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
                             <div className="absolute inset-0 opacity-15 bg-[url('/images/diahinh.png')] bg-cover bg-center"></div>
                             <div className="relative z-10 flex flex-col h-full w-full justify-between py-2">
                               <div className="flex flex-col items-center shrink-0">
-                                <div className="w-14 h-14 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white mb-2 shadow-md"><Image src={person.img} fill className="object-cover" alt={person.name} /></div>
+                                <div className="w-14 h-14 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white mb-2 shadow-md">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img src={person.img} className="w-full h-full object-cover" alt={person.name} />
+                                </div>
                                 <h2 className="text-white text-2xl md:text-4xl font-beausans font-black mb-1 drop-shadow-lg uppercase tracking-tighter leading-none">{person.years} NĂM</h2>
                                 <p className="text-white/90 text-[10px] md:text-xs font-beausans font-bold">cống hiến</p>
                               </div>
@@ -2120,6 +2129,7 @@ export default function ConNguoiPage() {
                       >
                         <div className="relative w-full h-full flex flex-col items-center justify-center">
                           {/* Map Image - As is, no filters */}
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={isCenter ? (prov.mapWithText || prov.map) : prov.map}
                             alt={prov.name}

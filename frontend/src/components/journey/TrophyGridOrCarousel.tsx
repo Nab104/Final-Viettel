@@ -79,6 +79,7 @@ export const TrophyGridOrCarousel: React.FC = () => {
                 {/* Subtle shine effect overlay */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 bg-gradient-to-tr from-white via-transparent to-white pointer-events-none" />
                 
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={trophy.image}
                   alt={trophy.title}

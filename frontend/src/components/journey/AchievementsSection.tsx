@@ -18,6 +18,7 @@ const AchievementsSection = () => {
             '/images/IMG_0427.JPG'
           ].map((src, index) => (
             <div key={index} className="aspect-square relative group overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src={src} 
                 alt={`Achievement ${index + 1}`}
