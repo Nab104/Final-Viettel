@@ -326,7 +326,8 @@ const organizations = [
   },
 ];
 
-// const branches = [
+/*
+const branches = [
   {
     name: "Chi nhánh Bình Dương",
     img: "/images/bình dương.jpg",
@@ -414,6 +415,7 @@ const organizations = [
     }
   },
 ];
+*/
 
 const provinces = [
   {
