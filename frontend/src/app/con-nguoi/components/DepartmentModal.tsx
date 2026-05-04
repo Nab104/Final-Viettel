@@ -55,7 +55,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                     <div className="grid grid-cols-2 gap-4">
                       {dept.details.mainItems.slice(0, 4).map((item, i) => (
                         <div key={i} className="relative aspect-square rounded-2xl overflow-hidden border border-white/10">
-                          <Image src={item.img} fill sizes="50vw" className="object-cover" alt="" />
+                          <Image unoptimized quality={100} src={item.img} fill sizes="50vw" className="object-cover" alt="" />
                         </div>
                       ))}
                     </div>
@@ -63,7 +63,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                     <div className="flex flex-col gap-6">
                       {dept.details.mainItems.map((item, i) => (
                         <div key={i} className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10">
-                          <Image src={item.img} fill sizes="100vw" className="object-cover" alt="" />
+                          <Image unoptimized quality={100} src={item.img} fill sizes="100vw" className="object-cover" alt="" />
                         </div>
                       ))}
                     </div>
@@ -72,7 +72,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       {dept.details.leader && (
                         <div className="flex flex-col items-center">
                           <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden border border-white/10">
-                            <Image src={dept.details.leader.img} fill sizes="100vw" className="object-cover" alt="leader" />
+                            <Image unoptimized quality={100} src={dept.details.leader.img} fill sizes="100vw" className="object-cover" alt="leader" />
                           </div>
                           {!hideComradeLabel && (
                             <div className="mt-4 text-center">
@@ -85,7 +85,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       {dept.details.group && (
                         <div className="flex flex-col items-center">
                           <div className="relative w-full aspect-[16/10] rounded-3xl overflow-hidden border border-white/20">
-                            <Image src={dept.details.group.img} fill sizes="100vw" className="object-cover" alt="group" />
+                            <Image unoptimized quality={100} src={dept.details.group.img} fill sizes="100vw" className="object-cover" alt="group" />
                           </div>
                           <div className="mt-4 text-center">
                             <h3 className="text-white font-bold text-lg uppercase">{dept.details.group.name}</h3>
@@ -95,7 +95,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       {dept.details.deputies && dept.details.deputies.map((deputy, i) => (
                         <div key={i} className="flex flex-col items-center">
                           <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden border border-white/10">
-                            <Image src={deputy.img} fill sizes="100vw" className="object-cover" alt="deputy" />
+                            <Image unoptimized quality={100} src={deputy.img} fill sizes="100vw" className="object-cover" alt="deputy" />
                           </div>
                           {!hideComradeLabel && (
                             <div className="mt-4 text-center">
@@ -122,7 +122,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                     {page.items.map((item, iIdx) => (
                       <div key={iIdx} className="flex flex-col items-center">
                         <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden border border-white/10">
-                          <Image src={item.img} fill sizes="100vw" className="object-cover" alt="" />
+                          <Image unoptimized quality={100} src={item.img} fill sizes="100vw" className="object-cover" alt="" />
                         </div>
                         {!hideComradeLabel && item.name && (
                           <div className="mt-4 text-center">
@@ -145,7 +145,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                     <div className="grid grid-cols-2 gap-8 h-[600px]">
                       {dept.details.mainItems.slice(0, 4).map((item, i) => (
                         <div key={i} className="relative rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image src={item.img} fill sizes="500px" className="object-cover transition-transform duration-1000 group-hover:scale-110" style={{ objectPosition: item.objectPosition || 'center' }} alt="" />
+                          <Image unoptimized quality={100} src={item.img} fill sizes="500px" className="object-cover transition-transform duration-1000 group-hover:scale-110" style={{ objectPosition: item.objectPosition || 'center' }} alt="" />
                         </div>
                       ))}
                     </div>
@@ -153,24 +153,24 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                     <div className="w-full space-y-8">
                       <div className="flex gap-8 h-[350px]">
                         <div className="relative flex-[1.6] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image src={dept.details.mainItems[0].img} fill sizes="800px" className="object-cover" alt="" />
+                          <Image unoptimized quality={100} src={dept.details.mainItems[0].img} fill sizes="800px" className="object-cover" alt="" />
                         </div>
                         <div className="relative flex-[0.8] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image src={dept.details.mainItems[1].img} fill sizes="400px" className="object-cover" alt="" />
+                          <Image unoptimized quality={100} src={dept.details.mainItems[1].img} fill sizes="400px" className="object-cover" alt="" />
                         </div>
                         <div className="relative flex-[1.2] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image src={dept.details.mainItems[2].img} fill sizes="600px" className="object-cover" alt="" />
+                          <Image unoptimized quality={100} src={dept.details.mainItems[2].img} fill sizes="600px" className="object-cover" alt="" />
                         </div>
                       </div>
                       <div className="flex gap-8 h-[350px]">
                         <div className="relative flex-[1] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image src={dept.details.mainItems[3].img} fill sizes="500px" className="object-cover" alt="" />
+                          <Image unoptimized quality={100} src={dept.details.mainItems[3].img} fill sizes="500px" className="object-cover" alt="" />
                         </div>
                         <div className="relative flex-[1.4] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image src={dept.details.mainItems[4].img} fill sizes="700px" className="object-cover" alt="" />
+                          <Image unoptimized quality={100} src={dept.details.mainItems[4].img} fill sizes="700px" className="object-cover" alt="" />
                         </div>
                         <div className="relative flex-[1.4] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image src={dept.details.mainItems[5].img} fill sizes="700px" className="object-cover" alt="" />
+                          <Image unoptimized quality={100} src={dept.details.mainItems[5].img} fill sizes="700px" className="object-cover" alt="" />
                         </div>
                       </div>
                     </div>
@@ -181,7 +181,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                         {dept.details.leader ? (
                           <>
                             <div className="relative w-full h-[450px] xl:h-[550px] rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-2xl">
-                              <Image src={dept.details.leader.img} fill sizes="350px" className="object-cover" style={{ objectPosition: dept.details.leader.objectPosition || 'center' }} alt="leader" />
+                              <Image unoptimized quality={100} src={dept.details.leader.img} fill sizes="350px" className="object-cover" style={{ objectPosition: dept.details.leader.objectPosition || 'center' }} alt="leader" />
                             </div>
                             {!hideComradeLabel && (
                               <div className="mt-6 text-center">
@@ -199,7 +199,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       {dept.details.group && (
                         <div className="flex-1 flex flex-col items-center group min-w-[300px]">
                           <div className="relative w-full h-[450px] xl:h-[550px] rounded-[3rem] overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all duration-500 shadow-2xl">
-                            <Image src={dept.details.group.img} fill sizes="800px" className="object-cover" alt="group" />
+                            <Image unoptimized quality={100} src={dept.details.group.img} fill sizes="800px" className="object-cover" alt="group" />
                           </div>
                           <div className="mt-6 text-center">
                             <h3 className="text-white font-bold text-xl uppercase tracking-[0.2em] opacity-60">{dept.details.group.name}</h3>
@@ -213,7 +213,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                           dept.details.deputies.map((deputy, i) => (
                             <div key={i} className="flex flex-col items-center group">
                               <div className="relative w-full h-[450px] xl:h-[550px] rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-xl">
-                                <Image src={deputy.img} fill sizes="350px" className="object-cover" style={{ objectPosition: deputy.objectPosition || 'center' }} alt="deputy" />
+                                <Image unoptimized quality={100} src={deputy.img} fill sizes="350px" className="object-cover" style={{ objectPosition: deputy.objectPosition || 'center' }} alt="deputy" />
                               </div>
                               {!hideComradeLabel && (
                                 <div className="mt-4 text-center">
@@ -243,7 +243,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                           {page.items.map((item, i) => (
                             <div key={i} className="flex flex-col items-center group">
                               <div className="relative w-full aspect-[3/4] rounded-[2rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500">
-                                <Image src={item.img} fill sizes="400px" className="object-cover" alt="" />
+                                <Image unoptimized quality={100} src={item.img} fill sizes="400px" className="object-cover" alt="" />
                               </div>
                               {!hideComradeLabel && item.name && (
                                 <div className="mt-6 text-center">
