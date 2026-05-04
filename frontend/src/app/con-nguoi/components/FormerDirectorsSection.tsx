@@ -23,6 +23,8 @@ const FormerDirectorsSection = ({ formerDirectorsData, isMobile, onSelect }: For
           >
             <div className="relative w-full aspect-[4/5] bg-white overflow-hidden">
               <Image 
+                unoptimized
+                quality={100}
                 src={director.img} 
                 alt={director.name} 
                 fill 

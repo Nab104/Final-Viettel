@@ -22,6 +22,8 @@ const DirectorModal = ({ director, onClose }: DirectorModalProps) => {
         {/* Image Card */}
         <div className="w-full md:w-[38%] aspect-square md:aspect-[4/5] relative rounded-[24px] overflow-hidden shadow-lg">
           <Image 
+            unoptimized
+            quality={100}
             src={director.img} 
             alt={director.name} 
             fill 

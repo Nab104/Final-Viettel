@@ -117,6 +117,8 @@ const LeadersSection = ({ leaders, positions, isMobile, isTablet, rotateLeaders 
               >
                 <div className="w-full h-full relative overflow-hidden">
                   <Image
+                    unoptimized
+                    quality={100}
                     src={leader.img}
                     alt={leader.name}
                     fill
