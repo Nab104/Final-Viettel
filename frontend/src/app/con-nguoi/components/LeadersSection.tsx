@@ -117,18 +117,17 @@ const LeadersSection = ({ leaders, positions, isMobile, isTablet, rotateLeaders 
               >
                 <div className="w-full h-full relative overflow-hidden">
                   <Image
-                    unoptimized
                     quality={100}
                     src={leader.img}
                     alt={leader.name}
                     fill
-                    sizes={isMobile ? "180px" : "450px"}
+                    sizes={isMobile ? "400px" : "1000px"}
                     className="object-cover"
                     style={{
                       objectPosition: leader.objectPosition || 'top',
                       transform: `scale(${leader.scale || 1.8})`
                     }}
-                    priority={isCenter}
+                    priority={true}
                     onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"}
                   />
                 </div>
