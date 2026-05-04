@@ -175,47 +175,58 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       </div>
                     </div>
                   ) : (
-                    <div className="w-full flex items-start justify-center gap-10">
-                      {dept.details.leader && (
-                        <div className="w-[320px] flex flex-col items-center group">
-                          <div className="relative w-full h-[500px] rounded-[2rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500">
-                            <Image src={dept.details.leader.img} fill sizes="320px" className="object-cover" style={{ objectPosition: dept.details.leader.objectPosition || 'center' }} alt="leader" />
-                          </div>
-                          {!hideComradeLabel && (
-                            <div className="mt-6 text-center">
-                              <h4 className="text-white font-bold text-xl uppercase">Đồng chí {dept.details.leader.name}</h4>
-                              <p className="mt-2 text-gray-200 text-lg italic">{dept.details.leader.role}</p>
+                    <div className="w-full flex flex-row items-center justify-center gap-6 lg:gap-12 px-4">
+                      {/* Left Column: Leader */}
+                      <div className="w-[300px] xl:w-[350px] shrink-0 flex flex-col items-center group">
+                        {dept.details.leader ? (
+                          <>
+                            <div className="relative w-full h-[450px] xl:h-[550px] rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-2xl">
+                              <Image src={dept.details.leader.img} fill sizes="350px" className="object-cover" style={{ objectPosition: dept.details.leader.objectPosition || 'center' }} alt="leader" />
                             </div>
-                          )}
-                        </div>
-                      )}
+                            {!hideComradeLabel && (
+                              <div className="mt-6 text-center">
+                                <h4 className="text-white font-bold text-xl uppercase tracking-wide">Đồng chí {dept.details.leader.name}</h4>
+                                <p className="mt-2 text-gray-200 text-lg italic opacity-80">{dept.details.leader.role}</p>
+                              </div>
+                            )}
+                          </>
+                        ) : (
+                          <div className="w-full h-[450px] xl:h-[550px]"></div> // Placeholder to keep symmetry
+                        )}
+                      </div>
+
+                      {/* Middle Column: Group Photo */}
                       {dept.details.group && (
-                        <div className="flex-1 flex flex-col items-center group">
-                          <div className="relative w-full h-[500px] rounded-[40px] overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all duration-500">
+                        <div className="flex-1 flex flex-col items-center group min-w-[300px]">
+                          <div className="relative w-full h-[450px] xl:h-[550px] rounded-[3rem] overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all duration-500 shadow-2xl">
                             <Image src={dept.details.group.img} fill sizes="800px" className="object-cover" alt="group" />
                           </div>
                           <div className="mt-6 text-center">
-                            <h3 className="text-white font-bold text-xl uppercase">{dept.details.group.name}</h3>
+                            <h3 className="text-white font-bold text-xl uppercase tracking-[0.2em] opacity-60">{dept.details.group.name}</h3>
                           </div>
                         </div>
                       )}
-                      {dept.details.deputies && dept.details.deputies.length > 0 && (
-                        <div className="w-[320px] flex flex-col gap-6">
-                          {dept.details.deputies.map((deputy, i) => (
+
+                      {/* Right Column: Deputies */}
+                      <div className="w-[300px] xl:w-[350px] shrink-0 flex flex-col justify-center gap-10">
+                        {dept.details.deputies && dept.details.deputies.length > 0 ? (
+                          dept.details.deputies.map((deputy, i) => (
                             <div key={i} className="flex flex-col items-center group">
-                              <div className="relative w-full h-[240px] rounded-[2rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500">
-                                <Image src={deputy.img} fill sizes="320px" className="object-cover" alt="deputy" />
+                              <div className="relative w-full h-[210px] xl:h-[260px] rounded-[2rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-xl">
+                                <Image src={deputy.img} fill sizes="350px" className="object-cover" style={{ objectPosition: deputy.objectPosition || 'center' }} alt="deputy" />
                               </div>
                               {!hideComradeLabel && (
                                 <div className="mt-4 text-center">
-                                  <h4 className="text-white font-bold text-lg uppercase">Đồng chí {deputy.name}</h4>
-                                  <p className="text-gray-300 text-base italic">{deputy.role}</p>
+                                  <h4 className="text-white font-bold text-xl uppercase tracking-wide">Đồng chí {deputy.name}</h4>
+                                  <p className="mt-1 text-gray-200 text-lg italic opacity-80">{deputy.role}</p>
                                 </div>
                               )}
                             </div>
-                          ))}
-                        </div>
-                      )}
+                          ))
+                        ) : (
+                          <div className="w-full h-[450px] xl:h-[550px]"></div> // Placeholder to keep symmetry
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
