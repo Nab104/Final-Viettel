@@ -212,7 +212,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                         {dept.details.deputies && dept.details.deputies.length > 0 ? (
                           dept.details.deputies.map((deputy, i) => (
                             <div key={i} className="flex flex-col items-center group">
-                              <div className="relative w-full h-[210px] xl:h-[260px] rounded-[2rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-xl">
+                              <div className="relative w-full h-[450px] xl:h-[550px] rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-xl">
                                 <Image src={deputy.img} fill sizes="350px" className="object-cover" style={{ objectPosition: deputy.objectPosition || 'center' }} alt="deputy" />
                               </div>
                               {!hideComradeLabel && (
