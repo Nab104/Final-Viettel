@@ -13,24 +13,23 @@ export function useWindowSize() {
 
     let timeoutId: NodeJS.Timeout;
 
-    const handleResize = (immediate = false) => {
-      const update = () => {
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
         setWindowSize({
           width: window.innerWidth,
           height: window.innerHeight,
         });
-      };
-
-      if (immediate) {
-        update();
-      } else {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(update, 150);
-      }
+      }, 150);
     };
 
-    window.addEventListener("resize", () => handleResize(false));
-    handleResize(true); // Initialize on mount immediately
+    window.addEventListener("resize", handleResize);
+    
+    // Initial size
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
 
     return () => {
       window.removeEventListener("resize", handleResize);

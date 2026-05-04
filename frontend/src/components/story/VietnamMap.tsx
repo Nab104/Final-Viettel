@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, SVGProps } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MapPin } from "./MapPin";
 import { ProvinceModal } from "./ProvinceModal";
@@ -229,12 +229,12 @@ export const VietnamMap = () => {
           <div className="w-full h-full relative">
             {/* We ensure the SVG takes up the full container space */}
             {React.isValidElement(province.svg) 
-              ? React.cloneElement(province.svg as React.ReactElement<any>, { 
+              ? React.cloneElement(province.svg as React.ReactElement<SVGProps<SVGSVGElement>>, { 
                   width: "100%", 
                   height: "100%",
                   onMouseEnter: () => setHoveredProvinceId(province.id),
                   onMouseLeave: () => setHoveredProvinceId(null),
-                  onClick: (e: any) => {
+                  onClick: (e: React.MouseEvent) => {
                     e.stopPropagation();
                     setSelectedProvinceId(province.id);
                   },

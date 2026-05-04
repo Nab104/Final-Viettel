@@ -5,7 +5,7 @@ export interface Leader {
   role: string;
   img: string;
   objectPosition?: string;
-  scale?: number;
+  scale?: string | number;
 }
 
 export interface LongService {
@@ -21,7 +21,7 @@ export interface DepartmentItem {
   name: string;
   role: string;
   objectPosition?: string;
-  scale?: number;
+  scale?: string | number;
 }
 
 export interface DepartmentPage {
@@ -39,10 +39,12 @@ export interface Department {
   hasTextOnImage: boolean;
   details: {
     useStaggeredOnMain?: boolean;
+    use2x2Layout?: boolean;
+    use3x2Layout?: boolean;
     mainItems?: DepartmentItem[];
-    leader?: { name: string; role: string; img: string; objectPosition?: string; scale?: number };
-    group: { name: string; subName: string; img: string };
-    deputies: { name: string; role: string; img: string; objectPosition?: string }[];
+    leader?: { name: string; role: string; img: string; objectPosition?: string; scale?: string | number };
+    group?: { name: string; subName: string; img: string };
+    deputies?: { name: string; role: string; img: string; objectPosition?: string }[];
     extraPages?: DepartmentPage[];
   };
 }
@@ -63,7 +65,7 @@ export interface Store {
   id: string;
   img: string;
   objectPosition?: string;
-  scale?: string;
+  scale?: string | number;
   objectFit?: "object-cover" | "object-contain";
 }
 

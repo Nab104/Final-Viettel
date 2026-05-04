@@ -468,7 +468,7 @@ export default function ProudJourneyPage() {
               const total = awards.length;
               const diff = (i - awardsActiveIndex + total) % total;
               let positionClass = "";
-              let isMain = diff === 0;
+              const isMain = diff === 0;
               let relDiff = diff;
               if (relDiff > total / 2) relDiff -= total;
 

@@ -20,11 +20,7 @@ import { motion } from "framer-motion";
 const fadeInUp = {
   initial: { opacity: 0, y: 50 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.15 },
-  transition: { 
-    duration: 1.0, 
-    ease: [0.22, 1, 0.36, 1] 
-  }
+  viewport: { once: true, amount: 0.15 }
 };
 const HonorsStyles = () => (
   <style dangerouslySetInnerHTML={{
@@ -236,6 +232,7 @@ export default function HanhTrinhPage() {
       <motion.section 
         className="py-24 bg-gray-50 mt-16 relative overflow-hidden"
         {...fadeInUp}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
         {/* Background Ripples */}
         <RipplePattern 
@@ -488,6 +485,7 @@ export default function HanhTrinhPage() {
       <motion.section 
         className="honors-section mt-32"
         {...fadeInUp}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
         <div className="honors-pattern">
           <Image src="/images/diahinh1.1.png" fill className="object-cover" alt="" />
@@ -502,7 +500,7 @@ export default function HanhTrinhPage() {
               const diff = (i - awardsActiveIndex + total) % total;
 
               let positionClass = "";
-              let isMain = diff === 0;
+              const isMain = diff === 0;
 
               // Normalized relative diff (-total/2 to total/2)
               let relDiff = diff;

@@ -48,11 +48,14 @@ const ProvinceModal = ({
   const getScale = () => {
     const s = currentStore.scale;
     if (!s) return 1.25;
-    if (s.startsWith('scale-[')) return parseFloat(s.replace('scale-[', '').replace(']', ''));
-    if (s === 'scale-150') return 1.5;
-    if (s === 'scale-125') return 1.25;
-    if (s === 'scale-110') return 1.1;
-    if (s === 'scale-100') return 1.0;
+    if (typeof s === 'number') return s;
+    if (typeof s === 'string') {
+      if (s.startsWith('scale-[')) return parseFloat(s.replace('scale-[', '').replace(']', ''));
+      if (s === 'scale-150') return 1.5;
+      if (s === 'scale-125') return 1.25;
+      if (s === 'scale-110') return 1.1;
+      if (s === 'scale-100') return 1.0;
+    }
     return 1.25;
   };
 
