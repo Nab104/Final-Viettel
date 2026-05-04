@@ -119,7 +119,7 @@ export const departments: Department[] = [
     img: "/images/tapthephong/Phòng Kinh doanh Thiết bị.jpg",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đồng chí Trần Hoàng Chung", role: "Trưởng phòng Kinh doanh Thiết bị", img: encodeURI("/images/tapthephong/tp-pp/kinh doanh thiết bị/TP-Trần Hoàng Chung.jpg"), objectPosition: "center", scale: 1.1 },
+      leader: { name: "Đồng chí Trần Hoàng Chung", role: "Trưởng phòng Kinh doanh Thiết bị", img: encodeURI("/images/tapthephong/tp-pp/kinh doanh thiết bị/TP-Trần Hoàng Chung.jpg"), objectPosition: "20% center", scale: 1.1 },
       group: { name: "Tập thể Phòng Kinh doanh Thiết bị", subName: "Phòng Kinh doanh Thiết bị", img: "/images/tapthephong/Phòng Kinh doanh Thiết bị.jpg" },
       deputies: [
         { name: "Đồng chí Nguyễn Thị Quỳnh Mai", role: "Phó phòng Kinh doanh Thiết bị", img: encodeURI("/images/tapthephong/tp-pp/kinh doanh thiết bị/PP-Nguyễn Thị Quỳnh Mai.jpg") }
