@@ -76,7 +76,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                           </div>
                           {!hideComradeLabel && (
                             <div className="mt-4 text-center">
-                              <h4 className="text-white font-bold text-lg uppercase">Đồng chí {dept.details.leader.name}</h4>
+                              <h4 className="text-white font-bold text-lg uppercase">Đồng chí {dept.details.leader.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
                               <p className="text-gray-300 text-sm italic">{dept.details.leader.role}</p>
                             </div>
                           )}
@@ -99,7 +99,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                           </div>
                           {!hideComradeLabel && (
                             <div className="mt-4 text-center">
-                              <h4 className="text-white font-bold text-lg uppercase">Đồng chí {deputy.name}</h4>
+                              <h4 className="text-white font-bold text-lg uppercase">Đồng chí {deputy.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
                               <p className="text-gray-300 text-sm italic">{deputy.role}</p>
                             </div>
                           )}
@@ -126,7 +126,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                         </div>
                         {!hideComradeLabel && item.name && (
                           <div className="mt-4 text-center">
-                            <h4 className="text-white font-bold text-lg uppercase">Đồng chí {item.name}</h4>
+                            <h4 className="text-white font-bold text-lg uppercase">Đồng chí {item.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
                             <p className="text-gray-300 text-sm italic">{item.role}</p>
                           </div>
                         )}
@@ -185,7 +185,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                             </div>
                             {!hideComradeLabel && (
                               <div className="mt-6 text-center">
-                                <h4 className="text-white font-bold text-xl uppercase tracking-wide">Đồng chí {dept.details.leader.name}</h4>
+                                <h4 className="text-white font-bold text-xl uppercase tracking-wide">Đồng chí {dept.details.leader.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
                                 <p className="mt-2 text-gray-200 text-lg italic opacity-80">{dept.details.leader.role}</p>
                               </div>
                             )}
@@ -208,16 +208,16 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       )}
 
                       {/* Right Column: Deputies */}
-                      <div className="w-[300px] xl:w-[350px] shrink-0 flex flex-col justify-center gap-10">
+                      <div className="w-[300px] xl:w-[350px] shrink-0 flex flex-col justify-center gap-6 xl:gap-8 h-[450px] xl:h-[550px]">
                         {dept.details.deputies && dept.details.deputies.length > 0 ? (
                           dept.details.deputies.map((deputy, i) => (
-                            <div key={i} className="flex flex-col items-center group">
-                              <div className="relative w-full h-[450px] xl:h-[550px] rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-xl">
+                            <div key={i} className="flex-1 flex flex-col items-center group min-h-0">
+                              <div className="relative w-full flex-1 rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-xl min-h-0">
                                 <Image unoptimized quality={100} src={deputy.img} fill sizes="350px" className="object-cover" style={{ objectPosition: deputy.objectPosition || 'center' }} alt="deputy" />
                               </div>
                               {!hideComradeLabel && (
                                 <div className="mt-4 text-center">
-                                  <h4 className="text-white font-bold text-xl uppercase tracking-wide">Đồng chí {deputy.name}</h4>
+                                  <h4 className="text-white font-bold text-xl uppercase tracking-wide">Đồng chí {deputy.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
                                   <p className="mt-1 text-gray-200 text-lg italic opacity-80">{deputy.role}</p>
                                 </div>
                               )}
@@ -247,7 +247,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                               </div>
                               {!hideComradeLabel && item.name && (
                                 <div className="mt-6 text-center">
-                                  <h4 className="text-white font-bold text-xl uppercase">Đồng chí {item.name}</h4>
+                                  <h4 className="text-white font-bold text-xl uppercase">Đồng chí {item.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
                                   <p className="mt-2 text-gray-200 text-lg italic">{item.role}</p>
                                 </div>
                               )}
