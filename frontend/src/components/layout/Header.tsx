@@ -14,7 +14,7 @@ export const Header = () => {
 
   const links = [
     { name: "HÀNH TRÌNH TỰ HÀO", href: "/hanh-trinh" },
-    { name: "CON NGƯỜI VIETTEL STORE", href: "/con-nguoi" },
+    { name: "MÔ HÌNH TỔ CHỨC", href: "/con-nguoi" },
     { name: "CÂU CHUYỆN VIETTEL STORE", href: "/cau-chuyen" },
     { name: "VỮNG BƯỚC TƯƠNG LAI", href: "/tuong-lai" },
   ];
@@ -28,7 +28,7 @@ export const Header = () => {
               src="/images/logo-viettel-store.png" 
               alt="Viettel Store" 
               fill 
-              className="object-contain object-left scale-[3.8] origin-left translate-x-12 translate-y-2"
+              className="object-contain object-left scale-[2.8] md:scale-[3.8] origin-left translate-x-6 md:translate-x-12 translate-y-1 md:translate-y-2"
               priority
             />
           </Link>
@@ -65,7 +65,7 @@ export const Header = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-white shadow-lg border-t border-gray-100 flex flex-col py-4 px-4 gap-4">
+        <div className="lg:hidden absolute top-20 left-0 w-full bg-white shadow-lg border-t border-gray-100 flex flex-col py-4 px-4 gap-4 pointer-events-auto">
           {links.map((link) => {
             const isActive = pathname === link.href;
             return (
