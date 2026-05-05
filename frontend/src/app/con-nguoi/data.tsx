@@ -380,34 +380,34 @@ export const partyGroups: Department[] = [
   },
   {
     name: "Công đoàn cơ sở thành viên",
-    img: "/images/ẢNH CÔNG ĐOÀN/1.jpg",
+    img: "/images/anh_cong_doan/1.jpg",
     hasTextOnImage: true,
     details: {
       use2x2Layout: true,
       mainItems: [
-        { img: "/images/ẢNH CÔNG ĐOÀN/1.jpg", name: "", role: "" },
-        { img: "/images/ẢNH CÔNG ĐOÀN/2.jpg", name: "", role: "" },
-        { img: "/images/ẢNH CÔNG ĐOÀN/3.jpg", name: "", role: "" },
-        { img: "/images/ẢNH CÔNG ĐOÀN/4.jpg", name: "", role: "" }
+        { img: "/images/anh_cong_doan/1.jpg", name: "", role: "" },
+        { img: "/images/anh_cong_doan/2.jpg", name: "", role: "" },
+        { img: "/images/anh_cong_doan/3.jpg", name: "", role: "" },
+        { img: "/images/anh_cong_doan/4.jpg", name: "", role: "" }
       ],
-      group: { name: "Công đoàn cơ sở thành viên", subName: "Viettel Store", img: "/images/ẢNH CÔNG ĐOÀN/1.jpg" },
+      group: { name: "Công đoàn cơ sở thành viên", subName: "Viettel Store", img: "/images/anh_cong_doan/1.jpg" },
       deputies: [],
       extraPages: [
         {
           layout: "grid-2x2",
           items: [
-            { img: "/images/ẢNH CÔNG ĐOÀN/5.jpg", name: "", role: "" },
-            { img: "/images/ẢNH CÔNG ĐOÀN/6.jpg", name: "", role: "", scale: 1.5 },
-            { img: "/images/ẢNH CÔNG ĐOÀN/7.jpg", name: "", role: "" },
-            { img: "/images/ẢNH CÔNG ĐOÀN/8.jpg", name: "", role: "" }
+            { img: "/images/anh_cong_doan/5.jpg", name: "", role: "" },
+            { img: "/images/anh_cong_doan/6.jpg", name: "", role: "", scale: 1.5 },
+            { img: "/images/anh_cong_doan/7.jpg", name: "", role: "" },
+            { img: "/images/anh_cong_doan/8.jpg", name: "", role: "" }
           ]
         },
         {
           layout: "collage-1-2",
           items: [
-            { img: "/images/ẢNH CÔNG ĐOÀN/9.jpg", name: "", role: "" },
-            { img: "/images/ẢNH CÔNG ĐOÀN/10.jpg", name: "", role: "" },
-            { img: "/images/ẢNH CÔNG ĐOÀN/11.jpg", name: "", role: "" }
+            { img: "/images/anh_cong_doan/9.jpg", name: "", role: "" },
+            { img: "/images/anh_cong_doan/10.jpg", name: "", role: "" },
+            { img: "/images/anh_cong_doan/11.jpg", name: "", role: "" }
           ]
         }
       ]
@@ -415,51 +415,51 @@ export const partyGroups: Department[] = [
   },
   {
     name: "Tập thể Chi hội phụ nữ",
-    img: "/images/chi hội phụ nữ/main.jpg",
+    img: "/images/chi_hoi_phu_nu/main.jpg",
     hasTextOnImage: true,
     details: {
       useCollageStaggered4: true,
       mainItems: [
-        { img: "/images/chi hội phụ nữ/4.jpg", name: "", role: "", objectFit: "fill", scaleX: 1.3 },
-        { img: "/images/chi hội phụ nữ/2.jpg", name: "", role: "" },
-        { img: "/images/chi hội phụ nữ/3.jpg", name: "", role: "" },
-        { img: "/images/chi hội phụ nữ/main.jpg", name: "", role: "" }
+        { img: "/images/chi_hoi_phu_nu/4.jpg", name: "", role: "", objectFit: "fill", scaleX: 1.3 },
+        { img: "/images/chi_hoi_phu_nu/2.jpg", name: "", role: "" },
+        { img: "/images/chi_hoi_phu_nu/3.jpg", name: "", role: "" },
+        { img: "/images/chi_hoi_phu_nu/main.jpg", name: "", role: "" }
       ],
-      group: { name: "Chi hội phụ nữ", subName: "Viettel Store", img: "/images/chi hội phụ nữ/main.jpg" },
+      group: { name: "Chi hội phụ nữ", subName: "Viettel Store", img: "/images/chi_hoi_phu_nu/main.jpg" },
       deputies: []
     }
   },
   {
     name: "Liên chi đoàn",
-    img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/5.jpg",
+    img: "/images/lien_chi_doan/5.jpg",
     hasTextOnImage: true,
     details: {
       use2x2Layout: true,
       mainItems: [
-        { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/1.jpg", name: "", role: "" },
-        { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/2.jpg", name: "", role: "", objectPosition: "center 95%" },
-        { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/3.jpg", name: "", role: "", objectPosition: "center 95%" },
-        { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/4.jpg", name: "", role: "" }
+        { img: "/images/lien_chi_doan/1.jpg", name: "", role: "" },
+        { img: "/images/lien_chi_doan/2.jpg", name: "", role: "", objectPosition: "center 95%" },
+        { img: "/images/lien_chi_doan/3.jpg", name: "", role: "", objectPosition: "center 95%" },
+        { img: "/images/lien_chi_doan/4.jpg", name: "", role: "" }
       ],
-      group: { name: "Liên chi đoàn", subName: "Viettel Store", img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/5.jpg" },
+      group: { name: "Liên chi đoàn", subName: "Viettel Store", img: "/images/lien_chi_doan/5.jpg" },
       deputies: [],
       extraPages: [
         {
           layout: "grid-2x2",
           items: [
-            { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/5.jpg", name: "", role: "", objectPosition: "center 95%" },
-            { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/6.jpg", name: "", role: "" },
-            { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/7.jpg", name: "", role: "" },
-            { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/8.jpg", name: "", role: "" }
+            { img: "/images/lien_chi_doan/5.jpg", name: "", role: "", objectPosition: "center 95%" },
+            { img: "/images/lien_chi_doan/6.jpg", name: "", role: "" },
+            { img: "/images/lien_chi_doan/7.jpg", name: "", role: "" },
+            { img: "/images/lien_chi_doan/8.jpg", name: "", role: "" }
           ]
         },
         {
           layout: "grid-2x2",
           items: [
-            { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/1.jpg", name: "", role: "" },
-            { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/2.jpg", name: "", role: "" },
-            { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/3.jpg", name: "", role: "" },
-            { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/4.jpg", name: "", role: "" }
+            { img: "/images/lien_chi_doan/1.jpg", name: "", role: "" },
+            { img: "/images/lien_chi_doan/2.jpg", name: "", role: "" },
+            { img: "/images/lien_chi_doan/3.jpg", name: "", role: "" },
+            { img: "/images/lien_chi_doan/4.jpg", name: "", role: "" }
           ]
         }
       ]
@@ -565,7 +565,7 @@ export const provinces: Province[] = [
     stores: [
       { id: "TQG01", img: "/images/hethongsieuthi/tuyenquang/tqg01.jpg", objectPosition: "center 100%", scale: 1.1, translateX: "-5%" },
       { id: "TQG02", img: "/images/hethongsieuthi/tuyenquang/tqg02.jpg", objectPosition: "center 55%", scale: 1.2, translateX: "-4%" },
-      { id: "TQG03", img: "/images/hethongsieuthi/tuyenquang/tqg03.jpg", objectPosition: "center 30%" },
+      { id: "TQG03", img: "/images/hethongsieuthi/tuyenquang/tqg03.jpg", objectPosition: "center 90%" },
       { id: "TQG04", img: "/images/hethongsieuthi/tuyenquang/tqg04.jpg" },
       { id: "TQG05", img: "/images/hethongsieuthi/tuyenquang/tqg05.jpg" },
     ]
