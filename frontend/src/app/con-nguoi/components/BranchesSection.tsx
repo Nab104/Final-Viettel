@@ -94,7 +94,7 @@ const BranchesSection = ({
                       >
                         <div className="absolute inset-0 overflow-hidden" style={{ transform: 'translateZ(0)' }}>
                           <Image
-                            src={branch.img}
+                            src={encodeURI(branch.img)}
                             fill
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 750px"
                             className="object-cover scale-[1.01] transition-transform duration-1000 group-hover:scale-110"

@@ -30,7 +30,7 @@ const BranchModal = ({ branch, onClose }: BranchModalProps) => {
           <div className="flex flex-col items-center group">
             <div className="relative w-full aspect-[3/4] max-w-[280px] rounded-[2rem] overflow-hidden shadow-2xl border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500">
               <Image 
-                src={branch.details.leader.img} 
+                src={encodeURI(branch.details.leader.img)} 
                 fill 
                 sizes="(max-width: 768px) 280px, 450px"
                 className="object-cover" 
@@ -48,7 +48,7 @@ const BranchModal = ({ branch, onClose }: BranchModalProps) => {
           <div className="flex flex-col items-center group order-first md:order-none">
             <div className="relative w-full aspect-[16/10] rounded-[40px] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border-4 border-white/20 group-hover:border-white/40 transition-all duration-500">
               <Image
-                src={branch.details.group.img}
+                src={encodeURI(branch.details.group.img)}
                 fill
                 sizes="(max-width: 768px) 95vw, 600px"
                 className="object-cover group-hover:scale-105 transition-transform duration-1000"
@@ -66,7 +66,7 @@ const BranchModal = ({ branch, onClose }: BranchModalProps) => {
             <div className="flex flex-col items-center group">
               <div className="relative w-full aspect-[3/4] max-w-[280px] rounded-[2rem] overflow-hidden shadow-2xl border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500">
                 <Image 
-                  src={branch.details.deputies[0].img} 
+                  src={encodeURI(branch.details.deputies[0].img)} 
                   fill 
                   sizes="(max-width: 768px) 280px, 450px"
                   className="object-cover" 
