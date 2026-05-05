@@ -125,8 +125,7 @@ const ProvincesSection = ({
                     {/* Base Map (Always visible) */}
                     <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${isCenter ? "scale-110" : "scale-90"}`}>
                       <Image
-                        unoptimized
-                        quality={100}
+                        quality={60}
                         src={prov.map}
                         alt={prov.name}
                         fill
@@ -141,8 +140,7 @@ const ProvincesSection = ({
                     {prov.mapWithText && (
                       <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${isCenter ? "opacity-100 scale-110" : "opacity-0 scale-90"}`}>
                         <Image
-                          unoptimized
-                          quality={100}
+                          quality={60}
                           src={prov.mapWithText}
                           alt={`${prov.name} details`}
                           fill

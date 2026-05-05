@@ -68,7 +68,7 @@ const ProvinceModal = ({
         backgroundPosition: 'center',
         touchAction: 'pan-y'
       }}
-      className="fixed inset-0 z-[2147483647] flex flex-col items-center justify-around py-16 px-4 backdrop-blur-md font-beausans"
+      className="fixed inset-0 z-[2147483647] flex flex-col items-center justify-center py-6 md:py-10 px-4 backdrop-blur-md font-beausans"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -80,7 +80,7 @@ const ProvinceModal = ({
         <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
       </div>
 
-      <div className="relative z-50 w-full text-center mb-6 md:mb-8 pt-12 md:pt-0">
+      <div className="relative z-50 w-full text-center mb-4 md:mb-6 pt-12 md:pt-0">
         {/* Inside Close Button */}
         <button
           onClick={onClose}
@@ -96,18 +96,18 @@ const ProvinceModal = ({
       </div>
 
       <div className="flex-1 flex flex-col items-center justify-center gap-y-4 md:gap-y-8 w-full animate-in fade-in zoom-in-90 duration-1000 delay-200 overflow-hidden">
-        <div className="relative flex items-center justify-center w-full max-w-[1300px] px-4 md:px-0">
+        <div className="relative flex items-center justify-center w-full max-w-[1600px] px-4 md:px-0">
           {province.stores.length > 1 && (
             <>
               <button
                 onClick={onPrevStore}
-                className="absolute -left-2 md:-left-20 top-1/2 -translate-y-1/2 z-50 text-white/80 hover:text-[#EE0033] transition-all transform hover:scale-110 p-2"
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-50 text-white/80 hover:text-[#EE0033] transition-all transform hover:scale-110 p-2 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]"
               >
                 <ChevronLeft size={isMobile ? 32 : 70} strokeWidth={2.5} />
               </button>
               <button
                 onClick={onNextStore}
-                className="absolute -right-2 md:-right-20 top-1/2 -translate-y-1/2 z-50 text-white/80 hover:text-[#EE0033] transition-all transform hover:scale-110 p-2"
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-50 text-white/80 hover:text-[#EE0033] transition-all transform hover:scale-110 p-2 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]"
               >
                 <ChevronRight size={isMobile ? 32 : 70} strokeWidth={2.5} />
               </button>
@@ -117,8 +117,8 @@ const ProvinceModal = ({
           <div 
             className="relative rounded-[2.5rem] overflow-hidden isolation-isolate transform translate-z-0 flex items-center justify-center shadow-[0_0_120px_rgba(0,0,0,0.8)] border border-white/10 bg-black/40 group"
             style={{ 
-              width: 'min(1100px, 96vw)', 
-              height: 'clamp(320px, 55vh, 550px)',
+              width: 'min(1400px, 96vw)', 
+              height: isMobile ? 'clamp(320px, 50vh, 500px)' : 'clamp(400px, 68vh, 750px)',
               borderRadius: '2.5rem',
               position: 'relative'
             }}
@@ -139,6 +139,7 @@ const ProvinceModal = ({
                   className="absolute inset-0 w-full h-full pointer-events-none"
                 >
                   <Image
+                    quality={10}
                     src={encodeURI(currentStore.img)}
                     alt=""
                     fill
@@ -167,12 +168,11 @@ const ProvinceModal = ({
                   className="relative z-10 w-full h-full shadow-2xl"
                 >
                   <Image
-                    unoptimized
-                    quality={100}
+                    quality={75}
                     src={encodeURI(currentStore.img)}
                     alt={province.name}
                     fill
-                    sizes="(max-width: 768px) 95vw, 850px"
+                    sizes="(max-width: 768px) 95vw, 1400px"
                     priority
                     className={`${currentStore.objectFit || 'object-cover'}`}
                     style={{ 
@@ -190,7 +190,7 @@ const ProvinceModal = ({
           </div>
         </div>
 
-        <div className="w-full text-center mt-2 md:mt-4">
+        <div className="w-full text-center mt-2 md:mt-3">
           <h3 className="relative z-50 font-beausans font-bold text-xl md:text-4xl tracking-wide opacity-60 text-white">
             {currentStore.id.includes('CH')
               ? `Cửa hàng ${currentStore.id}`

@@ -557,16 +557,17 @@ export const branches: Branch[] = [
 ];
 
 export const provinces: Province[] = [
+
   {
     name: "TUYÊN QUANG",
     map: encodeURI("/images/provinces/tuyen_quang_thumb.png"),
     mapWithText: encodeURI("/images/provinces/tuyen_quang_thumb chữ.png"),
     stores: [
-      { id: "TQG01", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-1.jpg", objectPosition: "center 100%" },
-      { id: "TQG02", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-2.jpg", objectPosition: "center 60%", scale: 1.2, translateX: "-4%" },
-      { id: "TQG03", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-3.jpg" },
-      { id: "TQG04", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-4.jpg" },
-      { id: "TQG05", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-5.jpg" },
+      { id: "TQG01", img: "/images/hethongsieuthi/tuyenquang/tqg01.jpg", objectPosition: "center 100%", scale: 1.1, translateX: "-5%" },
+      { id: "TQG02", img: "/images/hethongsieuthi/tuyenquang/tqg02.jpg", objectPosition: "center 55%", scale: 1.2, translateX: "-4%" },
+      { id: "TQG03", img: "/images/hethongsieuthi/tuyenquang/tqg03.jpg", objectPosition: "center 30%" },
+      { id: "TQG04", img: "/images/hethongsieuthi/tuyenquang/tqg04.jpg" },
+      { id: "TQG05", img: "/images/hethongsieuthi/tuyenquang/tqg05.jpg" },
     ]
   },
   {
@@ -999,8 +1000,24 @@ export const provinces: Province[] = [
     map: encodeURI("/images/provinces/đồng nai.png"),
     mapWithText: encodeURI("/images/provinces/đồng nai chữ.png"),
     stores: [
-      { id: "DNI01", img: "/images/hethongsieuthi/đồng nai_ đni/DNI01/DNI01-Tập thể bên trong ST.jpg" },
-      { id: "DNI02", img: "/images/hethongsieuthi/đồng nai_ đni/DNI02/DNI02-Tập thể bên trong ST.jpg" },
+      { id: "DNI01", img: "/images/hethongsieuthi/dongnai/dni01.JPG" },
+      { id: "DNI02", img: "/images/hethongsieuthi/dongnai/dni02.jpg", objectPosition: "center 60%" },
+      { id: "DNI03", img: "/images/hethongsieuthi/dongnai/dni03.jpg", objectPosition: "center 40%" },
+      { id: "DNI04", img: "/images/hethongsieuthi/dongnai/dni04.jpg", objectPosition: "center 20%" },
+      { id: "DNI05", img: "/images/hethongsieuthi/dongnai/dni05.jpg", objectPosition: "center 20%" },
+      { id: "DNI06", img: "/images/hethongsieuthi/dongnai/dni06.png", objectPosition: "center 20%" },
+      { id: "DNI07", img: "/images/hethongsieuthi/dongnai/dni07.png" },
+      { id: "DNI08", img: "/images/hethongsieuthi/dongnai/dni08.jpeg", objectPosition: "center 80%", scale: 1.2, translateX: "-5%" },
+      { id: "DNI09", img: "/images/hethongsieuthi/dongnai/dni09.jpg" },
+      { id: "DNI10", img: "/images/hethongsieuthi/dongnai/dni10.jpg" },
+      { id: "DNI11", img: "/images/hethongsieuthi/dongnai/dni11.jpg", objectPosition: "center 10%" },
+      { id: "DNI12", img: "/images/hethongsieuthi/dongnai/dni12.jpg", objectPosition: "center 80%" },
+      { id: "DNI13", img: "/images/hethongsieuthi/dongnai/dni13.jpg" },
+      { id: "DNI14", img: "/images/hethongsieuthi/dongnai/dni14.jpg", objectPosition: "center 20%" },
+      { id: "DNI15", img: "/images/hethongsieuthi/dongnai/dni15.jpg", objectPosition: "center 20%" },
+      { id: "DNI16", img: "/images/hethongsieuthi/dongnai/dni16.jpg" },
+      { id: "DNI18", img: "/images/hethongsieuthi/dongnai/dni18.jpg" },
+      { id: "DNI19", img: "/images/hethongsieuthi/dongnai/dni19.jpg" },
     ]
   },
   {
