@@ -25,7 +25,7 @@ const FormerDirectorsSection = ({ formerDirectorsData, isMobile, onSelect }: For
               <Image 
                 unoptimized
                 quality={100}
-                src={director.img} 
+                src={encodeURI(director.img)} 
                 alt={director.name} 
                 fill 
                 sizes="(max-width: 640px) 95vw, (max-width: 1024px) 50vw, 350px"

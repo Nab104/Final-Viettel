@@ -25,7 +25,7 @@ const DirectorModal = ({ director, isMobile, onClose }: DirectorModalProps) => {
           <Image 
             unoptimized
             quality={100}
-            src={director.modalImg || director.img} 
+            src={encodeURI(director.modalImg || director.img)} 
             alt={director.name} 
             fill 
             sizes="(max-width: 768px) 100vw, 400px"
