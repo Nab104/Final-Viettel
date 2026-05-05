@@ -13,6 +13,7 @@ import {
   ecommerceChannel,
   supermarketChannel,
   provinces, 
+  partyGroups,
   formerDirectorsData,
   Department,
   Province,
@@ -25,6 +26,7 @@ import FormerDirectorsSection from "./components/FormerDirectorsSection";
 import LongServiceSection from "./components/LongServiceSection";
 import DepartmentsSection from "./components/DepartmentsSection";
 import ProvincesSection from "./components/ProvincesSection";
+import PartySection from "./components/PartySection";
 
 // Modals
 import DepartmentModal from "./components/DepartmentModal";
@@ -77,12 +79,23 @@ export default function ConNguoiPage() {
   const [selectedHonoree, setSelectedHonoree] = useState<number | null>(null);
 
   const handleVdNext = useCallback(() => {
-    setVdIndex(prev => (prev + 1) % longService.length);
-  }, []);
+    const step = isMobile ? 1 : isTablet ? 2 : 4;
+    setVdIndex(prev => {
+      const next = prev + step;
+      return next >= longService.length ? 0 : next;
+    });
+  }, [isMobile, isTablet]);
 
   const handleVdPrev = useCallback(() => {
-    setVdIndex(prev => (prev - 1 + longService.length) % longService.length);
-  }, []);
+    const step = isMobile ? 1 : isTablet ? 2 : 4;
+    setVdIndex(prev => {
+      const next = prev - step;
+      if (next < 0) {
+        return Math.floor((longService.length - 1) / step) * step;
+      }
+      return next;
+    });
+  }, [isMobile, isTablet]);
 
   // --- Departments Carousel State ---
   const [activeDeptPage, setActiveDeptPage] = useState(0);
@@ -128,7 +141,7 @@ export default function ConNguoiPage() {
           />
         )}
         {selectedDirector && (
-          <DirectorModal director={selectedDirector} onClose={() => setSelectedDirector(null)} />
+          <DirectorModal director={selectedDirector} isMobile={isMobile} onClose={() => setSelectedDirector(null)} />
         )}
         {selectedProvince && (
           <ProvinceModal 
@@ -301,6 +314,12 @@ export default function ConNguoiPage() {
             onSelectProvince={setSelectedProvince}
             onPrev={prevProvince}
             onNext={nextProvince}
+          />
+
+          <PartySection 
+            partyGroups={partyGroups}
+            onSelect={setSelectedDept}
+            isMobile={isMobile}
           />
         </div>
       </div>

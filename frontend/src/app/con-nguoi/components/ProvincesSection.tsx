@@ -77,7 +77,7 @@ const ProvincesSection = ({
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-4 text-center">
-        <h2 className="text-white font-beausans font-black text-2xl md:text-4xl uppercase tracking-[0.15em] mt-0 mb-20 md:mb-32 drop-shadow-2xl flex flex-col md:block items-center">
+        <h2 className="text-white font-beausans font-black text-2xl md:text-5xl uppercase tracking-tight mt-0 mb-20 md:mb-32 drop-shadow-2xl flex flex-col md:block items-center">
           <span>HỆ THỐNG</span>
           <span className="md:ml-[0.5em]">SIÊU THỊ/CỬA HÀNG</span>
         </h2>
@@ -125,6 +125,8 @@ const ProvincesSection = ({
                     {/* Base Map (Always visible) */}
                     <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${isCenter ? "scale-110" : "scale-90"}`}>
                       <Image
+                        unoptimized
+                        quality={100}
                         src={prov.map}
                         alt={prov.name}
                         fill
@@ -139,6 +141,8 @@ const ProvincesSection = ({
                     {prov.mapWithText && (
                       <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${isCenter ? "opacity-100 scale-110" : "opacity-0 scale-90"}`}>
                         <Image
+                          unoptimized
+                          quality={100}
                           src={prov.mapWithText}
                           alt={`${prov.name} details`}
                           fill
@@ -164,7 +168,7 @@ const ProvincesSection = ({
               &lt;
             </button>
             <div className="w-[300px] md:w-[600px] flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
-              <span className="text-white font-beausans font-black text-2xl md:text-4xl uppercase tracking-[0.2em]">
+              <span className="text-white font-beausans font-black text-2xl md:text-4xl uppercase tracking-wider">
                 {provinces[activeProvince].name}
               </span>
             </div>

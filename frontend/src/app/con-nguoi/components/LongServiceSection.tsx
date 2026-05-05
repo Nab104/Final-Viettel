@@ -62,7 +62,7 @@ const LongServiceSection = ({
       <div className="container mx-auto px-4 relative z-10 max-w-6xl">
         <h2 className="text-white font-beausans font-black text-2xl md:text-4xl uppercase mb-16 text-center tracking-wide">VINH DANH NHÂN SỰ CỐNG HIẾN LÂU NĂM</h2>
         <div 
-          className="relative overflow-visible px-4 py-8"
+          className="relative overflow-hidden px-4 py-8"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -73,7 +73,7 @@ const LongServiceSection = ({
             style={{ 
               transform: `translateX(calc(-1 * (var(--ls-active-idx) * (var(--ls-card-width) + var(--ls-card-gap))) + (var(--ls-center-offset)) + ${dragOffset}px))`,
               '--ls-active-idx': vdIndex,
-              '--ls-center-offset': 'calc(50% - (var(--ls-card-width) / 2))'
+              '--ls-center-offset': '0px'
             } as React.CSSProperties}
           >
             {longService.map((person, idx) => {

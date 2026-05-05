@@ -122,7 +122,7 @@ const LeadersSection = ({ leaders, positions, isMobile, isTablet, rotateLeaders 
                     alt={leader.name}
                     fill
                     sizes={isMobile ? "400px" : "1000px"}
-                    className="object-cover"
+                    className={leader.objectFit === "contain" ? "object-contain" : "object-cover"}
                     style={{
                       objectPosition: leader.objectPosition || 'top',
                       transform: `scale(${leader.scale || 1.8})`

@@ -29,15 +29,22 @@ const FormerDirectorsSection = ({ formerDirectorsData, isMobile, onSelect }: For
                 alt={director.name} 
                 fill 
                 sizes="(max-width: 640px) 95vw, (max-width: 1024px) 50vw, 350px"
-                className="object-cover object-top transition-transform duration-1000 group-hover:scale-110" 
+                className="object-cover transition-transform duration-1000 group-hover:scale-110" 
+                style={{ 
+                  objectPosition: isMobile 
+                    ? (director.mobileObjectPosition || director.objectPosition || 'center top')
+                    : (director.objectPosition || 'center top'),
+                  transform: `scale(${isMobile ? (director.mobileScale || director.scale || 1) : (director.scale || 1)}) translate(${director.translateX || '0px'}, ${director.translateY || '0px'})`
+                }}
                 loading="lazy"
                 onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} 
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
             </div>
             <div className="bg-[#D9D9D9] group-hover:bg-[#EE0033] p-4 text-center min-h-[4.5rem] flex items-center justify-center transition-colors duration-500">
-              <h4 className="text-[10px] sm:text-xs md:text-sm font-bold text-black group-hover:text-white uppercase tracking-tight transition-colors duration-500">
-                ĐỒNG CHÍ {director.name.replace('Đồng chí ', '').replace('ĐỒNG CHÍ ', '')}
+              <h4 className="text-[10px] sm:text-xs md:text-sm font-bold text-black group-hover:text-white uppercase tracking-tight transition-colors duration-500 whitespace-pre-line">
+                {isMobile ? "ĐỒNG CHÍ\n" : "ĐỒNG CHÍ "}
+                {director.name.replace('Đồng chí ', '').replace('ĐỒNG CHÍ ', '')}
               </h4>
             </div>
           </div>

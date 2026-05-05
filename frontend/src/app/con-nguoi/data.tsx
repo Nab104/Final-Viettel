@@ -6,6 +6,7 @@ export interface Leader {
   img: string;
   objectPosition?: string;
   scale?: string | number;
+  objectFit?: "cover" | "contain" | "fill";
 }
 
 export interface LongService {
@@ -22,10 +23,12 @@ export interface DepartmentItem {
   role: string;
   objectPosition?: string;
   scale?: string | number;
+  scaleX?: string | number;
+  objectFit?: "cover" | "contain" | "fill";
 }
 
 export interface DepartmentPage {
-  title: string;
+  title?: string;
   layout?: string;
   items: DepartmentItem[];
 }
@@ -41,10 +44,11 @@ export interface Department {
     useStaggeredOnMain?: boolean;
     use2x2Layout?: boolean;
     use3x2Layout?: boolean;
+    useCollageStaggered4?: boolean;
     mainItems?: DepartmentItem[];
-    leader?: { name: string; role: string; img: string; objectPosition?: string; scale?: string | number };
+    leader?: { name: string; role: string; img: string; objectPosition?: string; scale?: string | number; scaleX?: string | number; objectFit?: "cover" | "contain" | "fill" };
     group?: { name: string; subName: string; img: string };
-    deputies?: { name: string; role: string; img: string; objectPosition?: string }[];
+    deputies?: { name: string; role: string; img: string; objectPosition?: string; scale?: string | number; scaleX?: string | number; objectFit?: "cover" | "contain" | "fill" }[];
     extraPages?: DepartmentPage[];
   };
 }
@@ -67,6 +71,8 @@ export interface Store {
   objectPosition?: string;
   scale?: string | number;
   objectFit?: "object-cover" | "object-contain";
+  translateX?: string;
+  translateY?: string;
 }
 
 export interface Province {
@@ -82,12 +88,26 @@ export interface FormerDirector {
   role: string;
   period: string;
   description: React.ReactNode;
+  objectFit?: "cover" | "contain";
+  objectPosition?: string;
+  scale?: number;
+  mobileObjectPosition?: string;
+  mobileScale?: number;
+  translateX?: string;
+  translateY?: string;
+  modalImg?: string;
+  modalObjectPosition?: string;
+  modalScale?: number;
+  modalTranslateY?: string;
+  mobileModalObjectPosition?: string;
+  mobileModalScale?: number;
+  mobileModalTranslateY?: string;
 }
 
 export const leaders: Leader[] = [
-  { name: "THƯỢNG TÁ\nTRƯƠNG ĐẠI NGHĨA", role: "Phó giám đốc Viettel Store", img: encodeURI("/images/ban giám đốc/nghia.jpg"), objectPosition: "20% 20%", scale: 1.2 },
-  { name: "THIẾU TÁ\nĐINH THỊ DUNG", role: "Phó giám đốc công ty Viettel Commerce\nGiám đốc Viettel Store", img: encodeURI("/images/ban giám đốc/dung.jpg"), objectPosition: "50% 0%", scale: 1.8 },
-  { name: "THIẾU TÁ\nĐINH SƠN TÙNG", role: "Phó giám đốc Viettel Store", img: encodeURI("/images/ban giám đốc/tung.jpg"), objectPosition: "60% 0%", scale: 1.2 },
+  { name: "THƯỢNG TÁ\nTRƯƠNG ĐẠI NGHĨA", role: "Phó giám đốc Viettel Store", img: encodeURI("/images/giamdoc/le-quoc-tuan-1.jpg"), objectPosition: "20% top", scale: 1.08, objectFit: "cover" },
+  { name: "THIẾU TÁ\nĐINH THỊ DUNG", role: "Phó giám đốc công ty Viettel Commerce\nGiám đốc Viettel Store", img: encodeURI("/images/ban giám đốc/dung.jpg"), objectPosition: "center top", scale: 1.45 },
+  { name: "THIẾU TÁ\nĐINH SƠN TÙNG", role: "Phó giám đốc Viettel Store", img: encodeURI("/images/ban giám đốc/tung.jpg"), objectPosition: "center top", scale: 1.15 },
 ];
 
 export const longService: LongService[] = [
@@ -330,7 +350,7 @@ export const supermarketChannel: Department = {
 
 export const partyGroups: Department[] = [
   {
-    name: "Đảng bộ bộ phận và các Chi bộ",
+    name: "Đảng bộ bộ phận và Chi bộ",
     img: "/images/dangbophanvachibo/anhmain.jpg",
     hasTextOnImage: true,
     details: {
@@ -343,8 +363,19 @@ export const partyGroups: Department[] = [
         { img: "/images/dangbophanvachibo/anh5.jpg", name: "Chi bộ khối Dịch vụ Khách hàng", role: "" },
         { img: "/images/dangbophanvachibo/anh6.jpg", name: "Chi bộ khối Đảm bảo", role: "", scale: 1.05 }
       ],
-      group: { name: "Đảng bộ bộ phận và các Chi bộ", subName: "Viettel Store", img: "/images/dangbophanvachibo/anhmain.jpg" },
-      deputies: []
+      group: { name: "Đảng bộ bộ phận và Chi bộ", subName: "Viettel Store", img: "/images/dangbophanvachibo/anhmain.jpg" },
+      deputies: [],
+      extraPages: [
+        {
+          layout: "collage-staggered-4",
+          items: [
+            { img: "/images/dangbophanvachibo/anh7.jpg", name: "", role: "" },
+            { img: "/images/dangbophanvachibo/anh8.jpg", name: "", role: "" },
+            { img: "/images/dangbophanvachibo/anh9.jpg", name: "", role: "" },
+            { img: "/images/dangbophanvachibo/anh10.jpg", name: "", role: "" }
+          ]
+        }
+      ]
     }
   },
   {
@@ -363,20 +394,18 @@ export const partyGroups: Department[] = [
       deputies: [],
       extraPages: [
         {
-          title: "Hoạt động Công đoàn (Tiếp theo)",
           layout: "grid-2x2",
           items: [
             { img: "/images/ẢNH CÔNG ĐOÀN/5.jpg", name: "", role: "" },
-            { img: "/images/ẢNH CÔNG ĐOÀN/6.jpg", name: "", role: "" },
+            { img: "/images/ẢNH CÔNG ĐOÀN/6.jpg", name: "", role: "", scale: 1.5 },
             { img: "/images/ẢNH CÔNG ĐOÀN/7.jpg", name: "", role: "" },
             { img: "/images/ẢNH CÔNG ĐOÀN/8.jpg", name: "", role: "" }
           ]
         },
         {
-          title: "Hoạt động Công đoàn (Tiếp theo)",
           layout: "collage-1-2",
           items: [
-            { img: "/images/ẢNH CÔNG ĐOÀN/DSC01513.jpg", name: "", role: "" },
+            { img: "/images/ẢNH CÔNG ĐOÀN/9.jpg", name: "", role: "" },
             { img: "/images/ẢNH CÔNG ĐOÀN/10.jpg", name: "", role: "" },
             { img: "/images/ẢNH CÔNG ĐOÀN/11.jpg", name: "", role: "" }
           ]
@@ -385,16 +414,16 @@ export const partyGroups: Department[] = [
     }
   },
   {
-    name: "Chi hội phụ nữ",
+    name: "Tập thể Chi hội phụ nữ",
     img: "/images/chi hội phụ nữ/main.jpg",
     hasTextOnImage: true,
     details: {
-      use2x2Layout: true,
+      useCollageStaggered4: true,
       mainItems: [
-        { img: "/images/chi hội phụ nữ/main.jpg", name: "", role: "" },
+        { img: "/images/chi hội phụ nữ/4.jpg", name: "", role: "", objectFit: "fill", scaleX: 1.3 },
         { img: "/images/chi hội phụ nữ/2.jpg", name: "", role: "" },
         { img: "/images/chi hội phụ nữ/3.jpg", name: "", role: "" },
-        { img: "/images/chi hội phụ nữ/4.jpg", name: "", role: "" }
+        { img: "/images/chi hội phụ nữ/main.jpg", name: "", role: "" }
       ],
       group: { name: "Chi hội phụ nữ", subName: "Viettel Store", img: "/images/chi hội phụ nữ/main.jpg" },
       deputies: []
@@ -416,7 +445,6 @@ export const partyGroups: Department[] = [
       deputies: [],
       extraPages: [
         {
-          title: "Hoạt động Liên chi đoàn (Tiếp theo)",
           layout: "grid-2x2",
           items: [
             { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/5.jpg", name: "", role: "", objectPosition: "center 95%" },
@@ -426,7 +454,6 @@ export const partyGroups: Department[] = [
           ]
         },
         {
-          title: "Hoạt động Liên chi đoàn (Trang 3)",
           layout: "grid-2x2",
           items: [
             { img: "/images/LIÊN CHI ĐOÀN THANH NIÊN/1.jpg", name: "", role: "" },
@@ -535,8 +562,8 @@ export const provinces: Province[] = [
     map: encodeURI("/images/provinces/tuyen_quang_thumb.png"),
     mapWithText: encodeURI("/images/provinces/tuyen_quang_thumb chữ.png"),
     stores: [
-      { id: "TQG01", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-1.jpg", objectPosition: "center 60%" },
-      { id: "TQG02", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-2.jpg", objectPosition: "center 60%" },
+      { id: "TQG01", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-1.jpg", objectPosition: "center 100%" },
+      { id: "TQG02", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-2.jpg", objectPosition: "center 60%", scale: 1.2, translateX: "-4%" },
       { id: "TQG03", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-3.jpg" },
       { id: "TQG04", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-4.jpg" },
       { id: "TQG05", img: "/images/hethongsieuthi/tuyenquang/tuyenquang-5.jpg" },
@@ -550,6 +577,27 @@ export const provinces: Province[] = [
       { id: "CBG01", img: "/images/hethongsieuthi/caobang/caobang-1.jpg" },
       { id: "CBG02", img: "/images/hethongsieuthi/caobang/caobang-2.jpg" },
       { id: "CBG03", img: "/images/hethongsieuthi/caobang/caobang-3.jpg", objectPosition: "center 20%" },
+    ]
+  },
+  {
+    name: "LAI CHÂU",
+    map: encodeURI("/images/provinces/lai_chau_thumb.png"),
+    mapWithText: encodeURI("/images/provinces/lai_chau_thumb chữ.png"),
+    stores: [
+      { id: "LCU01", img: "/images/hethongsieuthi/laichau/laichau-1.jpg" },
+    ]
+  },
+  {
+    name: "LÀO CAI",
+    map: encodeURI("/images/provinces/lao_cai_thumb.png"),
+    mapWithText: encodeURI("/images/provinces/lao_cai_thumb chữ 2.png"),
+    stores: [
+      { id: "LCI01", img: "/images/hethongsieuthi/laocai/laocai-1.jpg" },
+      { id: "LCI02", img: "/images/hethongsieuthi/laocai/laocai-2.jpg" },
+      { id: "LCI03", img: "/images/hethongsieuthi/laocai/laocai-3.jpg", objectPosition: "center 30%" },
+      { id: "LCI04", img: "/images/hethongsieuthi/laocai/laocai-4.jpg" },
+      { id: "LCI05", img: "/images/hethongsieuthi/laocai/laocai-5.jpg" },
+      { id: "LCI06", img: "/images/hethongsieuthi/laocai/laocai-6.jpg", objectPosition: "center 60%" },
     ]
   },
   {
@@ -574,8 +622,8 @@ export const provinces: Province[] = [
     map: encodeURI("/images/provinces/điện biên.png"),
     mapWithText: encodeURI("/images/provinces/điện biên chữ.png"),
     stores: [
-      { id: "DBN01", img: "/images/hethongsieuthi/dienbien/dienbien-1.jpg" },
-      { id: "DBN02", img: "/images/hethongsieuthi/dienbien/dienbien-2.jpg", objectPosition: "center 50%" },
+      { id: "DBN01", img: "/images/hethongsieuthi/dienbien/dienbien-1.jpg", objectPosition: "center 30%" },
+      { id: "DBN02", img: "/images/hethongsieuthi/dienbien/dienbien-2.jpg", objectPosition: "center 45%" },
     ]
   },
   {
@@ -853,8 +901,8 @@ export const provinces: Province[] = [
   },
   {
     name: "TP. ĐÀ NẴNG",
-    map: encodeURI("/images/21 ĐÀ NẴNG.png"),
-    mapWithText: encodeURI("/images/21 ĐÀ NẴNG.png"),
+    map: encodeURI("/images/provinces/đà nẵng.png"),
+    mapWithText: "/images/danang_text3.png",
     stores: [
       { id: "DNG01", img: "/images/hethongsieuthi/danang/dng01.jpg", objectPosition: "center 60%" },
       { id: "DNG02", img: "/images/hethongsieuthi/danang/dng02.jpg", objectPosition: "center 10%" },
@@ -874,6 +922,19 @@ export const provinces: Province[] = [
     ]
   },
   {
+    name: "QUẢNG NGÃI",
+    map: encodeURI("/images/provinces/quang_ngai_thumb.png"),
+    mapWithText: encodeURI("/images/provinces/quang_ngai_thumb chữ.png"),
+    stores: [
+      { id: "QNI01", img: "/images/hethongsieuthi/quangngai/QNI01.jpg" },
+      { id: "QNI02", img: "/images/hethongsieuthi/quangngai/qni02.jpg", objectPosition: "center 80%" },
+      { id: "QNI03", img: "/images/hethongsieuthi/quangngai/qni03.jpg", objectPosition: "center 60%" },
+      { id: "QNI04", img: "/images/hethongsieuthi/quangngai/qni04.jpg" },
+      { id: "QNI05", img: "/images/hethongsieuthi/quangngai/qni05.jpg" },
+      { id: "QNI-CH01", img: "/images/hethongsieuthi/quangngai/qni-ch01.jpg" },
+    ]
+  },
+  {
     name: "GIA LAI",
     map: encodeURI("/images/provinces/gia_lai_thumb.png"),
     mapWithText: encodeURI("/images/provinces/gia_lai_thumb chữ.png"),
@@ -885,19 +946,6 @@ export const provinces: Province[] = [
       { id: "GLI05", img: "/images/hethongsieuthi/gialai/GLI05.jpg" },
       { id: "GLI06", img: "/images/hethongsieuthi/gialai/gli06.jpg" },
       { id: "GLI-CH01", img: "/images/hethongsieuthi/gialai/gli-ch01.jpg", objectPosition: "center 20%" },
-    ]
-  },
-  {
-    name: "QUẢNG NGÃI",
-    map: encodeURI("/images/provinces/quang_ngai_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/quang_ngai_thumb chữ.png"),
-    stores: [
-      { id: "QNI01", img: "/images/hethongsieuthi/quangngai/QNI01.jpg" },
-      { id: "QNI02", img: "/images/hethongsieuthi/quangngai/qni02.jpg", objectPosition: "center 80%" },
-      { id: "QNI03", img: "/images/hethongsieuthi/quangngai/qni03.jpg", objectPosition: "center 60%" },
-      { id: "QNI04", img: "/images/hethongsieuthi/quangngai/qni04.jpg" },
-      { id: "QNI05", img: "/images/hethongsieuthi/quangngai/qni05.jpg" },
-      { id: "QNI-CH01", img: "/images/hethongsieuthi/quangngai/qni-ch01.jpg" },
     ]
   },
   {
@@ -918,8 +966,8 @@ export const provinces: Province[] = [
   },
   {
     name: "KHÁNH HOÀ",
-    map: encodeURI("/images/25 KHÁNH HOÀ.png"),
-    mapWithText: encodeURI("/images/25 KHÁNH HOÀ.png"),
+    map: encodeURI("/images/provinces/khanh_hoa_thumb.png"),
+    mapWithText: "/images/khanhhoa_text3.png",
     stores: [
       { id: "KHA01", img: "/images/hethongsieuthi/khanhhoa/kha01.jpg" },
       { id: "KHA02", img: "/images/hethongsieuthi/khanhhoa/kha02.jpg" },
@@ -1123,27 +1171,6 @@ export const provinces: Province[] = [
       { id: "CMU05", img: "/images/hethongsieuthi/camau/cmu05.jpg" },
     ]
   },
-  {
-    name: "LAI CHÂU",
-    map: encodeURI("/images/provinces/lai_chau_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/lai_chau_thumb chữ.png"),
-    stores: [
-      { id: "LCU01", img: "/images/hethongsieuthi/laichau/laichau-1.jpg" },
-    ]
-  },
-  {
-    name: "LÀO CAI",
-    map: encodeURI("/images/provinces/lao_cai_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/lao_cai_thumb chữ 2.png"),
-    stores: [
-      { id: "LCI01", img: "/images/hethongsieuthi/laocai/laocai-1.jpg" },
-      { id: "LCI02", img: "/images/hethongsieuthi/laocai/laocai-2.jpg" },
-      { id: "LCI03", img: "/images/hethongsieuthi/laocai/laocai-3.jpg", objectPosition: "center 30%" },
-      { id: "LCI04", img: "/images/hethongsieuthi/laocai/laocai-4.jpg" },
-      { id: "LCI05", img: "/images/hethongsieuthi/laocai/laocai-5.jpg" },
-      { id: "LCI06", img: "/images/hethongsieuthi/laocai/laocai-6.jpg", objectPosition: "center 60%" },
-    ]
-  },
 ];
 
 export const formerDirectorsData: FormerDirector[] = [
@@ -1181,9 +1208,16 @@ export const formerDirectorsData: FormerDirector[] = [
   },
   {
     name: "Đồng chí Nguyễn Quang Vinh",
-    img: "/images/giamdoc/nguyen-quang-vinh.jpg",
+    img: "/images/giamdoc/former-vinh.jpg",
+    modalImg: "/images/giamdoc/former-vinh.jpg",
     role: "Quyền Giám đốc Viettel Store",
     period: "10/2014 - 01/2015",
+    scale: 1.1,
+    objectPosition: "center 40%",
+    mobileObjectPosition: "center 30%",
+    modalTranslateY: "0px",
+    mobileModalObjectPosition: "center 30%",
+    modalScale: 1.05,
     description: (
       <>
         <p className="mb-2 text-[#333333]">Đồng chí đã dẫn dắt Trung tâm qua các giai đoạn chuyển dịch chiến lược quan trọng:</p>
@@ -1201,6 +1235,11 @@ export const formerDirectorsData: FormerDirector[] = [
     img: "/images/giamdoc/le-quoc-tuan.png",
     role: "Giám đốc Viettel Store",
     period: "(01/2015 - 08/2015) và giai đoạn (12/2015 - 05/2018)",
+    objectPosition: "center 80%",
+    modalImg: "/images/giamdoc/le-quoc-tuan.png",
+    modalObjectPosition: "center 80%",
+    mobileModalObjectPosition: "center 30%",
+    modalScale: 1.15,
     description: (
       <>
         <ul className="space-y-2 text-[#333333]">
@@ -1227,6 +1266,10 @@ export const formerDirectorsData: FormerDirector[] = [
     img: "/images/giamdoc/vu-tam-hoa.jpg",
     role: "Giám đốc Công ty kiêm Phụ trách Trung tâm Viettel Store",
     period: "05/2018 - 09/2018",
+    objectPosition: "center 80%",
+    modalTranslateY: "0px",
+    mobileModalObjectPosition: "center 30%",
+    modalScale: 1.05,
     description: (
       <>
         <p className="mb-2 text-[#333333]">Trên cương vị Giám đốc Công ty kiêm phụ trách Trung tâm, đồng chí đã có những đóng góp trong việc thay đổi tư duy quản trị:</p>

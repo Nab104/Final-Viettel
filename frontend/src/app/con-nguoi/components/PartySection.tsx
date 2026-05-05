@@ -54,7 +54,7 @@ const PartySection = ({
   return (
     <section className="py-24 bg-[#F2F2F2] relative w-full overflow-hidden">
       <div className="container mx-auto px-4 relative z-10 max-w-[1500px]">
-        <h2 className="text-[#4A4A4A] font-beausans font-black text-2xl md:text-5xl uppercase mb-12 md:mb-16 text-center tracking-tight px-4">ĐẢNG BỘ BỘ PHẬN</h2>
+        <h2 className="text-[#4A4A4A] font-beausans font-black text-2xl md:text-5xl uppercase mb-12 md:mb-16 text-center tracking-tight px-4">ĐẢNG BỘ BỘ PHẬN VÀ CÁC TỔ CHỨC QUẦN CHÚNG</h2>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 w-full max-w-[1700px] mx-auto relative px-0 md:px-4">
           {/* Desktop Left Arrow */}
@@ -83,33 +83,36 @@ const PartySection = ({
             >
               {Array.from({ length: totalPages }).map((_, pageIdx) => (
                 <div key={pageIdx} className="w-full shrink-0 px-4 md:px-2">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
-                    {(isMobile 
-                      ? partyGroups.slice(pageIdx * 4, pageIdx * 4 + 4) 
-                      : partyGroups
-                    ).map((group, idx) => (
-                      <div
-                        key={idx}
-                        className="relative w-full rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] group cursor-pointer transition-all duration-500 hover:-translate-y-2 aspect-[4/3]"
-                        onClick={() => onSelect(group)}
-                      >
-                        <Image
-                          src={group.img}
-                          fill
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 750px"
-                          className="transition-transform duration-1000 group-hover:scale-105 object-cover"
-                          alt={group.name}
-                          priority={pageIdx === 0}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-6 md:p-8">
-                          <div className="text-white">
-                            <h3 className="text-lg md:text-xl font-bold leading-tight drop-shadow-md">
-                              {group.name}
-                            </h3>
+                  <div className="max-w-4xl mx-auto w-full">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
+                      {(isMobile 
+                        ? partyGroups.slice(pageIdx * 4, pageIdx * 4 + 4) 
+                        : partyGroups
+                      ).map((group, idx) => (
+                        <div
+                          key={idx}
+                          className="relative w-full rounded-xl md:rounded-2xl overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 hover:-translate-y-2 aspect-[4/3] bg-black/90"
+                          onClick={() => onSelect(group)}
+                        >
+                          <Image
+                            src={group.img}
+                            fill
+                            quality={60}
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 750px"
+                            className="transition-transform duration-1000 group-hover:scale-105 object-cover"
+                            alt={group.name}
+                            priority={pageIdx === 0}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-6 md:p-8">
+                            <div className="text-white">
+                              <h3 className="text-sm md:text-base font-bold leading-tight drop-shadow-md">
+                                {group.name}
+                              </h3>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}

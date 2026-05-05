@@ -6,10 +6,11 @@ import { FormerDirector } from "../data";
 
 interface DirectorModalProps {
   director: FormerDirector;
+  isMobile: boolean;
   onClose: () => void;
 }
 
-const DirectorModal = ({ director, onClose }: DirectorModalProps) => {
+const DirectorModal = ({ director, isMobile, onClose }: DirectorModalProps) => {
   return (
     <div className="fixed inset-0 z-[2147483647] bg-black/50 backdrop-blur-[2px] flex items-center justify-center p-4 animate-in fade-in duration-300 font-beausans">
 
@@ -24,11 +25,17 @@ const DirectorModal = ({ director, onClose }: DirectorModalProps) => {
           <Image 
             unoptimized
             quality={100}
-            src={director.img} 
+            src={director.modalImg || director.img} 
             alt={director.name} 
             fill 
             sizes="(max-width: 768px) 100vw, 400px"
-            className="object-cover object-top" 
+            className="object-cover" 
+            style={{ 
+              objectPosition: isMobile 
+                ? (director.mobileModalObjectPosition || director.modalObjectPosition || director.objectPosition || 'center top')
+                : (director.modalObjectPosition || director.objectPosition || 'center top'),
+              transform: `scale(${isMobile ? (director.mobileModalScale || director.modalScale || 1) : (director.modalScale || 1)}) translateY(${isMobile ? (director.mobileModalTranslateY || director.modalTranslateY || '0px') : (director.modalTranslateY || '0px')})`
+            }}
             onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} 
           />
         </div>

@@ -80,7 +80,7 @@ const ProvinceModal = ({
         <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
       </div>
 
-      <div className="relative z-50 w-full text-center mb-6 md:mb-8">
+      <div className="relative z-50 w-full text-center mb-6 md:mb-8 pt-12 md:pt-0">
         {/* Inside Close Button */}
         <button
           onClick={onClose}
@@ -118,7 +118,7 @@ const ProvinceModal = ({
             className="relative rounded-[2.5rem] overflow-hidden isolation-isolate transform translate-z-0 flex items-center justify-center shadow-[0_0_120px_rgba(0,0,0,0.8)] border border-white/10 bg-black/40 group"
             style={{ 
               width: 'min(1100px, 96vw)', 
-              height: 'clamp(320px, 60vw, 650px)',
+              height: 'clamp(320px, 55vh, 550px)',
               borderRadius: '2.5rem',
               position: 'relative'
             }}
@@ -143,8 +143,11 @@ const ProvinceModal = ({
                     alt=""
                     fill
                     sizes="10vw"
-                    className="object-cover blur-2xl scale-125"
-                    style={{ objectPosition: currentStore.objectPosition || 'center' }}
+                    className="object-cover blur-2xl"
+                    style={{ 
+                      objectPosition: currentStore.objectPosition || 'center',
+                      transform: `scale(${getScale()})`
+                    }}
                   />
                 </motion.div>
               </AnimatePresence>
@@ -154,7 +157,7 @@ const ProvinceModal = ({
                   key={activeStoreIndex}
                   variants={{
                     enter: { opacity: 0 },
-                    center: { opacity: 1, scale: getScale() },
+                    center: { opacity: 1 },
                     exit: { opacity: 0 }
                   }}
                   initial="enter"
@@ -164,13 +167,18 @@ const ProvinceModal = ({
                   className="relative z-10 w-full h-full shadow-2xl"
                 >
                   <Image
+                    unoptimized
+                    quality={100}
                     src={encodeURI(currentStore.img)}
                     alt={province.name}
                     fill
                     sizes="(max-width: 768px) 95vw, 850px"
                     priority
                     className={`${currentStore.objectFit || 'object-cover'}`}
-                    style={{ objectPosition: currentStore.objectPosition || 'center' }}
+                    style={{ 
+                      objectPosition: currentStore.objectPosition || 'center',
+                      transform: `scale(${getScale()}) translate(${currentStore.translateX || '0px'}, ${currentStore.translateY || '0px'})`
+                    }}
                     onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"}
                   />
                 </motion.div>
