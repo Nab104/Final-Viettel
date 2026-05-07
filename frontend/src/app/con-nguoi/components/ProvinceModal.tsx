@@ -90,7 +90,7 @@ const ProvinceModal = ({
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
         </button>
-        <h2 className="font-beausans font-black text-sm md:text-xl lg:text-2xl uppercase tracking-tight px-4 leading-tight opacity-80" style={{ color: '#FFFFFF' }}>
+        <h2 className="font-beausans font-bold text-lg md:text-3xl lg:text-5xl uppercase tracking-normal px-4 leading-tight !text-white !opacity-100 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
           {currentStore.id.includes('CH')
             ? `TẬP THỂ CÁC CỬA HÀNG TẠI TỈNH ${province.name}`
             : `TẬP THỂ CÁC SIÊU THỊ TẠI TỈNH ${province.name}`}
@@ -178,7 +178,11 @@ const ProvinceModal = ({
                     fill
                     sizes="(max-width: 768px) 95vw, 1400px"
                     priority
-                    className={`${currentStore.objectFit || 'object-cover'}`}
+                    className={`${
+                      currentStore.objectFit === 'object-contain' 
+                        ? 'object-contain' 
+                        : 'object-cover'
+                    }`}
                     style={{ 
                       objectPosition: currentStore.objectPosition || 'center',
                       transform: `scale(${getScale()}) translate(${currentStore.translateX || '0px'}, ${currentStore.translateY || '0px'})`
@@ -195,7 +199,7 @@ const ProvinceModal = ({
         </div>
 
           <div className="w-full text-center mt-4 md:mt-6">
-            <h3 className="relative z-50 font-beausans font-bold text-xl md:text-2xl lg:text-4xl tracking-tight opacity-60 text-white">
+            <h3 className="relative z-50 font-beausans font-bold text-2xl md:text-4xl lg:text-5xl tracking-normal !text-white !opacity-100 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
               {currentStore.id.includes('CH')
                 ? `Cửa hàng ${currentStore.id}`
                 : `Siêu thị ${currentStore.id}`}

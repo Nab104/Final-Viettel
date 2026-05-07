@@ -18,17 +18,43 @@ interface LongServiceSectionProps {
 
 const LongServiceSection = ({ 
   longService, 
-  vdIndex, 
-  selectedHonoree, 
-  onSelectHonoree, 
-  onPrev, 
-  onNext,
   isMobile,
   isTablet
-}: LongServiceSectionProps) => {
+}: { longService: LongService[], isMobile: boolean, isTablet: boolean }) => {
+  const [vdIndex, setVdIndex] = useState(0);
+  const [selectedHonoree, setSelectedHonoree] = useState<number | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(true);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+
+  const step = isMobile ? 1 : isTablet ? 2 : 4;
+  const totalItems = longService.length;
+
+  const handleNext = () => {
+    setIsTransitioning(true);
+    setVdIndex(prev => prev + step);
+  };
+
+  const handlePrev = () => {
+    setIsTransitioning(true);
+    setVdIndex(prev => prev - step);
+  };
+
+  // Logic to handle the seamless "snap back"
+  React.useEffect(() => {
+    if (vdIndex >= totalItems || vdIndex <= -step) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        if (vdIndex >= totalItems) {
+          setVdIndex(vdIndex % totalItems);
+        } else {
+          setVdIndex((vdIndex + totalItems) % totalItems);
+        }
+      }, 1000); // Wait for transition duration
+      return () => clearTimeout(timer);
+    }
+  }, [vdIndex, totalItems, step]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
@@ -47,8 +73,8 @@ const LongServiceSection = ({
     const diff = touchStart - touchEnd;
 
     if (Math.abs(diff) > 50) {
-      if (diff > 0) onNext();
-      else onPrev();
+      if (diff > 0) handleNext();
+      else handlePrev();
     }
     setTouchStart(null);
     setDragOffset(0);
@@ -69,20 +95,27 @@ const LongServiceSection = ({
           style={{ touchAction: 'pan-y' }}
         >
           <div 
-            className={`flex gap-4 md:gap-8 will-change-transform ${isDragging ? '' : 'transition-transform duration-1000 ease-in-out'}`} 
+            className={`flex gap-4 md:gap-8 will-change-transform ${isDragging || !isTransitioning ? '' : 'transition-transform duration-1000 ease-in-out'}`} 
             style={{ 
               transform: `translateX(calc(-1 * (var(--ls-active-idx) * (var(--ls-card-width) + var(--ls-card-gap))) + (var(--ls-center-offset)) + ${dragOffset}px))`,
-              '--ls-active-idx': vdIndex,
+              '--ls-active-idx': vdIndex + longService.length,
               '--ls-center-offset': '0px'
             } as React.CSSProperties}
           >
-            {longService.map((person, idx) => {
+            {[...longService, ...longService, ...longService].map((person, idx) => {
+              const realIdx = idx % longService.length;
               const isFlipped = selectedHonoree === idx;
-              const isVisible = isMobile ? (idx === vdIndex) : isTablet ? (idx >= vdIndex && idx < vdIndex + 2) : (idx >= vdIndex && idx < vdIndex + 4);
+              // Adjust visibility logic to account for triple duplication
+              const isVisible = isMobile 
+                ? (idx === vdIndex + longService.length) 
+                : isTablet 
+                  ? (idx >= vdIndex + longService.length && idx < vdIndex + longService.length + 2) 
+                  : (idx >= vdIndex + longService.length && idx < vdIndex + longService.length + 4);
+              
               return (
                 <div 
                   key={idx} 
-                  onClick={() => onSelectHonoree(isFlipped ? null : idx)} 
+                  onClick={() => setSelectedHonoree(isFlipped ? null : idx)} 
                   className="shrink-0 relative group transition-all duration-500 cursor-pointer" 
                   style={{ 
                     width: 'var(--ls-card-width)',
@@ -97,15 +130,19 @@ const LongServiceSection = ({
                   >
                     {/* Front side */}
                     <div className="absolute inset-0 w-full h-full z-20 rounded-[40px] overflow-hidden shadow-2xl bg-transparent" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
-                      <Image 
-                        src={encodeURI(person.img)} 
-                        fill 
-                        sizes="(max-width: 640px) 95vw, (max-width: 1024px) 50vw, 350px"
-                        className="object-cover transition-transform duration-1000 group-hover:scale-105 rounded-[40px]" 
-                        alt={person.name} 
-                        loading="lazy"
-                        onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} 
-                      />
+                        <Image 
+                          src={encodeURI(person.img)} 
+                          fill 
+                          sizes="(max-width: 640px) 95vw, (max-width: 1024px) 50vw, 350px"
+                          className="object-cover transition-transform duration-1000 group-hover:scale-105 rounded-[40px]" 
+                          alt={person.name} 
+                          loading="lazy"
+                          style={{ 
+                            objectPosition: person.objectPosition || 'center',
+                            transform: `scale(${person.scale || 1})`
+                          }}
+                          onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} 
+                        />
                       <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-300 flex items-end p-6 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}>
                         <div className="flex flex-col items-start">
                           <p className="text-gray-400 font-beausans font-bold text-xs md:text-sm uppercase tracking-wider mb-1">Đồng chí</p>
@@ -119,7 +156,7 @@ const LongServiceSection = ({
                       <div className="relative z-10 flex flex-col h-full w-full justify-between py-2">
                         <div className="flex flex-col items-center shrink-0">
                           <div className="w-14 h-14 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white mb-2 shadow-md">
-                            <Image src={encodeURI(person.img)} fill sizes="64px" className="object-cover" alt={person.name} />
+                            <Image src={encodeURI(person.img)} fill sizes="64px" className="object-cover" alt={person.name} style={{ objectPosition: person.objectPosition || 'center', transform: `scale(${person.scale || 1})` }} />
                           </div>
                           <h2 className="text-white text-4xl md:text-4xl font-beausans font-black mb-1 drop-shadow-lg uppercase tracking-tighter leading-none">{person.years} NĂM</h2>
                           <p className="text-white/90 text-sm md:text-xs font-beausans font-bold">cống hiến</p>
@@ -142,8 +179,8 @@ const LongServiceSection = ({
           </div>
         </div>
         <div className="flex justify-center gap-16 mt-12 text-white pb-8">
-          <button onClick={onPrev} className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white transition-all active:scale-95"><ChevronLeft /></button>
-          <button onClick={onNext} className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white transition-all active:scale-95"><ChevronRight /></button>
+          <button onClick={handlePrev} className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white transition-all active:scale-95"><ChevronLeft /></button>
+          <button onClick={handleNext} className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white transition-all active:scale-95"><ChevronRight /></button>
         </div>
       </div>
     </section>

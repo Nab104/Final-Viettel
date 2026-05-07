@@ -75,30 +75,9 @@ export default function ConNguoiPage() {
   }, []);
 
   // --- Long Service Section State ---
-  const [vdIndex, setVdIndex] = useState(0);
   const [selectedHonoree, setSelectedHonoree] = useState<number | null>(null);
 
-  const handleVdNext = useCallback(() => {
-    const step = isMobile ? 1 : isTablet ? 2 : 4;
-    setVdIndex(prev => {
-      const next = prev + step;
-      return next >= longService.length ? 0 : next;
-    });
-  }, [isMobile, isTablet]);
-
-  const handleVdPrev = useCallback(() => {
-    const step = isMobile ? 1 : isTablet ? 2 : 4;
-    setVdIndex(prev => {
-      const next = prev - step;
-      if (next < 0) {
-        return Math.floor((longService.length - 1) / step) * step;
-      }
-      return next;
-    });
-  }, [isMobile, isTablet]);
-
   // --- Departments Carousel State ---
-  const [activeDeptPage, setActiveDeptPage] = useState(0);
 
   // --- Provinces Carousel State ---
   const [activeProvince, setActiveProvince] = useState(0);
@@ -190,11 +169,6 @@ export default function ConNguoiPage() {
 
           <LongServiceSection 
             longService={longService}
-            vdIndex={vdIndex}
-            selectedHonoree={selectedHonoree}
-            onSelectHonoree={setSelectedHonoree}
-            onPrev={handleVdPrev}
-            onNext={handleVdNext}
             isMobile={isMobile}
             isTablet={isTablet}
           />
@@ -236,8 +210,6 @@ export default function ConNguoiPage() {
             <div className="relative z-10">
               <DepartmentsSection 
                 departments={departments}
-                activeDeptPage={activeDeptPage}
-                onPageChange={setActiveDeptPage}
                 onSelectDept={setSelectedDept}
                 isMobile={isMobile}
               />

@@ -32,11 +32,11 @@ const LeadersSection = ({ leaders, positions, isMobile, isTablet, rotateLeaders 
   
   // Dynamic constants based on device
   const xOffset = isMobile ? 140 : isTablet ? 300 : 450;
-  const yOffset = isMobile ? 80 : isTablet ? 150 : 300;
-  const containerHeight = isMobile ? "360px" : isTablet ? "680px" : "700px";
+  const yOffset = isMobile ? 80 : isTablet ? 150 : 200;
+  const containerHeight = isMobile ? "360px" : isTablet ? "680px" : "min(750px, 80vh)";
 
   return (
-    <section className="w-full relative pt-4 md:pt-6 pb-0 md:pb-10 mb-0">
+    <section className="w-full relative pt-4 md:pt-6 pb-20 md:pb-32 mb-0">
       <div className={`container mx-auto relative z-10 ${isMobile ? "px-6 mb-20" : "max-w-7xl px-6 lg:px-8 mb-8 md:mb-16"}`}>
         <h2 className={`text-[#262626] font-black uppercase tracking-tighter text-left ${isMobile ? "text-3xl px-4" : "text-3xl md:text-5xl px-4"}`}>
           BAN GIÁM ĐỐC
@@ -44,10 +44,10 @@ const LeadersSection = ({ leaders, positions, isMobile, isTablet, rotateLeaders 
       </div>
 
       <div 
-        className="w-full mx-auto px-4 relative flex items-start justify-center h-[360px] md:h-[min(700px,75vh)]"
+        className="w-full mx-auto px-4 relative flex items-start justify-center"
+        style={{ height: containerHeight, touchAction: 'pan-y' }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        style={{ touchAction: 'pan-y' }}
       >
         {leaders.map((leader, index) => {
           const pos = positions.indexOf(index);

@@ -15,6 +15,8 @@ export interface LongService {
   dept: string;
   date: string;
   img: string;
+  objectPosition?: string;
+  scale?: number;
 }
 
 export interface DepartmentItem {
@@ -47,7 +49,7 @@ export interface Department {
     useCollageStaggered4?: boolean;
     mainItems?: DepartmentItem[];
     leader?: { name: string; role: string; img: string; objectPosition?: string; scale?: string | number; scaleX?: string | number; objectFit?: "cover" | "contain" | "fill" };
-    group?: { name: string; subName: string; img: string };
+    group?: { name: string; subName: string; img: string; objectPosition?: string; objectFit?: "cover" | "contain" | "fill" };
     deputies?: { name: string; role: string; img: string; objectPosition?: string; scale?: string | number; scaleX?: string | number; objectFit?: "cover" | "contain" | "fill" }[];
     extraPages?: DepartmentPage[];
   };
@@ -111,7 +113,7 @@ export const leaders: Leader[] = [
 ];
 
 export const longService: LongService[] = [
-  { name: "ĐỒNG CHÍ NGÔ NGÂN HÀ", years: 20, dept: "Phòng Kinh doanh Thiết bị", date: "01/10/2005", img: "/images/vinhdanh/v1.jpg" },
+  { name: "ĐỒNG CHÍ NGÔ NGÂN HÀ", years: 20, dept: "Phòng Kinh doanh Thiết bị", date: "01/10/2005", img: "/images/vinhdanh/v1.jpg", objectPosition: "center 10%", scale: 1.0 },
   { name: "ĐỒNG CHÍ NGUYỄN THỊ THÙY DƯƠNG", years: 20, dept: "Phòng Chất lượng dịch vụ", date: "01/10/2005", img: "/images/vinhdanh/v2.jpg" },
   { name: "ĐỒNG CHÍ ĐOÀN CHÍ HIẾU", years: 20, dept: "Phòng Kế hoạch và kiểm soát", date: "01/10/2005", img: "/images/vinhdanh/v3.jpg" },
   { name: "ĐỒNG CHÍ BÙI ĐỨC TOÀN", years: 20, dept: "Phòng Chất lượng dịch vụ", date: "01/10/2005", img: "/images/vinhdanh/v4.jpg" },
@@ -152,7 +154,7 @@ export const departments: Department[] = [
     hasTextOnImage: false,
     details: {
       leader: { name: "Đồng chí Dương Sơn Tùng", role: "Trưởng phòng Kinh doanh Dịch vụ", img: "/images/tapthephong/tp_pp/kinh_doanh_dich_vu/tp_duong_son_tung.jpg" },
-      group: { name: "Tập thể Phòng Kinh doanh Dịch vụ", subName: "Phòng Kinh doanh Dịch vụ", img: "/images/tapthephong/phong_kinh_doanh_dich_vu.jpg" },
+      group: { name: "Tập thể Phòng Kinh doanh Dịch vụ", subName: "Phòng Kinh doanh Dịch vụ", img: "/images/tapthephong/phong_kinh_doanh_dich_vu.jpg", objectPosition: "center 100%" },
       deputies: []
     }
   },
@@ -164,7 +166,7 @@ export const departments: Department[] = [
     hasTextOnImage: false,
     details: {
       leader: { name: "Đồng chí Bùi Quốc Hưng", role: "Trưởng phòng Marketing", img: "/images/tapthephong/tp_pp/mkt/tp_bui_quoc_hung.jpg" },
-      group: { name: "Tập thể Phòng Marketing", subName: "Phòng Marketing", img: "/images/tapthephong/phong_marketing.jpg" },
+      group: { name: "Tập thể Phòng Marketing", subName: "Phòng Marketing", img: "/images/tapthephong/phong_marketing.jpg", objectFit: "contain" },
       deputies: [
         { name: "Đồng chí Bùi Xuân Vinh", role: "Phó phòng Marketing", img: "/images/tapthephong/tp_pp/mkt/pp_bui_xuan_vinh.jpg" }
       ]
@@ -198,7 +200,7 @@ export const departments: Department[] = [
     img: "/images/tapthephong/phong_chat_luong_dich_vu.jpg",
     hasTextOnImage: false,
     details: {
-      group: { name: "Tập thể Phòng Chất lượng Dịch vụ", subName: "Phòng Chất lượng Dịch vụ", img: "/images/tapthephong/phong_chat_luong_dich_vu.jpg" },
+      group: { name: "Tập thể Phòng Chất lượng Dịch vụ", subName: "Phòng Chất lượng Dịch vụ", img: "/images/tapthephong/phong_chat_luong_dich_vu.jpg", objectPosition: "center 80%" },
       deputies: [
         { name: "Đồng chí Lê Duy Bách", role: "Trưởng phòng Chất lượng Dịch vụ", img: "/images/tapthephong/tp_pp/chat_luong_dvu/tp_le_duy_bach.jpg" }
       ]
@@ -249,7 +251,7 @@ export const departments: Department[] = [
     hasTextOnImage: false,
     details: {
       leader: { name: "Đồng chí Phan Thị Ngọc Tú", role: "Trưởng phòng Bộ phận Kế hoạch", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_ke_hoach/tp_phan_thi_ngoc_tu.jpg") },
-      group: { name: "Tập thể Bộ phận Kế hoạch", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/bo_phan_ke_hoach_tong_hop.jpg" },
+      group: { name: "Tập thể Bộ phận Kế hoạch", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/bo_phan_ke_hoach_tong_hop.jpg", objectPosition: "90% center" },
       deputies: [
         { name: "Đồng chí Phạm Anh Quân", role: "Phó phòng Bộ phận Kế hoạch", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_ke_hoach/pp_pham_anh_quan.jpg") }
       ]
@@ -282,7 +284,7 @@ export const ecommerceChannel: Department = {
   img: "/images/tapthephong/kenh_tmdt.jpg",
   hasTextOnImage: false,
   details: {
-    group: { name: "Tập thể Kênh Thương mại Điện tử", subName: "Kênh Thương mại Điện tử", img: "/images/tapthephong/kenh_tmdt.jpg" },
+    group: { name: "Tập thể Kênh Thương mại Điện tử", subName: "Kênh Thương mại Điện tử", img: "/images/tapthephong/kenh_tmdt.jpg", objectPosition: "center 70%" },
     deputies: [
       { name: "Đồng chí Lê Thị Thanh Mai", role: "Phó giám đốc kênh Thương mại Điện tử", img: encodeURI("/images/tapthephong/tp_pp/kenh_thuong_mai_dien_tu/pho_giam_doc_le_thi_thanh_mai.jpg") }
     ]
@@ -297,7 +299,6 @@ export const supermarketChannel: Department = {
     deputies: [],
     extraPages: [
       {
-        title: "QUẢN LÝ VÙNG",
         items: [
           { img: encodeURI("/images/anh_nhan_su/c36c2549b912de31f2ee7b038e17379c516c6727.jpg"), name: "Đồng chí Lê Đình Giáp", role: "Quản lý vùng" },
           { img: encodeURI("/images/anh_nhan_su/3452289c633053c6b3fe745eaf2f7d5a099f94c4.jpg"), name: "Đồng chí Phạm Duy Phố", role: "Quản lý vùng" },
@@ -305,7 +306,6 @@ export const supermarketChannel: Department = {
         ]
       },
       {
-        title: "QUẢN LÝ VÙNG",
         items: [
           { img: encodeURI("/images/anh_nhan_su/34bb5189995efad634242857370b4bbc6ee11e4d.jpg"), name: "Đồng chí Đinh Hồng Quân", role: "Quản lý vùng" },
           { img: encodeURI("/images/anh_nhan_su/b4bc0e5e5ca76b372afd88e8ae520dc8e9d35114.jpg"), name: "Đồng chí Quách Thị Thuý", role: "Quản lý vùng" },
@@ -313,7 +313,6 @@ export const supermarketChannel: Department = {
         ]
       },
       {
-        title: "QUẢN LÝ VÙNG",
         items: [
           { img: encodeURI("/images/anh_nhan_su/064a53ee4386709bb10fb44a62cf4c361b9f57ae.jpg"), name: "Đồng chí Nguyễn Xuân Thuỳ", role: "Quản lý vùng" },
           { img: encodeURI("/images/anh_nhan_su/b4114357a0d12811dd38ad78d948a5f7c0b25f57.jpg"), name: "Đồng chí Lê Thế Công", role: "Quản lý vùng" },
@@ -321,7 +320,6 @@ export const supermarketChannel: Department = {
         ]
       },
       {
-        title: "QUẢN LÝ VÙNG",
         items: [
           { img: encodeURI("/images/anh_nhan_su/b507b621cf655996ecd369b151d16ffb69b66ef9.jpg"), name: "Đồng chí Phạm Minh Khánh", role: "Quản lý vùng" },
           { img: encodeURI("/images/anh_nhan_su/c9baf5fce77b0830df0d30ea3b68db90aad27746.jpg"), name: "Đồng chí Vũ Mạnh Tiến", role: "Quản lý vùng" },
@@ -329,7 +327,6 @@ export const supermarketChannel: Department = {
         ]
       },
       {
-        title: "QUẢN LÝ VÙNG",
         items: [
           { img: encodeURI("/images/anh_nhan_su/1.jpg"), name: "Đồng chí Trương Công Luân", role: "Quản lý vùng" },
           { img: encodeURI("/images/anh_nhan_su/2.jpg"), name: "Đồng chí Phan Minh Hải", role: "Quản lý vùng" },
@@ -337,7 +334,6 @@ export const supermarketChannel: Department = {
         ]
       },
       {
-        title: "QUẢN LÝ VÙNG",
         items: [
           { img: encodeURI("/images/anh_nhan_su/4.jpg"), name: "Đồng chí Diệp Nghĩa Trọng", role: "Quản lý vùng" },
           { img: encodeURI("/images/anh_nhan_su/5.jpg"), name: "Đồng chí Trần Quốc Việt", role: "Quản lý vùng" },
@@ -350,7 +346,7 @@ export const supermarketChannel: Department = {
 
 export const partyGroups: Department[] = [
   {
-    name: "Đảng bộ bộ phận và Chi bộ",
+    name: "Đảng bộ bộ phận và các Chi bộ",
     img: "/images/dangbophanvachibo/anhmain.jpg",
     hasTextOnImage: true,
     details: {
@@ -360,10 +356,10 @@ export const partyGroups: Department[] = [
         { img: "/images/dangbophanvachibo/anh2.jpg", name: "", role: "" },
         { img: "/images/dangbophanvachibo/anh3.jpg", name: "Đảng bộ bộ phận Trung tâm bán lẻ", role: "" },
         { img: "/images/dangbophanvachibo/anh4.jpg", name: "Chi bộ khối kinh doanh", role: "", objectPosition: "30% center" },
-        { img: "/images/dangbophanvachibo/anh5.jpg", name: "Chi bộ khối Dịch vụ Khách hàng", role: "" },
-        { img: "/images/dangbophanvachibo/anh6.jpg", name: "Chi bộ khối Đảm bảo", role: "", scale: 1.05 }
+        { img: "/images/dangbophanvachibo/anh5.jpg", name: "Chi bộ khối Dịch vụ Khách hàng", role: "", objectPosition: "center 90%" },
+        { img: "/images/dangbophanvachibo/anh6.jpg", name: "Chi bộ khối Đảm bảo", role: "", scale: 1.05, objectPosition: "center 90%" }
       ],
-      group: { name: "Đảng bộ bộ phận và Chi bộ", subName: "Viettel Store", img: "/images/dangbophanvachibo/anhmain.jpg" },
+      group: { name: "Đảng bộ bộ phận và các Chi bộ", subName: "Viettel Store", img: "/images/dangbophanvachibo/anhmain.jpg" },
       deputies: [],
       extraPages: [
         {
@@ -420,7 +416,7 @@ export const partyGroups: Department[] = [
     details: {
       useCollageStaggered4: true,
       mainItems: [
-        { img: "/images/chi_hoi_phu_nu/4.jpg", name: "", role: "", objectFit: "fill", scaleX: 1.3 },
+        { img: "/images/chi_hoi_phu_nu/4.jpg", name: "", role: "", objectPosition: "70% center" },
         { img: "/images/chi_hoi_phu_nu/2.jpg", name: "", role: "" },
         { img: "/images/chi_hoi_phu_nu/3.jpg", name: "", role: "" },
         { img: "/images/chi_hoi_phu_nu/main.jpg", name: "", role: "" }
@@ -453,15 +449,6 @@ export const partyGroups: Department[] = [
             { img: "/images/lien_chi_doan/8.jpg", name: "", role: "" }
           ]
         },
-        {
-          layout: "grid-2x2",
-          items: [
-            { img: "/images/lien_chi_doan/1.jpg", name: "", role: "" },
-            { img: "/images/lien_chi_doan/2.jpg", name: "", role: "" },
-            { img: "/images/lien_chi_doan/3.jpg", name: "", role: "" },
-            { img: "/images/lien_chi_doan/4.jpg", name: "", role: "" }
-          ]
-        }
       ]
     }
   },
@@ -566,7 +553,7 @@ export const provinces: Province[] = [
       { id: "TQG01", img: "/images/hethongsieuthi/tuyenquang/tqg01.jpg", objectPosition: "center 100%", scale: 1.1, translateX: "-5%" },
       { id: "TQG02", img: "/images/hethongsieuthi/tuyenquang/tqg02.jpg", objectPosition: "center 55%", scale: 1.2, translateX: "-4%" },
       { id: "TQG03", img: "/images/hethongsieuthi/tuyenquang/tqg03.jpg", objectPosition: "center 100%", scale: 1.3 },
-      { id: "TQG04", img: "/images/hethongsieuthi/tuyenquang/tqg04.jpg" },
+      { id: "TQG04", img: "/images/hethongsieuthi/tuyenquang/tqg04.jpg", scale: 1.0 },
       { id: "TQG05", img: "/images/hethongsieuthi/tuyenquang/tqg05.jpg" },
     ]
   },
@@ -593,9 +580,9 @@ export const provinces: Province[] = [
     map: "/images/provinces/lao_cai_thumb.png",
     mapWithText: "/images/provinces/lao_cai_thumb_chu_2.png",
     stores: [
-      { id: "LCI01", img: "/images/hethongsieuthi/laocai/laocai-1.jpg" },
-      { id: "LCI02", img: "/images/hethongsieuthi/laocai/laocai-2.jpg" },
-      { id: "LCI03", img: "/images/hethongsieuthi/laocai/laocai-3.jpg", objectPosition: "center 30%" },
+      { id: "LCI01", img: "/images/hethongsieuthi/laocai/laocai-1.jpg", scale: 1.0 },
+      { id: "LCI02", img: "/images/hethongsieuthi/laocai/laocai-2.jpg", scale: 1.0 },
+      { id: "LCI03", img: "/images/hethongsieuthi/laocai/laocai-3.jpg", objectPosition: "70% 30%", scale: 1.0 },
       { id: "LCI04", img: "/images/hethongsieuthi/laocai/laocai-4.jpg" },
       { id: "LCI05", img: "/images/hethongsieuthi/laocai/laocai-5.jpg" },
       { id: "LCI06", img: "/images/hethongsieuthi/laocai/laocai-6.jpg", objectPosition: "center 60%" },
@@ -642,7 +629,7 @@ export const provinces: Province[] = [
     mapWithText: "/images/provinces/son_la_thumb_chu.png",
     stores: [
       { id: "SLA01", img: "/images/hethongsieuthi/sonla/sonla-3.jpg", objectPosition: "center 85%" },
-      { id: "SLA02", img: "/images/hethongsieuthi/sonla/sonla-1.jpg", objectPosition: "center 85%", scale: "scale-140" },
+      { id: "SLA02", img: "/images/hethongsieuthi/sonla/sonla-1.jpg", objectPosition: "70% 85%", scale: "scale-140" },
       { id: "SLA03", img: "/images/hethongsieuthi/sonla/sonla-4.jpg", translateX: "5%" },
       { id: "SLA04", img: "/images/hethongsieuthi/sonla/sonla-2.jpg", scale: "scale-150", objectPosition: "center 60%" },
     ]
@@ -652,13 +639,13 @@ export const provinces: Province[] = [
     map: "/images/provinces/phu_tho_thumb.png",
     mapWithText: "/images/provinces/phu_tho_thumb_chu.png",
     stores: [
-      { id: "PTO01", img: "/images/hethongsieuthi/phutho/pt001.jpg" },
+      { id: "PTO01", img: "/images/hethongsieuthi/phutho/pt001.jpg", translateX: "8%" },
       { id: "PTO02", img: "/images/hethongsieuthi/phutho/pt002.jpg" },
-      { id: "PTO03", img: "/images/hethongsieuthi/phutho/pt003.jpg" },
-      { id: "PTO04", img: "/images/hethongsieuthi/phutho/pt004.jpg", objectPosition: "center 30%" },
-      { id: "PTO05", img: "/images/hethongsieuthi/phutho/pt005.jpg", scale: 1.1, objectPosition: "40% 5%" },
-      { id: "PTO06", img: "/images/hethongsieuthi/phutho/pt006.jpg" },
-      { id: "PTO07", img: "/images/hethongsieuthi/phutho/pt007.jpg" },
+      { id: "PTO03", img: "/images/hethongsieuthi/phutho/pt003.jpg", scale: 1.0 },
+      { id: "PTO04", img: "/images/hethongsieuthi/phutho/pt004.jpg", objectPosition: "center 30%", scale: 1.0 },
+      { id: "PTO05", img: "/images/hethongsieuthi/phutho/pt005.jpg", scale: 1.0, objectPosition: "center 100%" },
+      { id: "PTO06", img: "/images/hethongsieuthi/phutho/pt006.jpg", scale: 1.0 },
+      { id: "PTO07", img: "/images/hethongsieuthi/phutho/pt007.jpg", objectPosition: "0% center", scale: 1.0 },
       { id: "PTO08", img: "/images/hethongsieuthi/phutho/pt008.png" },
       { id: "PTO10", img: "/images/hethongsieuthi/phutho/pt010.jpg", objectPosition: "center 80%" },
       { id: "PTO11", img: "/images/hethongsieuthi/phutho/pt011.jpg", objectPosition: "center 80%" },
@@ -668,11 +655,11 @@ export const provinces: Province[] = [
       { id: "PTO15", img: "/images/hethongsieuthi/phutho/pt015.jpg" },
       { id: "PTO16", img: "/images/hethongsieuthi/phutho/pt016.jpg" },
       { id: "PTO17", img: "/images/hethongsieuthi/phutho/pt017.jpg" },
-      { id: "PTO18", img: "/images/hethongsieuthi/phutho/pt018.jpg", objectPosition: "center 0%" },
+      { id: "PTO18", img: "/images/hethongsieuthi/phutho/pt018.jpg", objectPosition: "center 0%", scale: 1.0 },
       { id: "PTO19", img: "/images/hethongsieuthi/phutho/pt019.jpg" },
       { id: "PTO20", img: "/images/hethongsieuthi/phutho/pt020.jpg", objectPosition: "center 80%" },
       { id: "PTO21", img: "/images/hethongsieuthi/phutho/pt021.jpg" },
-      { id: "PTO22", img: "/images/hethongsieuthi/phutho/pt022.jpg", objectPosition: "center 60%" },
+      { id: "PTO22", img: "/images/hethongsieuthi/phutho/pt022.jpg", objectPosition: "20% 60%", scale: 1.0 },
       { id: "PTO-CH01", img: "/images/hethongsieuthi/phutho/pto-ch01.jpg", objectPosition: "center 80%" },
       { id: "PTO-CH02", img: "/images/hethongsieuthi/phutho/pto-ch2.jpg", scale: 1.0 },
     ]
@@ -683,9 +670,9 @@ export const provinces: Province[] = [
     mapWithText: "/images/provinces/bac_nih_chu.png",
     stores: [
       { id: "BNH01", img: "/images/hethongsieuthi/bacninh/bnh01.jpg", scale: 1.0 },
-      { id: "BNH02", img: "/images/hethongsieuthi/bacninh/bnh02.jpg", objectPosition: "center 30%" },
-      { id: "BNH03", img: "/images/hethongsieuthi/bacninh/bnh03.jpg" },
-      { id: "BNH04", img: "/images/hethongsieuthi/bacninh/bnh04.jpg", scale: 1.4, objectPosition: "center 100%", translateY: "2%" },
+      { id: "BNH02", img: "/images/hethongsieuthi/bacninh/bnh02.jpg", objectPosition: "center 30%", scale: 1.0 },
+      { id: "BNH03", img: "/images/hethongsieuthi/bacninh/bnh03.jpg", scale: 1.0 },
+      { id: "BNH04", img: "/images/hethongsieuthi/bacninh/bnh04.jpg", scale: 1.0, objectPosition: "center 100%" },
       { id: "BNH05", img: "/images/hethongsieuthi/bacninh/bnh05.jpg" },
       { id: "BNH06", img: "/images/hethongsieuthi/bacninh/bnh06.jpg", scale: "scale-110" },
       { id: "BNH07", img: "/images/hethongsieuthi/bacninh/bnh07.jpg" },
@@ -702,15 +689,15 @@ export const provinces: Province[] = [
     map: "/images/provinces/quang_ninh_thumb.png",
     mapWithText: "/images/provinces/quang_ninh_thumb_chu.png",
     stores: [
-      { id: "QNH01", img: "/images/hethongsieuthi/quangninh/qnh01.jpg" },
+      { id: "QNH01", img: "/images/hethongsieuthi/quangninh/qnh01.jpg", scale: 1.0 },
       { id: "QNH02", img: "/images/hethongsieuthi/quangninh/qnh02.jpg" },
       { id: "QNH03", img: "/images/hethongsieuthi/quangninh/qnh03.jpg", objectPosition: "center 25%", scale: "scale-100" },
       { id: "QNH04", img: "/images/hethongsieuthi/quangninh/qnh04.jpg", objectPosition: "center 80%" },
       { id: "QNH05", img: "/images/hethongsieuthi/quangninh/qnh05.jpg" },
-      { id: "QNH06", img: "/images/hethongsieuthi/quangninh/qnh06.jpg" },
+      { id: "QNH06", img: "/images/hethongsieuthi/quangninh/qnh06.jpg", scale: 1.0 },
       { id: "QNH07", img: "/images/hethongsieuthi/quangninh/qnh07.jpg", objectPosition: "center 70%" },
       { id: "QNH08", img: "/images/hethongsieuthi/quangninh/qnh08.jpg", objectPosition: "center 40%" },
-      { id: "QNH09", img: "/images/hethongsieuthi/quangninh/qnh09.jpg", objectPosition: "center 40%" },
+      { id: "QNH09", img: "/images/hethongsieuthi/quangninh/qnh09.jpg", objectPosition: "center 40%", scale: 1.0 },
       { id: "QNH-CH01", img: "/images/hethongsieuthi/quangninh/ch-01.jpg" },
     ]
   },
@@ -720,42 +707,42 @@ export const provinces: Province[] = [
     mapWithText: "/images/provinces/ha_noi_chu.png",
     stores: [
       { id: "HNI01", img: "/images/hethongsieuthi/hanoi/hni01.jpg" },
-      { id: "HNI02", img: "/images/hethongsieuthi/hanoi/hni02.jpg", scale: "scale-[1.6]", objectPosition: "center 90%" },
-      { id: "HNI03", img: "/images/hethongsieuthi/hanoi/hni03.jpg", objectPosition: "center 70%", scale: 1 },
+      { id: "HNI02", img: "/images/hethongsieuthi/hanoi/hni02.jpg", scale: 1.7, objectPosition: "0% 100%", translateX: "5%" },
+      { id: "HNI03", img: "/images/hethongsieuthi/hanoi/hni03.jpg", objectPosition: "center 70%", scale: 1.0 },
       { id: "HNI04", img: "/images/hethongsieuthi/hanoi/hni04.jpg", objectPosition: "center 40%", scale: 1.0 },
-      { id: "HNI05", img: "/images/hethongsieuthi/hanoi/hni05.jpg" },
-      { id: "HNI06", img: "/images/hethongsieuthi/hanoi/hni06.jpg", objectPosition: "center 30%", scale: 1.0 },
-      { id: "HNI07", img: "/images/hethongsieuthi/hanoi/hni07.jpg", objectPosition: "center 20%" },
+      { id: "HNI05", img: "/images/hethongsieuthi/hanoi/hni05.jpg", scale: 1.0 },
+      { id: "HNI06", img: "/images/hethongsieuthi/hanoi/hni06.jpg", objectPosition: "30% 30%", scale: 1.0 },
+      { id: "HNI07", img: "/images/hethongsieuthi/hanoi/hni07.jpg", objectPosition: "center 20%", scale: 1.0 },
       { id: "HNI08", img: "/images/hethongsieuthi/hanoi/hni08.jpg", objectPosition: "center 70%", scale: 1.0 },
       { id: "HNI09", img: "/images/hethongsieuthi/hanoi/hni09.jpg", scale: 1.0 },
       { id: "HNI10", img: "/images/hethongsieuthi/hanoi/hni010.jpg" },
       { id: "HNI11", img: "/images/hethongsieuthi/hanoi/hni011.jpg", scale: 1.0 },
       { id: "HNI12", img: "/images/hethongsieuthi/hanoi/hni012.jpg", scale: 1.0 },
       { id: "HNI13", img: "/images/hethongsieuthi/hanoi/hni013.jpg" },
-      { id: "HNI14", img: "/images/hethongsieuthi/hanoi/hni014.jpg" },
+      { id: "HNI14", img: "/images/hethongsieuthi/hanoi/hni014.jpg", scale: 1.0 },
       { id: "HNI15", img: "/images/hethongsieuthi/hanoi/hni015.jpg", objectPosition: "center 60%" },
       { id: "HNI16", img: "/images/hethongsieuthi/hanoi/hni016.jpg" },
       { id: "HNI17", img: "/images/hethongsieuthi/hanoi/hni017.jpg", objectPosition: "center 20%" },
       { id: "HNI18", img: "/images/hethongsieuthi/hanoi/hni018.png" },
-      { id: "HNI19", img: "/images/hethongsieuthi/hanoi/hni019.jpg", scale: 1.0 },
+      { id: "HNI19", img: "/images/hethongsieuthi/hanoi/hni019.jpg", scale: 1.0, objectPosition: "35% center" },
       { id: "HNI21", img: "/images/hethongsieuthi/hanoi/hni021.jpg", scale: 1.0 },
       { id: "HNI22", img: "/images/hethongsieuthi/hanoi/hni022.jpg" },
       { id: "HNI23", img: "/images/hethongsieuthi/hanoi/hni023.jpg" },
       { id: "HNI24", img: "/images/hethongsieuthi/hanoi/hni024.jpg", scale: "scale-[1.4]" },
-      { id: "HNI25", img: "/images/hethongsieuthi/hanoi/hni025.jpg", objectPosition: "center 40%" },
+      { id: "HNI25", img: "/images/hethongsieuthi/hanoi/hni025.jpg", objectPosition: "center 40%", scale: 1.0 },
       { id: "HNI26", img: "/images/hethongsieuthi/hanoi/hni026.jpg", scale: "scale-[1.4]" },
-      { id: "HNI27", img: "/images/hethongsieuthi/hanoi/hni-ch027.jpg", scale: "scale-[1.2]", objectPosition: "center 45%" },
-      { id: "HNI28", img: "/images/hethongsieuthi/hanoi/hni028.jpg" },
+      { id: "HNI27", img: "/images/hethongsieuthi/hanoi/hni-ch027.jpg", scale: 1.0, objectPosition: "center 15%" },
+      { id: "HNI28", img: "/images/hethongsieuthi/hanoi/hni028.jpg", scale: 1.0 },
       { id: "HNI-CH01", img: "/images/hethongsieuthi/hanoi/hni-ch01.png", objectPosition: "center 30%" },
-      { id: "HNI-CH02", img: "/images/hethongsieuthi/hanoi/hni-ch02.jpg", objectPosition: "center 40%" },
+      { id: "HNI-CH02", img: "/images/hethongsieuthi/hanoi/hni-ch02.jpg", objectPosition: "center 40%", scale: 1.0 },
       { id: "HNI-CH03", img: "/images/hethongsieuthi/hanoi/hni-ch03.jpg" },
       { id: "HNI-CH04", img: "/images/hethongsieuthi/hanoi/hni-ch04.jpg", objectPosition: "center 10%", scale: 1.0 },
       { id: "HNI-CH06", img: "/images/hethongsieuthi/hanoi/hni-ch06.jpg" },
       { id: "HNI-CH07", img: "/images/hethongsieuthi/hanoi/hni-ch07.jpg" },
-      { id: "HNI-CH11", img: "/images/hethongsieuthi/hanoi/hni-ch011.jpg", objectPosition: "center 80%" },
+      { id: "HNI-CH11", img: "/images/hethongsieuthi/hanoi/hni-ch011.jpg", objectPosition: "center 20%" },
       { id: "HNI-CH12", img: "/images/hethongsieuthi/hanoi/hni-ch012.jpg" },
       { id: "HNI-CH13", img: "/images/hethongsieuthi/hanoi/hni-ch013.jpg", objectPosition: "center 70%" },
-      { id: "HNI-CH14", img: "/images/hethongsieuthi/hanoi/hni-ch014.jpg", objectPosition: "center 80%" },
+      { id: "HNI-CH14", img: "/images/hethongsieuthi/hanoi/hni-ch014.jpg", objectPosition: "center 35%", scale: 1.0 },
       { id: "HNI-CH16", img: "/images/hethongsieuthi/hanoi/hni-ch016.jpg", objectPosition: "center 40%" },
       { id: "HNI-CH19", img: "/images/hethongsieuthi/hanoi/hni-ch019.jpg" },
     ]
@@ -765,12 +752,12 @@ export const provinces: Province[] = [
     map: "/images/provinces/hai_phong.png",
     mapWithText: "/images/provinces/hai_phong_chu.png",
     stores: [
-      { id: "HPG01", img: "/images/hethongsieuthi/haiphong/hpg01.jpg", objectPosition: "center 70%" },
+      { id: "HPG01", img: "/images/hethongsieuthi/haiphong/hpg01.jpg", objectPosition: "center 70%", scale: 1.0 },
       { id: "HPG02", img: "/images/hethongsieuthi/haiphong/hpg02.jpg" },
       { id: "HPG03", img: "/images/hethongsieuthi/haiphong/hpg03.jpg" },
-      { id: "HPG04", img: "/images/hethongsieuthi/haiphong/hpg04.jpg", objectPosition: "center 80%" },
-      { id: "HPG05", img: "/images/hethongsieuthi/haiphong/hpg05.jpg" },
-      { id: "HPG06", img: "/images/hethongsieuthi/haiphong/hpg06.jpg", objectPosition: "center 20%" },
+      { id: "HPG04", img: "/images/hethongsieuthi/haiphong/hpg04.jpg", objectPosition: "center 80%", scale: 1.0 },
+      { id: "HPG05", img: "/images/hethongsieuthi/haiphong/hpg05.jpg", scale: 1.0 },
+      { id: "HPG06", img: "/images/hethongsieuthi/haiphong/hpg06.jpg", objectPosition: "center 20%", scale: 1.0 },
       { id: "HPG07", img: "/images/hethongsieuthi/haiphong/hpg07.jpg" },
       { id: "HPG08", img: "/images/hethongsieuthi/haiphong/hpg08.jpg" },
       { id: "HPG09", img: "/images/hethongsieuthi/haiphong/hpg09.jpg" },
@@ -786,20 +773,20 @@ export const provinces: Province[] = [
     map: "/images/provinces/hung_yen_thumb.png",
     mapWithText: "/images/provinces/hung_yen_thumb_chu.png",
     stores: [
-      { id: "HYN01", img: "/images/hethongsieuthi/hungyen/hyn01.jpg" },
+      { id: "HYN01", img: "/images/hethongsieuthi/hungyen/hyn01.jpg", objectPosition: "10% center", translateX: "-10%", scale: 1.25 },
       { id: "HYN02", img: "/images/hethongsieuthi/hungyen/hyn02.jpg", objectPosition: "center 80%" },
-      { id: "HYN03", img: "/images/hethongsieuthi/hungyen/hyn03.jpg", objectPosition: "center 80%" },
+      { id: "HYN03", img: "/images/hethongsieuthi/hungyen/hyn03.jpg", objectPosition: "center 80%", scale: 1.0 },
       { id: "HYN04", img: "/images/hethongsieuthi/hungyen/hyn04.jpg" },
-      { id: "HYN05", img: "/images/hethongsieuthi/hungyen/hyn05.jpg" },
+      { id: "HYN05", img: "/images/hethongsieuthi/hungyen/hyn05.jpg", scale: 1.0 },
       { id: "HYN06", img: "/images/hethongsieuthi/hungyen/hyn06.jpg" },
       { id: "HYN07", img: "/images/hethongsieuthi/hungyen/hyn07.jpg" },
-      { id: "HYN08", img: "/images/hethongsieuthi/hungyen/hyn08.jpg", objectPosition: "center 60%" },
+      { id: "HYN08", img: "/images/hethongsieuthi/hungyen/hyn08.jpg", objectPosition: "center 60%", scale: 1.0 },
       { id: "HYN09", img: "/images/hethongsieuthi/hungyen/hyn09.jpg" },
-      { id: "HYN10", img: "/images/hethongsieuthi/hungyen/hyn10.jpg" },
+      { id: "HYN10", img: "/images/hethongsieuthi/hungyen/hyn10.jpg", objectPosition: "20% center", translateX: "8%" },
       { id: "HYN11", img: "/images/hethongsieuthi/hungyen/hyn11.jpg" },
-      { id: "HYN12", img: "/images/hethongsieuthi/hungyen/hyn12.jpg" },
+      { id: "HYN12", img: "/images/hethongsieuthi/hungyen/hyn12.jpg", scale: 1.0 },
       { id: "HYN13", img: "/images/hethongsieuthi/hungyen/hyn13.jpg" },
-      { id: "HYN-CH01", img: "/images/hethongsieuthi/hungyen/hyn-ch01.jpg", objectPosition: "center 20%" },
+      { id: "HYN-CH01", img: "/images/hethongsieuthi/hungyen/hyn-ch01.jpg", objectPosition: "center 20%", scale: 1.0 },
     ]
   },
   {
@@ -807,17 +794,17 @@ export const provinces: Province[] = [
     map: "/images/provinces/ninh_binh_thumb.png",
     mapWithText: "/images/provinces/ninh_binh_thumb_co_chu.png",
     stores: [
-      { id: "NBH01", img: "/images/hethongsieuthi/ninhbinh/nbh01.jpg" },
+      { id: "NBH01", img: "/images/hethongsieuthi/ninhbinh/nbh01.jpg", scale: 1.0 },
       { id: "NBH02", img: "/images/hethongsieuthi/ninhbinh/nbh02.jpg" },
-      { id: "NBH03", img: "/images/hethongsieuthi/ninhbinh/nbh03.jpg" },
-      { id: "NBH04", img: "/images/hethongsieuthi/ninhbinh/nbh04.jpg" },
+      { id: "NBH03", img: "/images/hethongsieuthi/ninhbinh/nbh03.jpg", translateX: "-5%" },
+      { id: "NBH04", img: "/images/hethongsieuthi/ninhbinh/nbh04.jpg", scale: 1.0 },
       { id: "NBH05", img: "/images/hethongsieuthi/ninhbinh/nbh05.jpg", objectPosition: "center 60%" },
       { id: "NBH06", img: "/images/hethongsieuthi/ninhbinh/nbh06.jpg" },
       { id: "NBH07", img: "/images/hethongsieuthi/ninhbinh/nbh07.jpg" },
       { id: "NBH08", img: "/images/hethongsieuthi/ninhbinh/nbh08.jpg", objectPosition: "center 60%" },
       { id: "NBH09", img: "/images/hethongsieuthi/ninhbinh/nbh09.jpg", objectPosition: "center 60%" },
-      { id: "NBH10", img: "/images/hethongsieuthi/ninhbinh/nbh10.jpg", objectPosition: "center 30%" },
-      { id: "NBH11", img: "/images/hethongsieuthi/ninhbinh/nbh11.jpg", objectPosition: "center 30%" },
+      { id: "NBH10", img: "/images/hethongsieuthi/ninhbinh/nbh10.jpg", objectPosition: "center 30%", scale: 1.0 },
+      { id: "NBH11", img: "/images/hethongsieuthi/ninhbinh/nbh11.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "NBH12", img: "/images/hethongsieuthi/ninhbinh/nbh12.png", objectPosition: "center 10%" },
       { id: "NBH13", img: "/images/hethongsieuthi/ninhbinh/nbh13.jpg", objectPosition: "center 60%" },
     ]
@@ -828,11 +815,11 @@ export const provinces: Province[] = [
     mapWithText: "/images/provinces/thanh_hoa_thumb_chu.png",
     stores: [
       { id: "THA01", img: "/images/hethongsieuthi/thanhhoa/tha01.jpg" },
-      { id: "THA02", img: "/images/hethongsieuthi/thanhhoa/tha02.jpg", objectPosition: "center 60%" },
+      { id: "THA02", img: "/images/hethongsieuthi/thanhhoa/tha02.jpg", objectPosition: "center 60%", scale: 1.0 },
       { id: "THA03", img: "/images/hethongsieuthi/thanhhoa/tha03.jpg", objectPosition: "center 60%" },
-      { id: "THA04", img: "/images/hethongsieuthi/thanhhoa/tha04.jpg", objectPosition: "center 80%" },
+      { id: "THA04", img: "/images/hethongsieuthi/thanhhoa/tha04.jpg", objectPosition: "center 80%", scale: 1.0 },
       { id: "THA05", img: "/images/hethongsieuthi/thanhhoa/tha05.jpg", objectPosition: "center 80%" },
-      { id: "THA06", img: "/images/hethongsieuthi/thanhhoa/tha06.jpg", objectPosition: "center 40%" },
+      { id: "THA06", img: "/images/hethongsieuthi/thanhhoa/tha06.jpg", objectPosition: "center 40%", scale: 1.0 },
       { id: "THA07", img: "/images/hethongsieuthi/thanhhoa/tha07.jpg" },
       { id: "THA08", img: "/images/hethongsieuthi/thanhhoa/tha08.jpg", objectPosition: "center 70%" },
       { id: "THA09", img: "/images/hethongsieuthi/thanhhoa/tha09.jpg" },
@@ -844,18 +831,18 @@ export const provinces: Province[] = [
     map: "/images/provinces/nghe_an_thumb.png",
     mapWithText: "/images/provinces/nghe_an_thumb_chu.png",
     stores: [
-      { id: "NAN01", img: "/images/hethongsieuthi/nghean/nan01.jpg" },
-      { id: "NAN02", img: "/images/hethongsieuthi/nghean/nan02.jpg", translateX: "10%" },
-      { id: "NAN03", img: "/images/hethongsieuthi/nghean/nan03.jpg", objectPosition: "center 60%" },
+      { id: "NAN01", img: "/images/hethongsieuthi/nghean/nan01.jpg", translateX: "7%" },
+      { id: "NAN02", img: "/images/hethongsieuthi/nghean/nan02.jpg", translateX: "8%" },
+      { id: "NAN03", img: "/images/hethongsieuthi/nghean/nan03.jpg", objectPosition: "center 60%", translateX: "-5%" },
       { id: "NAN04", img: "/images/hethongsieuthi/nghean/nan04.jpg", objectPosition: "center 20%" },
       { id: "NAN05", img: "/images/hethongsieuthi/nghean/nan05.jpg" },
       { id: "NAN06", img: "/images/hethongsieuthi/nghean/nan06.jpg" },
       { id: "NAN07", img: "/images/hethongsieuthi/nghean/nan07.jpg" },
       { id: "NAN08", img: "/images/hethongsieuthi/nghean/nan08.jpg" },
-      { id: "NAN09", img: "/images/hethongsieuthi/nghean/nan09.jpg", objectPosition: "center 70%" },
+      { id: "NAN09", img: "/images/hethongsieuthi/nghean/nan09.jpg", objectPosition: "center 70%", translateX: "6%" },
       { id: "NAN10", img: "/images/hethongsieuthi/nghean/nan10.jpg" },
       { id: "NAN11", img: "/images/hethongsieuthi/nghean/nan11.jpg" },
-      { id: "NAN12", img: "/images/hethongsieuthi/nghean/nan12.jpg", objectPosition: "center 10%" },
+      { id: "NAN12", img: "/images/hethongsieuthi/nghean/nan12.jpg", objectPosition: "center 10%", scale: 1.0 },
       { id: "NAN13", img: "/images/hethongsieuthi/nghean/nan13.jpg", scale: "scale-[1.0]" },
       { id: "NAN14", img: "/images/hethongsieuthi/nghean/nan14.jpg" },
     ]
@@ -865,11 +852,11 @@ export const provinces: Province[] = [
     map: "/images/provinces/ha_tinh_thumb.png",
     mapWithText: "/images/provinces/ha_tinh_thumb_chu.png",
     stores: [
-      { id: "HTH01", img: "/images/hethongsieuthi/hatinh/hth01.jpg" },
-      { id: "HTH02", img: "/images/hethongsieuthi/hatinh/hth02.jpg", objectPosition: "center 60%" },
+      { id: "HTH01", img: "/images/hethongsieuthi/hatinh/hth01.jpg", translateX: "-5%" },
+      { id: "HTH02", img: "/images/hethongsieuthi/hatinh/hth02.jpg", objectPosition: "center 60%", translateX: "-5%" },
       { id: "HTH03", img: "/images/hethongsieuthi/hatinh/hth03.jpg" },
       { id: "HTH04", img: "/images/hethongsieuthi/hatinh/hth04.jpg", objectPosition: "center 60%" },
-      { id: "HTH05", img: "/images/hethongsieuthi/hatinh/hth05.jpg", objectPosition: "center 20%" },
+      { id: "HTH05", img: "/images/hethongsieuthi/hatinh/hth05.jpg", objectPosition: "center 20%", scale: 1.0 },
       { id: "HTH06", img: "/images/hethongsieuthi/hatinh/hth06.jpg" },
     ]
   },
@@ -894,27 +881,27 @@ export const provinces: Province[] = [
     map: "/images/provinces/hue.png",
     mapWithText: "/images/provinces/hue_chu.png",
     stores: [
-      { id: "HUE01", img: "/images/hethongsieuthi/hue/hue01.jpg" },
-      { id: "HUE02", img: "/images/hethongsieuthi/hue/hue02.jpg", objectPosition: "center 25%" },
-      { id: "HUE03", img: "/images/hethongsieuthi/hue/hue03.jpg" },
-      { id: "HUE-CH01", img: "/images/hethongsieuthi/hue/hue-ch01.jpg", objectPosition: "center 45%" },
+      { id: "HUE01", img: "/images/hethongsieuthi/hue/hue01.jpg", scale: 1.0 },
+      { id: "HUE02", img: "/images/hethongsieuthi/hue/hue02.jpg", objectPosition: "center 25%", scale: 1.0 },
+      { id: "HUE03", img: "/images/hethongsieuthi/hue/hue03.jpg", scale: 1.0 },
+      { id: "HUE-CH01", img: "/images/hethongsieuthi/hue/hue-ch01.jpg", objectPosition: "center 45%", scale: 1.0 },
     ]
   },
   {
     name: "TP. ĐÀ NẴNG",
-    map: "/images/provinces/da_nang.png",
+    map: "/images/danang_text4.png",
     mapWithText: "/images/danang_text3.png",
     stores: [
       { id: "DNG01", img: "/images/hethongsieuthi/danang/dng01.jpg", objectPosition: "center 60%" },
-      { id: "DNG02", img: "/images/hethongsieuthi/danang/dng02.jpg", objectPosition: "center 10%" },
+      { id: "DNG02", img: "/images/hethongsieuthi/danang/dng02.jpg", objectPosition: "center 10%", scale: 1.0 },
       { id: "DNG03", img: "/images/hethongsieuthi/danang/dng03.jpg" },
-      { id: "DNG04", img: "/images/hethongsieuthi/danang/dng04.jpg", objectPosition: "center 60%" },
-      { id: "DNG05", img: "/images/hethongsieuthi/danang/dng05.jpg", objectPosition: "center 40%" },
-      { id: "DNG06", img: "/images/hethongsieuthi/danang/dng06.jpg", objectPosition: "center 60%" },
+      { id: "DNG04", img: "/images/hethongsieuthi/danang/dng04.jpg", objectPosition: "center 60%", scale: 1.0 },
+      { id: "DNG05", img: "/images/hethongsieuthi/danang/dng05.jpg", objectPosition: "center 40%", translateX: "0%", scale: 1.0 },
+      { id: "DNG06", img: "/images/hethongsieuthi/danang/dng06.jpg", objectPosition: "center 60%", translateX: "5%" },
       { id: "DNG07", img: "/images/hethongsieuthi/danang/dng07.jpg" },
       { id: "DNG08", img: "/images/hethongsieuthi/danang/dng08.jpg", objectPosition: "center 80%" },
       { id: "DNG09", img: "/images/hethongsieuthi/danang/DNG09.jpg" },
-      { id: "DNG10", img: "/images/hethongsieuthi/danang/dng10.jpg", objectPosition: "center 60%" },
+      { id: "DNG10", img: "/images/hethongsieuthi/danang/dng10.jpg", objectPosition: "center 60%", scale: 1.0 },
       { id: "DNG11", img: "/images/hethongsieuthi/danang/dng11.jpg" },
       { id: "DNG-CH01", img: "/images/hethongsieuthi/danang/dng-ch01.jpg", objectPosition: "center 70%" },
       { id: "DNG-CH02", img: "/images/hethongsieuthi/danang/dng-ch02.jpg" },
@@ -946,7 +933,7 @@ export const provinces: Province[] = [
       { id: "GLI04", img: "/images/hethongsieuthi/gialai/gli04.jpg", objectPosition: "center 60%" },
       { id: "GLI05", img: "/images/hethongsieuthi/gialai/GLI05.jpg" },
       { id: "GLI06", img: "/images/hethongsieuthi/gialai/gli06.jpg" },
-      { id: "GLI-CH01", img: "/images/hethongsieuthi/gialai/gli-ch01.jpg", objectPosition: "center 20%" },
+      { id: "GLI-CH01", img: "/images/hethongsieuthi/gialai/gli-ch01.jpg", objectPosition: "center 20%", scale: 1.0 },
     ]
   },
   {
@@ -957,25 +944,25 @@ export const provinces: Province[] = [
       { id: "DLK01", img: "/images/hethongsieuthi/daklak/dlk01.png", objectPosition: "center 40%" },
       { id: "DLK02", img: "/images/hethongsieuthi/daklak/dlk02.jpg", objectPosition: "center 60%", translateX: "10%" },
       { id: "DLK03", img: "/images/hethongsieuthi/daklak/dlk03.jpg", objectPosition: "center 70%" },
-      { id: "DLK04", img: "/images/hethongsieuthi/daklak/DLK04.jpg" },
-      { id: "DLK05", img: "/images/hethongsieuthi/daklak/dlk05.jpg" },
+      { id: "DLK04", img: "/images/hethongsieuthi/daklak/DLK04.jpg", translateX: "-5%" },
+      { id: "DLK05", img: "/images/hethongsieuthi/daklak/dlk05.jpg", translateX: "5%" },
       { id: "DLK06", img: "/images/hethongsieuthi/daklak/DLK06.jpg", objectPosition: "center 80%" },
-      { id: "DLK07", img: "/images/hethongsieuthi/daklak/dlk07.JPG" },
+      { id: "DLK07", img: "/images/hethongsieuthi/daklak/dlk07.JPG", translateX: "-5%" },
       { id: "DLK09", img: "/images/hethongsieuthi/daklak/dlk09.jpg", objectPosition: "center 60%" },
       { id: "DLK-CH01", img: "/images/hethongsieuthi/daklak/DLK-CH01.jpg", objectPosition: "center 30%" },
     ]
   },
   {
     name: "KHÁNH HOÀ",
-    map: "/images/provinces/khanh_hoa_thumb.png",
+    map: "/images/khanhhoa_text4.png",
     mapWithText: "/images/khanhhoa_text3.png",
     stores: [
       { id: "KHA01", img: "/images/hethongsieuthi/khanhhoa/kha01.jpg" },
       { id: "KHA02", img: "/images/hethongsieuthi/khanhhoa/kha02.jpg", scale: 1.0 },
-      { id: "KHA03", img: "/images/hethongsieuthi/khanhhoa/KHA03.jpg", objectPosition: "center 80%" },
-      { id: "KHA04", img: "/images/hethongsieuthi/khanhhoa/kha04.jpg" },
-      { id: "KHA05", img: "/images/hethongsieuthi/khanhhoa/KHA05.jpg", objectPosition: "center 40%" },
-      { id: "KHA06", img: "/images/hethongsieuthi/khanhhoa/KHA06.jpg" },
+      { id: "KHA03", img: "/images/hethongsieuthi/khanhhoa/KHA03.jpg", objectPosition: "center 80%", translateX: "10%" },
+      { id: "KHA04", img: "/images/hethongsieuthi/khanhhoa/kha04.jpg", scale: 1.0 },
+      { id: "KHA05", img: "/images/hethongsieuthi/khanhhoa/KHA05.jpg", objectPosition: "center 40%", scale: 1.0 },
+      { id: "KHA06", img: "/images/hethongsieuthi/khanhhoa/KHA06.jpg", scale: 1.0 },
     ]
   },
   {
@@ -984,13 +971,13 @@ export const provinces: Province[] = [
     mapWithText: "/images/provinces/lam_dong_thumb_chu.png",
     stores: [
       { id: "LDG01", img: "/images/hethongsieuthi/lamdong/ldg01.jpg", objectPosition: "center 60%" },
-      { id: "LDG02", img: "/images/hethongsieuthi/lamdong/LDG02.jpg", objectPosition: "center 40%" },
+      { id: "LDG02", img: "/images/hethongsieuthi/lamdong/LDG02.jpg", objectPosition: "center 40%", translateX: "-5%" },
       { id: "LDG03", img: "/images/hethongsieuthi/lamdong/ldg03.jpg" },
       { id: "LDG04", img: "/images/hethongsieuthi/lamdong/LDG04.jpg", objectPosition: "center 30%" },
-      { id: "LDG05", img: "/images/hethongsieuthi/lamdong/ldg05.jpg", objectPosition: "center 30%" },
-      { id: "LDG06", img: "/images/hethongsieuthi/lamdong/LDG06.jpg", objectPosition: "center 20%" },
-      { id: "LDG07", img: "/images/hethongsieuthi/lamdong/LDG07.jpg" },
-      { id: "LDG08", img: "/images/hethongsieuthi/lamdong/LDG08.jpg" },
+      { id: "LDG05", img: "/images/hethongsieuthi/lamdong/ldg05.jpg", objectPosition: "center 30%", scale: 1.0 },
+      { id: "LDG06", img: "/images/hethongsieuthi/lamdong/LDG06.jpg", objectPosition: "center 20%", scale: 1.0 },
+      { id: "LDG07", img: "/images/hethongsieuthi/lamdong/LDG07.jpg", scale: 1.0 },
+      { id: "LDG08", img: "/images/hethongsieuthi/lamdong/LDG08.jpg", scale: 1.0 },
       { id: "LDG09", img: "/images/hethongsieuthi/lamdong/LDG09.jpg", objectPosition: "center 70%" },
       { id: "LDG-CH01", img: "/images/hethongsieuthi/lamdong/ldg-ch01.jpg", objectPosition: "center 30%" },
     ]
@@ -1002,18 +989,18 @@ export const provinces: Province[] = [
     stores: [
       { id: "DNI01", img: "/images/hethongsieuthi/dongnai/dni01.JPG" },
       { id: "DNI02", img: "/images/hethongsieuthi/dongnai/dni02.jpg", objectPosition: "center 60%" },
-      { id: "DNI03", img: "/images/hethongsieuthi/dongnai/dni03.jpg", objectPosition: "center 40%" },
-      { id: "DNI04", img: "/images/hethongsieuthi/dongnai/dni04.jpg", objectPosition: "center 20%" },
+      { id: "DNI03", img: "/images/hethongsieuthi/dongnai/dni03.jpg", objectPosition: "center 40%", scale: 1.0 },
+      { id: "DNI04", img: "/images/hethongsieuthi/dongnai/dni04.jpg", objectPosition: "center 20%", scale: 1.0 },
       { id: "DNI05", img: "/images/hethongsieuthi/dongnai/dni05.jpg", objectPosition: "center 20%" },
       { id: "DNI06", img: "/images/hethongsieuthi/dongnai/dni06.png", objectPosition: "center 20%", scale: 1.0 },
-      { id: "DNI07", img: "/images/hethongsieuthi/dongnai/dni07.png" },
+      { id: "DNI07", img: "/images/hethongsieuthi/dongnai/dni07.png", scale: 1.0 },
       { id: "DNI08", img: "/images/hethongsieuthi/dongnai/dni08.jpeg", objectPosition: "center 80%", scale: 1.2, translateX: "-5%" },
-      { id: "DNI09", img: "/images/hethongsieuthi/dongnai/dni09.jpg" },
+      { id: "DNI09", img: "/images/hethongsieuthi/dongnai/dni09.jpg", scale: 1.0 },
       { id: "DNI10", img: "/images/hethongsieuthi/dongnai/dni10.jpg" },
-      { id: "DNI11", img: "/images/hethongsieuthi/dongnai/dni11.jpg", objectPosition: "center 10%" },
+      { id: "DNI11", img: "/images/hethongsieuthi/dongnai/dni11.jpg", objectPosition: "center 10%", scale: 1.0 },
       { id: "DNI12", img: "/images/hethongsieuthi/dongnai/dni12.jpg", objectPosition: "center 80%" },
       { id: "DNI13", img: "/images/hethongsieuthi/dongnai/dni13.jpg" },
-      { id: "DNI14", img: "/images/hethongsieuthi/dongnai/dni14.jpg", objectPosition: "center 20%" },
+      { id: "DNI14", img: "/images/hethongsieuthi/dongnai/dni14.jpg", objectPosition: "center 20%", scale: 1.0 },
       { id: "DNI15", img: "/images/hethongsieuthi/dongnai/dni15.jpg", objectPosition: "center 20%" },
       { id: "DNI16", img: "/images/hethongsieuthi/dongnai/dni16.jpg" },
       { id: "DNI18", img: "/images/hethongsieuthi/dongnai/dni18.jpg" },
@@ -1026,13 +1013,13 @@ export const provinces: Province[] = [
     mapWithText: "/images/provinces/tay_ninh_thumb_chu.png",
     stores: [
       { id: "TNH01", img: "/images/hethongsieuthi/tayninh/tnh01.jpg", objectPosition: "center 60%" },
-      { id: "TNH02", img: "/images/hethongsieuthi/tayninh/tnh02.jpg", objectPosition: "center 40%" },
+      { id: "TNH02", img: "/images/hethongsieuthi/tayninh/tnh02.jpg", objectPosition: "center 40%", scale: 1.0 },
       { id: "TNH03", img: "/images/hethongsieuthi/tayninh/tnh03.jpg", objectPosition: "center 10%" },
       { id: "TNH04", img: "/images/hethongsieuthi/tayninh/tnh04.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "TNH05", img: "/images/hethongsieuthi/tayninh/tnh05.jpg", objectPosition: "center 5%" },
       { id: "TNH06", img: "/images/hethongsieuthi/tayninh/tnh06.jpg" },
-      { id: "TNH07", img: "/images/hethongsieuthi/tayninh/tnh07.jpg", objectPosition: "center 40%" },
-      { id: "TNH08", img: "/images/hethongsieuthi/tayninh/tnh08.jpg", objectPosition: "center 30%" },
+      { id: "TNH07", img: "/images/hethongsieuthi/tayninh/tnh07.jpg", objectPosition: "center 40%", scale: 1.0, translateX: "0%" },
+      { id: "TNH08", img: "/images/hethongsieuthi/tayninh/tnh08.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "TNH09", img: "/images/hethongsieuthi/tayninh/tnh09.jpg" },
     ]
   },
@@ -1047,49 +1034,49 @@ export const provinces: Province[] = [
       { id: "HCM04", img: "/images/hethongsieuthi/hcm/hcm04.jpg" },
       { id: "HCM05", img: "/images/hethongsieuthi/hcm/HCM05.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "HCM06", img: "/images/hethongsieuthi/hcm/hcm06.jpg", objectPosition: "center 70%" },
-      { id: "HCM07", img: "/images/hethongsieuthi/hcm/hcm07.jpg" },
+      { id: "HCM07", img: "/images/hethongsieuthi/hcm/hcm07.jpg", scale: 1.0 },
       { id: "HCM08", img: "/images/hethongsieuthi/hcm/hcm08.jpg", objectPosition: "center 40%" },
       { id: "HCM09", img: "/images/hethongsieuthi/hcm/HCM09.jpg", objectPosition: "center 60%" },
       { id: "HCM10", img: "/images/hethongsieuthi/hcm/hcm10.jpg", objectPosition: "center 30%", scale: 1.0 },
-      { id: "HCM11", img: "/images/hethongsieuthi/hcm/hcm11.jpg", objectPosition: "center 40%" },
+      { id: "HCM11", img: "/images/hethongsieuthi/hcm/hcm11.jpg", objectPosition: "center 40%", translateX: "-5%" },
       { id: "HCM12", img: "/images/hethongsieuthi/hcm/hcm12.jpg" },
-      { id: "HCM13", img: "/images/hethongsieuthi/hcm/hcm13.jpg" },
-      { id: "HCM15", img: "/images/hethongsieuthi/hcm/HCM15.jpg" },
-      { id: "HCM16", img: "/images/hethongsieuthi/hcm/hcm16.jpg" },
-      { id: "HCM18", img: "/images/hethongsieuthi/hcm/hcm18.jpg" },
+      { id: "HCM13", img: "/images/hethongsieuthi/hcm/hcm13.jpg", scale: 1.0 },
+      { id: "HCM15", img: "/images/hethongsieuthi/hcm/HCM15.jpg", scale: 1.0 },
+      { id: "HCM16", img: "/images/hethongsieuthi/hcm/hcm16.jpg", scale: 1.0 },
+      { id: "HCM18", img: "/images/hethongsieuthi/hcm/hcm18.jpg", scale: 1.0 },
       { id: "HCM19", img: "/images/hethongsieuthi/hcm/hcm19.jpg" },
       { id: "HCM20", img: "/images/hethongsieuthi/hcm/hcm20.jpg" },
       { id: "HCM21", img: "/images/hethongsieuthi/hcm/hcm21.jpg" },
       { id: "HCM22", img: "/images/hethongsieuthi/hcm/hcm22.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "HCM23", img: "/images/hethongsieuthi/hcm/hcm23.jpg" },
-      { id: "HCM24", img: "/images/hethongsieuthi/hcm/hcm24.jpg" },
+      { id: "HCM24", img: "/images/hethongsieuthi/hcm/hcm24.jpg", scale: 1.0 },
       { id: "HCM25", img: "/images/hethongsieuthi/hcm/hcm25.jpg" },
       { id: "HCM26", img: "/images/hethongsieuthi/hcm/hcm26.jpg" },
       { id: "HCM27", img: "/images/hethongsieuthi/hcm/hcm27.jpg" },
       { id: "HCM28", img: "/images/hethongsieuthi/hcm/hcm28.jpeg" },
       { id: "HCM29", img: "/images/hethongsieuthi/hcm/hcm29.jpg" },
-      { id: "HCM30", img: "/images/hethongsieuthi/hcm/hcm30.jpg" },
-      { id: "HCM31", img: "/images/hethongsieuthi/hcm/hcm31.jpg" },
+      { id: "HCM30", img: "/images/hethongsieuthi/hcm/hcm30.jpg", scale: 1.0 },
+      { id: "HCM31", img: "/images/hethongsieuthi/hcm/hcm31.jpg", scale: 1.0 },
       { id: "HCM32", img: "/images/hethongsieuthi/hcm/hcm32.jpg" },
       { id: "HCM33", img: "/images/hethongsieuthi/hcm/hcm33.jpg" },
-      { id: "HCM34", img: "/images/hethongsieuthi/hcm/hcm34.jpg", objectPosition: "center 30%" },
-      { id: "HCM35", img: "/images/hethongsieuthi/hcm/hcm35.JPG" },
-      { id: "HCM36", img: "/images/hethongsieuthi/hcm/hcm36.jpg" },
-      { id: "HCM37", img: "/images/hethongsieuthi/hcm/hcm37.jpg", objectPosition: "center 50%" },
+      { id: "HCM34", img: "/images/hethongsieuthi/hcm/hcm34.jpg", objectPosition: "center 30%", scale: 1.0 },
+      { id: "HCM35", img: "/images/hethongsieuthi/hcm/hcm35.JPG", scale: 1.0 },
+      { id: "HCM36", img: "/images/hethongsieuthi/hcm/hcm36.jpg", scale: 1.0 },
+      { id: "HCM37", img: "/images/hethongsieuthi/hcm/hcm37.jpg", objectPosition: "center 50%", scale: 1.0 },
       { id: "HCM38", img: "/images/hethongsieuthi/hcm/hcm38.jpg" },
-      { id: "HCM39", img: "/images/hethongsieuthi/hcm/HCM39.jpg" },
-      { id: "HCM40", img: "/images/hethongsieuthi/hcm/hcm40.jpg" },
+      { id: "HCM39", img: "/images/hethongsieuthi/hcm/HCM39.jpg", scale: 1.0 },
+      { id: "HCM40", img: "/images/hethongsieuthi/hcm/hcm40.jpg", scale: 1.0 },
       { id: "HCM41", img: "/images/hethongsieuthi/hcm/hcm41.jpg" },
-      { id: "HCM42", img: "/images/hethongsieuthi/hcm/HCM42.jpg" },
-      { id: "HCM43", img: "/images/hethongsieuthi/hcm/hcm43.jpg", objectPosition: "center 60%" },
+      { id: "HCM42", img: "/images/hethongsieuthi/hcm/HCM42.jpg", objectPosition: "center 80%" },
+      { id: "HCM43", img: "/images/hethongsieuthi/hcm/hcm43.jpg", objectPosition: "center 60%", scale: 1.0 },
       { id: "HCM44", img: "/images/hethongsieuthi/hcm/hcm44.jpg" },
       { id: "HCM45", img: "/images/hethongsieuthi/hcm/HCM45.jpg", scale: 1.0 },
-      { id: "HCM46", img: "/images/hethongsieuthi/hcm/hcm46.jpg", objectPosition: "center 70%" },
-      { id: "HCM47", img: "/images/hethongsieuthi/hcm/hcm47.jpg" },
+      { id: "HCM46", img: "/images/hethongsieuthi/hcm/hcm46.jpg", objectPosition: "center 70%", scale: 1.0 },
+      { id: "HCM47", img: "/images/hethongsieuthi/hcm/hcm47.jpg", scale: 1.0 },
       { id: "HCM48", img: "/images/hethongsieuthi/hcm/hcm48.jpg" },
-      { id: "HCM49", img: "/images/hethongsieuthi/hcm/hcm49.jpg" },
-      { id: "HCM50", img: "/images/hethongsieuthi/hcm/HCM50.jpeg", objectPosition: "center 30%" },
-      { id: "HCM51", img: "/images/hethongsieuthi/hcm/HCM51.jpg", scale: 1.0 },
+      { id: "HCM49", img: "/images/hethongsieuthi/hcm/hcm49.jpg", scale: 1.0 },
+      { id: "HCM50", img: "/images/hethongsieuthi/hcm/HCM50.jpeg", objectPosition: "center 30%", scale: 1.0 },
+      { id: "HCM51", img: "/images/hethongsieuthi/hcm/HCM51.jpg", scale: 1.0, translateX: "0%" },
       { id: "HCM53", img: "/images/hethongsieuthi/hcm/hcm53.jpg" },
       { id: "HCM-CH01", img: "/images/hethongsieuthi/hcm/hcm-ch01.jpg" },
       { id: "HCM-CH02", img: "/images/hethongsieuthi/hcm/hcm-ch02.jpg" },
@@ -1100,7 +1087,7 @@ export const provinces: Province[] = [
       { id: "HCM-CH09", img: "/images/hethongsieuthi/hcm/hcm-ch09.jpg", objectPosition: "center 40%" },
       { id: "HCM-CH10", img: "/images/hethongsieuthi/hcm/hcm-ch10.jpg" },
       { id: "HCM-CH11", img: "/images/hethongsieuthi/hcm/hcm-ch11.jpg" },
-      { id: "HCM-CH12", img: "/images/hethongsieuthi/hcm/hcm-ch12.jpg", objectPosition: "center 40%" },
+      { id: "HCM-CH12", img: "/images/hethongsieuthi/hcm/hcm-ch12.jpg", objectPosition: "center 40%", scale: 1.0 },
       { id: "HCM-CH14", img: "/images/hethongsieuthi/hcm/hcm-ch14.jpg", objectPosition: "center 40%" },
       { id: "HCM-CH15", img: "/images/hethongsieuthi/hcm/hcm-ch15.jpg", objectPosition: "center 30%" },
       { id: "HCM-CH16", img: "/images/hethongsieuthi/hcm/hcm-ch16.jpg", objectPosition: "center 40%" },
@@ -1117,12 +1104,12 @@ export const provinces: Province[] = [
     mapWithText: "/images/provinces/dong_thap_thumb_chu.png",
     stores: [
       { id: "DTP01", img: "/images/hethongsieuthi/dongthap/dtp01.jpg", translateX: "5%" },
-      { id: "DTP02", img: "/images/hethongsieuthi/dongthap/dtp02.jpg" },
+      { id: "DTP02", img: "/images/hethongsieuthi/dongthap/dtp02.jpg", scale: 1.0 },
       { id: "DTP03", img: "/images/hethongsieuthi/dongthap/dtp03.jpg" },
       { id: "DTP04", img: "/images/hethongsieuthi/dongthap/dtp04.jpg" },
       { id: "DTP05", img: "/images/hethongsieuthi/dongthap/dtp05.jpg" },
-      { id: "DTP06", img: "/images/hethongsieuthi/dongthap/dtp06.jpg", objectPosition: "center 30%" },
-      { id: "DTP07", img: "/images/hethongsieuthi/dongthap/dtp07.jpg", objectPosition: "center 30%" },
+      { id: "DTP06", img: "/images/hethongsieuthi/dongthap/dtp06.jpg", objectPosition: "center 30%", scale: 1.0 },
+      { id: "DTP07", img: "/images/hethongsieuthi/dongthap/dtp07.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "DTP09", img: "/images/hethongsieuthi/dongthap/dtp09.jpg" },
       { id: "DTP-CH01", img: "/images/hethongsieuthi/dongthap/dtp-ch01.jpg" },
     ]
@@ -1132,12 +1119,12 @@ export const provinces: Province[] = [
     map: "/images/provinces/an_giang.png",
     mapWithText: "/images/provinces/an_giang_chu.png",
     stores: [
-      { id: "AGG01", img: "/images/hethongsieuthi/angiang/sthi_agg01.jpg" },
-      { id: "AGG02", img: "/images/hethongsieuthi/angiang/sthi_agg02.jpg" },
+      { id: "AGG01", img: "/images/hethongsieuthi/angiang/sthi_agg01.jpg", scale: 1.0 },
+      { id: "AGG02", img: "/images/hethongsieuthi/angiang/sthi_agg02.jpg", scale: 1.0 },
       { id: "AGG03", img: "/images/hethongsieuthi/angiang/sthi_agg03.jpg" },
       { id: "AGG04", img: "/images/hethongsieuthi/angiang/sthi_agg04.jpg" },
       { id: "AGG05", img: "/images/hethongsieuthi/angiang/sthi_agg05.jpg" },
-      { id: "AGG06", img: "/images/hethongsieuthi/angiang/sthi_agg06.jpg", objectPosition: "center 30%" },
+      { id: "AGG06", img: "/images/hethongsieuthi/angiang/sthi_agg06.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "AGG07", img: "/images/hethongsieuthi/angiang/sthi_agg07.jpg" },
       { id: "AGG-CH01", img: "/images/hethongsieuthi/angiang/agg_ch01.jpg", objectPosition: "center 30%" },
       { id: "AGG-CH03", img: "/images/hethongsieuthi/angiang/agg_ch03.jpg" },
@@ -1148,14 +1135,14 @@ export const provinces: Province[] = [
     map: "/images/provinces/vinh_long_thumb.png",
     mapWithText: "/images/provinces/vinh_long_thumb_chu.png",
     stores: [
-      { id: "VLG01", img: "/images/hethongsieuthi/vinhlong/vlg01.jpg" },
-      { id: "VLG02", img: "/images/hethongsieuthi/vinhlong/vlg02.jpg", objectPosition: "center 40%" },
+      { id: "VLG01", img: "/images/hethongsieuthi/vinhlong/vlg01.jpg", translateX: "-5%" },
+      { id: "VLG02", img: "/images/hethongsieuthi/vinhlong/vlg02.jpg", objectPosition: "center 40%", scale: 1.0 },
       { id: "VLG03", img: "/images/hethongsieuthi/vinhlong/vlg03.jpg" },
       { id: "VLG04", img: "/images/hethongsieuthi/vinhlong/vlg04.jpg" },
-      { id: "VLG05", img: "/images/hethongsieuthi/vinhlong/vlg05.jpg", objectPosition: "center 35%" },
+      { id: "VLG05", img: "/images/hethongsieuthi/vinhlong/vlg05.jpg", objectPosition: "center 35%", scale: 1.0 },
       { id: "VLG06", img: "/images/hethongsieuthi/vinhlong/vlg06.JPG" },
       { id: "VLG07", img: "/images/hethongsieuthi/vinhlong/vlg07.jpg" },
-      { id: "VLG08", img: "/images/hethongsieuthi/vinhlong/vlg08.jpg" },
+      { id: "VLG08", img: "/images/hethongsieuthi/vinhlong/vlg08.jpg", scale: 1.1 },
       { id: "VLG-CH01", img: "/images/hethongsieuthi/vinhlong/ch-vlg01.jpg" },
     ]
   },
@@ -1164,15 +1151,15 @@ export const provinces: Province[] = [
     map: "/images/provinces/can_tho.png",
     mapWithText: "/images/provinces/can_tho_chu.png",
     stores: [
-      { id: "CTO01", img: "/images/hethongsieuthi/cto/cto01.jpg" },
-      { id: "CTO02", img: "/images/hethongsieuthi/cto/cto02.jpg" },
-      { id: "CTO03", img: "/images/hethongsieuthi/cto/cto03.jpg", objectPosition: "center 40%" },
+      { id: "CTO01", img: "/images/hethongsieuthi/cto/cto01.jpg", translateX: "-5%" },
+      { id: "CTO02", img: "/images/hethongsieuthi/cto/cto02.jpg", translateX: "10%" },
+      { id: "CTO03", img: "/images/hethongsieuthi/cto/cto03.jpg", objectPosition: "center 40%", scale: 1.1 },
       { id: "CTO04", img: "/images/hethongsieuthi/cto/cto04.jpg", objectPosition: "center 60%" },
-      { id: "CTO05", img: "/images/hethongsieuthi/cto/cto05.jpg" },
+      { id: "CTO05", img: "/images/hethongsieuthi/cto/cto05.jpg", scale: 1.0 },
       { id: "CTO06", img: "/images/hethongsieuthi/cto/CTO06..jpg" },
       { id: "CTO07", img: "/images/hethongsieuthi/cto/cto07.jpg" },
-      { id: "CTO08", img: "/images/hethongsieuthi/cto/cto08.jpg" },
-      { id: "CTO09", img: "/images/hethongsieuthi/cto/cto09.jpg" },
+      { id: "CTO08", img: "/images/hethongsieuthi/cto/cto08.jpg", scale: 0.9 },
+      { id: "CTO09", img: "/images/hethongsieuthi/cto/cto09.jpg", translateX: "-5%" },
       { id: "CTO-CH01", img: "/images/hethongsieuthi/cto/ch-cto01.jpg", objectPosition: "center 40%" },
     ]
   },
@@ -1183,7 +1170,7 @@ export const provinces: Province[] = [
     stores: [
       { id: "CMU01", img: "/images/hethongsieuthi/camau/cmu01.jpg" },
       { id: "CMU02", img: "/images/hethongsieuthi/camau/cmu02.jpg", objectPosition: "center 20%", scale: 1.0 },
-      { id: "CMU03", img: "/images/hethongsieuthi/camau/cmu03.jpg", objectPosition: "center 20%" },
+      { id: "CMU03", img: "/images/hethongsieuthi/camau/cmu03.jpg", objectPosition: "center 20%", translateX: "-10%" },
       { id: "CMU04", img: "/images/hethongsieuthi/camau/cmu04.JPEG", objectPosition: "center 40%", scale: 1.0 },
       { id: "CMU05", img: "/images/hethongsieuthi/camau/cmu05.jpg" },
     ]

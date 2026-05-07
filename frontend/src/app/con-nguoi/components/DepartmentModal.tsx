@@ -40,7 +40,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
         <button onClick={onClose} className="sticky top-0 self-end text-white/50 hover:text-white z-[60] p-2 hover:bg-white/10 rounded-full cursor-pointer transition-all mb-0">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
         </button>
-        <h2 className="relative z-50 font-beausans font-black text-xl md:text-4xl uppercase mb-6 md:mb-10 tracking-wider text-center px-4" style={{ color: '#FFFFFF' }}>
+        <h2 className="relative z-50 font-beausans font-black text-xl md:text-4xl uppercase mb-6 md:mb-10 tracking-tight text-center px-4" style={{ color: '#FFFFFF' }}>
           {dept.name}
         </h2>
 
@@ -76,8 +76,8 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                           </div>
                           {!hideComradeLabel && (
                             <div className="mt-4 text-center">
-                              <h4 className="text-white font-bold text-lg uppercase">Đồng chí {dept.details.leader.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
-                              <p className="text-gray-300 text-sm font-medium">{dept.details.leader.role}</p>
+                              <h4 className="text-white font-bold text-lg">Đồng chí <br /> {dept.details.leader.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
+                              <p className="text-gray-300 text-sm font-medium whitespace-nowrap">{dept.details.leader.role}</p>
                             </div>
                           )}
                         </div>
@@ -126,8 +126,8 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                         </div>
                         {!hideComradeLabel && item.name && (
                           <div className="mt-4 text-center">
-                            <h4 className="text-white font-bold text-lg uppercase">Đồng chí {item.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
-                            <p className="text-gray-300 text-sm font-medium">{item.role}</p>
+                            <h4 className="text-white font-bold text-lg">Đồng chí <br /> {item.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
+                            <p className="text-gray-300 text-sm font-medium whitespace-nowrap">{item.role}</p>
                           </div>
                         )}
                       </div>
@@ -151,10 +151,10 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                     </div>
                   ) : dept.details.useCollageStaggered4 && dept.details.mainItems ? (
                     <div className="flex gap-8 w-full h-[min(620px,68vh)] max-w-[1200px] mx-auto">
-                      <div className="relative flex-[1.4] rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl group">
+                      <div className="relative flex-[1.8] rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl group">
                         <Image quality={75} src={encodeURI(dept.details.mainItems[0].img)} fill sizes="800px" className="transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[0].objectPosition || 'center', objectFit: dept.details.mainItems[0].objectFit || 'cover', transform: `scale(${dept.details.mainItems[0].scale || 1}) scaleX(${dept.details.mainItems[0].scaleX || 1})` }} alt="" />
                       </div>
-                      <div className="flex-[1.6] flex flex-col gap-8">
+                      <div className="flex-[1.2] flex flex-col gap-8">
                         <div className="flex-[0.4] flex gap-8">
                           <div className="relative flex-[0.8] rounded-[2.5rem] overflow-hidden border-2 border-white/10 shadow-xl group">
                             <Image quality={75} src={encodeURI(dept.details.mainItems[1].img)} fill sizes="400px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[1].objectPosition || 'center', transform: dept.details.mainItems[1].scale ? `scale(${dept.details.mainItems[1].scale})` : 'none' }} alt="" />
@@ -169,42 +169,42 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       </div>
                     </div>
                   ) : dept.details.useStaggeredOnMain && dept.details.mainItems ? (
-                    <div className="w-full space-y-4">
-                      <div className="flex gap-4 h-[min(300px,32vh)]">
+                    <div className="w-full space-y-2">
+                      <div className="flex gap-2 h-[min(300px,32vh)]">
                         <div className="relative flex-[1.6] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[0].img)} fill sizes="800px" className="object-cover" alt="" />
+                          <Image quality={75} src={encodeURI(dept.details.mainItems[0].img)} fill sizes="800px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[0].objectPosition || 'center', transform: dept.details.mainItems[0].scale ? `scale(${dept.details.mainItems[0].scale})` : 'none' }} alt="" />
                         </div>
                         <div className="relative flex-[0.8] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[1].img)} fill sizes="400px" className="object-cover" alt="" />
+                          <Image quality={75} src={encodeURI(dept.details.mainItems[1].img)} fill sizes="400px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[1].objectPosition || 'center', transform: dept.details.mainItems[1].scale ? `scale(${dept.details.mainItems[1].scale})` : 'none' }} alt="" />
                         </div>
                         <div className="relative flex-[1.2] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[2].img)} fill sizes="600px" className="object-cover" alt="" />
+                          <Image quality={75} src={encodeURI(dept.details.mainItems[2].img)} fill sizes="600px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[2].objectPosition || 'center', transform: dept.details.mainItems[2].scale ? `scale(${dept.details.mainItems[2].scale})` : 'none' }} alt="" />
                         </div>
                       </div>
-                      <div className="flex gap-4 h-[min(300px,32vh)]">
+                      <div className="flex gap-2 h-[min(300px,32vh)]">
                         <div className="relative flex-[1] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[3].img)} fill sizes="500px" className="object-cover" alt="" />
+                          <Image quality={75} src={encodeURI(dept.details.mainItems[3].img)} fill sizes="500px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[3].objectPosition || 'center', transform: dept.details.mainItems[3].scale ? `scale(${dept.details.mainItems[3].scale})` : 'none' }} alt="" />
                         </div>
                         <div className="relative flex-[1.4] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[4].img)} fill sizes="700px" className="object-cover" alt="" />
+                          <Image quality={75} src={encodeURI(dept.details.mainItems[4].img)} fill sizes="700px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[4].objectPosition || 'center', transform: dept.details.mainItems[4].scale ? `scale(${dept.details.mainItems[4].scale})` : 'none' }} alt="" />
                         </div>
                         <div className="relative flex-[1.4] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[5].img)} fill sizes="700px" className="object-cover" alt="" />
+                          <Image quality={75} src={encodeURI(dept.details.mainItems[5].img)} fill sizes="700px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[5].objectPosition || 'center', transform: dept.details.mainItems[5].scale ? `scale(${dept.details.mainItems[5].scale})` : 'none' }} alt="" />
                         </div>
                       </div>
                     </div>
                   ) : (
-                    <div className="w-full flex flex-row items-start justify-center gap-6 lg:gap-12 px-4">
+                    <div className="w-full flex flex-row items-stretch justify-center gap-6 lg:gap-12 px-4">
                       {/* Left Column: Leader */}
                       {dept.details.leader && (
-                        <div className="w-[300px] xl:w-[350px] shrink-0 flex flex-col items-center group">
+                        <div className="w-[300px] xl:w-[350px] shrink-0 flex flex-col justify-between group">
                           <div className="relative w-full h-[min(450px,50vh)] xl:h-[min(550px,60vh)] rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-2xl">
                             <Image quality={75} src={encodeURI(dept.details.leader.img)} fill sizes="350px" className="object-cover" style={{ objectPosition: dept.details.leader.objectPosition || 'center' }} alt="leader" />
                           </div>
                           {!hideComradeLabel && (
                             <div className="mt-6 text-center">
-                              <h4 className="text-white font-bold text-xl uppercase tracking-wide">Đồng chí {dept.details.leader.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
-                              <p className="mt-2 text-gray-200 text-lg font-medium opacity-80">{dept.details.leader.role}</p>
+                              <h4 className="text-white font-bold text-xl tracking-wide">Đồng chí <br /> {dept.details.leader.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
+                              <p className="mt-2 text-gray-200 text-lg font-medium opacity-80 whitespace-nowrap">{dept.details.leader.role}</p>
                             </div>
                           )}
                         </div>
@@ -214,30 +214,47 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       {dept.details.group && (
                         <div className={`flex flex-col items-center group ${(!dept.details.leader && (!dept.details.deputies || dept.details.deputies.length === 0)) ? 'w-full max-w-[1200px]' : 'flex-1 min-w-[300px]'}`}>
                           <div className={`relative w-full rounded-[3rem] overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all duration-500 shadow-2xl ${(!dept.details.leader && (!dept.details.deputies || dept.details.deputies.length === 0)) ? 'h-[min(650px,75vh)]' : 'h-[min(450px,50vh)] xl:h-[min(550px,60vh)]'}`}>
-                            <Image quality={75} src={encodeURI(dept.details.group.img)} fill sizes="1200px" className="object-cover" alt="group" />
+                            <Image quality={75} src={encodeURI(dept.details.group.img)} fill sizes="1200px" className={dept.details.group.objectFit === 'contain' ? 'object-contain' : 'object-cover'} style={{ objectPosition: dept.details.group.objectPosition || 'center' }} alt="group" />
                           </div>
                           <div className="mt-6 text-center">
-                            <h3 className="text-white font-bold text-xl uppercase tracking-wide opacity-60">{dept.details.group.name}</h3>
+                            <h3 className="text-white font-bold text-xl uppercase tracking-wide">{dept.details.group.name}</h3>
                           </div>
                         </div>
                       )}
 
                       {/* Right Column: Deputies */}
                       {dept.details.deputies && dept.details.deputies.length > 0 && (
-                        <div className="w-[300px] xl:w-[350px] shrink-0 flex flex-col justify-start gap-10">
-                          {dept.details.deputies.map((deputy, i) => (
-                            <div key={i} className="flex flex-col items-center group">
-                              <div className="relative w-full h-[min(450px,50vh)] xl:h-[min(550px,60vh)] rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-xl">
-                                <Image quality={75} src={encodeURI(deputy.img)} fill sizes="350px" className="object-cover" style={{ objectPosition: deputy.objectPosition || 'center' }} alt="deputy" />
-                              </div>
-                              {!hideComradeLabel && (
-                                <div className="mt-4 text-center">
-                                  <h4 className="text-white font-bold text-xl uppercase tracking-wide">Đồng chí {deputy.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
-                                  <p className="mt-1 text-gray-200 text-lg font-medium opacity-80">{deputy.role}</p>
+                        <div className={`w-[300px] xl:w-[350px] shrink-0 flex flex-col justify-between ${dept.details.deputies.length === 2 ? 'gap-1' : 'gap-10'}`}>
+                          {dept.details.deputies.map((deputy, i) => {
+                            const isTwoDeputies = dept.details.deputies!.length === 2;
+                            const showNameAbove = isTwoDeputies && i === 0;
+                            
+                            // Specific heights for 2-deputy layout
+                            let photoHeight = "h-[min(450px,50vh)] xl:h-[min(550px,60vh)]";
+                            if (isTwoDeputies) {
+                              photoHeight = "h-[min(220px,24vh)] xl:h-[min(280px,32vh)]";
+                            }
+
+                            return (
+                              <div key={i} className="flex flex-col items-center group relative">
+                                {showNameAbove && !hideComradeLabel && (
+                                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 text-center w-[120%]">
+                                    <h4 className="text-white font-bold text-xl tracking-wide">Đồng chí <br /> {deputy.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
+                                    <p className="mt-1 text-gray-200 text-lg font-medium opacity-80 whitespace-nowrap">{deputy.role}</p>
+                                  </div>
+                                )}
+                                <div className={`relative w-full ${photoHeight} rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-xl`}>
+                                  <Image quality={75} src={encodeURI(deputy.img)} fill sizes="350px" className="object-cover" style={{ objectPosition: deputy.objectPosition || 'center' }} alt="deputy" />
                                 </div>
-                              )}
-                            </div>
-                          ))}
+                                {!showNameAbove && !hideComradeLabel && (
+                                  <div className="mt-4 text-center">
+                                    <h4 className="text-white font-bold text-xl tracking-wide">Đồng chí <br /> {deputy.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
+                                    <p className="mt-1 text-gray-200 text-lg font-medium opacity-80 whitespace-nowrap">{deputy.role}</p>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
                         </div>
                       )}
                     </div>
@@ -255,12 +272,12 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                         {page && page.layout === 'collage-staggered-4' ? (
                           <div className="flex gap-4 w-full h-[min(620px,68vh)] max-w-[1300px]">
                             {/* Left Column: 1 Large Image */}
-                            <div className="relative flex-[1.4] rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl group">
+                            <div className="relative flex-[1.8] rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl group">
                               <Image quality={75} src={encodeURI(page.items[0].img)} fill sizes="800px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: page.items[0].objectPosition || 'center', transform: `scale(${page.items[0].scale || 1}) scaleX(${page.items[0].scaleX || 1})` }} alt="" />
                             </div>
                             
                             {/* Right Column: 3 Images staggered */}
-                            <div className="flex-[1.6] flex flex-col gap-4">
+                            <div className="flex-[1.2] flex flex-col gap-4">
                               <div className="flex-[0.4] flex gap-4">
                                 <div className="relative flex-[0.8] rounded-[2.5rem] overflow-hidden border-2 border-white/10 shadow-xl group">
                                   <Image quality={75} src={encodeURI(page.items[1].img)} fill sizes="400px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: page.items[1].objectPosition || 'center', transform: page.items[1].scale ? `scale(${page.items[1].scale})` : 'none' }} alt="" />
@@ -308,8 +325,8 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                                 </div>
                                 {!hideComradeLabel && item.name && (
                                   <div className="mt-6 text-center">
-                                    <h4 className="text-white font-bold text-xl uppercase">Đồng chí {item.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
-                                    <p className="mt-2 text-gray-200 text-lg font-medium">{item.role}</p>
+                                    <h4 className="text-white font-bold text-xl">Đồng chí <br /> {item.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
+                                    <p className="mt-2 text-gray-200 text-lg font-medium whitespace-nowrap">{item.role}</p>
                                   </div>
                                 )}
                               </div>
