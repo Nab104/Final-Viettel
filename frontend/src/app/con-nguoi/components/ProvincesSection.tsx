@@ -65,7 +65,7 @@ const ProvincesSection = ({
   };
 
   return (
-    <section id="store-system" className="relative z-10 w-full overflow-hidden bg-black pt-8 md:pt-12 pb-12 md:pb-24 min-h-[600px] md:min-h-[900px]">
+    <section id="store-system" className="relative z-10 w-full overflow-hidden bg-black pt-20 md:pt-24 pb-12 md:pb-24 min-h-[600px] md:min-h-[900px]">
       <div
         className="absolute inset-0 opacity-15 pointer-events-none"
         style={{
@@ -77,9 +77,9 @@ const ProvincesSection = ({
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-4 text-center">
-        <h2 className="text-white font-beausans font-black text-2xl md:text-5xl uppercase tracking-tight mt-0 mb-20 md:mb-32 drop-shadow-2xl flex flex-col md:block items-center">
-          <span>HỆ THỐNG</span>
-          <span className="md:ml-[0.5em]">SIÊU THỊ/CỬA HÀNG</span>
+        <h2 className="text-white font-beausans font-black text-xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight mt-0 mb-8 md:mb-24 drop-shadow-2xl flex flex-wrap justify-center items-center gap-x-[0.3em] leading-tight px-4">
+          <span className="whitespace-nowrap">HỆ THỐNG</span>
+          <span className="whitespace-nowrap">SIÊU THỊ / CỬA HÀNG</span>
         </h2>
 
         <div 
@@ -126,7 +126,7 @@ const ProvincesSection = ({
                     <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${isCenter ? "scale-110" : "scale-90"}`}>
                       <Image
                         quality={60}
-                        src={prov.map}
+                        src={encodeURI(prov.map)}
                         alt={prov.name}
                         fill
                         sizes="(max-width: 768px) 60vw, 350px"
@@ -141,7 +141,7 @@ const ProvincesSection = ({
                       <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${isCenter ? "opacity-100 scale-110" : "opacity-0 scale-90"}`}>
                         <Image
                           quality={60}
-                          src={prov.mapWithText}
+                          src={encodeURI(prov.mapWithText)}
                           alt={`${prov.name} details`}
                           fill
                           sizes="(max-width: 768px) 60vw, 350px"

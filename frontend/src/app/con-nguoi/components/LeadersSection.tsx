@@ -44,7 +44,7 @@ const LeadersSection = ({ leaders, positions, isMobile, isTablet, rotateLeaders 
       </div>
 
       <div 
-        className="w-full mx-auto px-4 relative flex items-start justify-center h-[360px] md:h-[700px]"
+        className="w-full mx-auto px-4 relative flex items-start justify-center h-[360px] md:h-[min(700px,75vh)]"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         style={{ touchAction: 'pan-y' }}

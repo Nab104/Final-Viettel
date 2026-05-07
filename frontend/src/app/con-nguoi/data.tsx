@@ -136,133 +136,133 @@ export const longService: LongService[] = [
 export const departments: Department[] = [
   {
     name: "Phòng Kinh doanh Thiết bị",
-    img: "/images/tapthephong/Phòng Kinh doanh Thiết bị.jpg",
+    img: "/images/tapthephong/phong_kinh_doanh_thiet_bi.jpg",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đồng chí Trần Hoàng Chung", role: "Trưởng phòng Kinh doanh Thiết bị", img: encodeURI("/images/tapthephong/tp-pp/kinh doanh thiết bị/TP-Trần Hoàng Chung.jpg"), objectPosition: "20% center", scale: 1.1 },
-      group: { name: "Tập thể Phòng Kinh doanh Thiết bị", subName: "Phòng Kinh doanh Thiết bị", img: "/images/tapthephong/Phòng Kinh doanh Thiết bị.jpg" },
+      leader: { name: "Đồng chí Trần Hoàng Chung", role: "Trưởng phòng Kinh doanh Thiết bị", img: "/images/tapthephong/tp_pp/kinh_doanh_thiet_bi/tp_tran_hoang_chung.jpg", objectPosition: "20% center", scale: 1.1 },
+      group: { name: "Tập thể Phòng Kinh doanh Thiết bị", subName: "Phòng Kinh doanh Thiết bị", img: "/images/tapthephong/phong_kinh_doanh_thiet_bi.jpg" },
       deputies: [
-        { name: "Đồng chí Nguyễn Thị Quỳnh Mai", role: "Phó phòng Kinh doanh Thiết bị", img: encodeURI("/images/tapthephong/tp-pp/kinh doanh thiết bị/PP-Nguyễn Thị Quỳnh Mai.jpg") }
+        { name: "Đồng chí Nguyễn Thị Quỳnh Mai", role: "Phó phòng Kinh doanh Thiết bị", img: "/images/tapthephong/tp_pp/kinh_doanh_thiet_bi/pp_nguyen_thi_quynh_mai.jpg" }
       ]
     }
   },
   {
     name: "Phòng Kinh doanh Dịch vụ",
-    img: "/images/tapthephong/Phòng Kinh doanh tịch vụ.jpg",
+    img: "/images/tapthephong/phong_kinh_doanh_dich_vu.jpg",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đồng chí Dương Sơn Tùng", role: "Trưởng phòng Kinh doanh Dịch vụ", img: encodeURI("/images/tapthephong/tp-pp/kinh doanh dịch vụ/TP-Dương Sơn Tùng.jpg") },
-      group: { name: "Tập thể Phòng Kinh doanh Dịch vụ", subName: "Phòng Kinh doanh Dịch vụ", img: "/images/tapthephong/Phòng Kinh doanh tịch vụ.jpg" },
+      leader: { name: "Đồng chí Dương Sơn Tùng", role: "Trưởng phòng Kinh doanh Dịch vụ", img: "/images/tapthephong/tp_pp/kinh_doanh_dich_vu/tp_duong_son_tung.jpg" },
+      group: { name: "Tập thể Phòng Kinh doanh Dịch vụ", subName: "Phòng Kinh doanh Dịch vụ", img: "/images/tapthephong/phong_kinh_doanh_dich_vu.jpg" },
       deputies: []
     }
   },
   {
     name: "Phòng Marketing",
-    img: "/marketing-main.jpg",
+    img: "/images/tapthephong/phong_marketing.jpg",
     gridObjectFit: "cover",
     gridObjectPosition: "center center",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đồng chí Bùi Quốc Hưng", role: "Trưởng phòng Marketing", img: encodeURI("/images/tapthephong/tp-pp/mkt/TP-Bùi Quốc Hưng.jpg") },
-      group: { name: "Tập thể Phòng Marketing", subName: "Phòng Marketing", img: "/marketing-main.jpg" },
+      leader: { name: "Đồng chí Bùi Quốc Hưng", role: "Trưởng phòng Marketing", img: "/images/tapthephong/tp_pp/mkt/tp_bui_quoc_hung.jpg" },
+      group: { name: "Tập thể Phòng Marketing", subName: "Phòng Marketing", img: "/images/tapthephong/phong_marketing.jpg" },
       deputies: [
-        { name: "Đồng chí Bùi Xuân Vinh", role: "Phó phòng Marketing", img: encodeURI("/images/tapthephong/tp-pp/mkt/PP-Bùi Xuân Vinh.JPG") }
+        { name: "Đồng chí Bùi Xuân Vinh", role: "Phó phòng Marketing", img: "/images/tapthephong/tp_pp/mkt/pp_bui_xuan_vinh.jpg" }
       ]
     }
   },
   {
     name: "Phòng Điều hành và Phát triển Siêu thị\nBộ phận Điều hành Siêu thị",
-    img: "/images/tapthephong/Bộ Phận Điều hành Siêu thị.jpg",
+    img: "/images/tapthephong/bo_phan_dieu_hanh_sieu_thi.jpg",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Phạm Anh Tuấn", role: "Trưởng phòng Điều hành và Phát triển Siêu thị", img: encodeURI("/images/tapthephong/tp-pp/điều hành siêu thị/TP-Phạm Anh Tuấn.jpg") },
-      group: { name: "Tập thể Bộ phận Điều hành Siêu thị", subName: "Phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/Bộ Phận Điều hành Siêu thị.jpg" },
+      leader: { name: "Phạm Anh Tuấn", role: "Trưởng phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/tp_pp/dieu_hanh_sieu_thi/tp_pham_anh_tuan.jpg" },
+      group: { name: "Tập thể Bộ phận Điều hành Siêu thị", subName: "Phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/bo_phan_dieu_hanh_sieu_thi.jpg" },
       deputies: [
-        { name: "Chung Duy Tuấn", role: "Phó phòng Điều hành và Phát triển Siêu thị", img: encodeURI("/images/tapthephong/tp-pp/điều hành siêu thị/PP-Chung Duy Tuấn 2.jpg") }
+        { name: "Chung Duy Tuấn", role: "Phó phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/tp_pp/dieu_hanh_sieu_thi/pp_chung_duy_tuan_2.jpg" }
       ]
     }
   },
   {
     name: "Phòng Điều hành và Phát triển Siêu thị\nBộ phận Phát triển Kênh",
-    img: "/images/tapthephong/Phát triển Siêu thị.jpg",
+    img: "/images/tapthephong/phong_phat_trien_sieu_thi.jpg",
     hasTextOnImage: false,
     details: {
-      group: { name: "Tập thể Bộ phận Phát triển Kênh", subName: "Phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/Phát triển Siêu thị.jpg" },
+      group: { name: "Tập thể Bộ phận Phát triển Kênh", subName: "Phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/phong_phat_trien_sieu_thi.jpg" },
       deputies: [
-        { name: "Đồng chí Trần Hải Vinh", role: "Phó phòng - Phụ trách bộ phận Phát triển Kênh", img: encodeURI("/images/tapthephong/tp-pp/phát triển kênh/PP-Trần Hải Vinh.jpg") }
+        { name: "Đồng chí Trần Hải Vinh", role: "Phó phòng - Phụ trách bộ phận Phát triển Kênh", img: "/images/tapthephong/tp_pp/phat_trien_kenh/pp_tran_hai_vinh.jpg" }
       ]
     }
   },
   {
     name: "Phòng Chất lượng Dịch vụ",
-    img: "/images/tapthephong/Phòng Chất Lượng Dịch vụ.jpg",
+    img: "/images/tapthephong/phong_chat_luong_dich_vu.jpg",
     hasTextOnImage: false,
     details: {
-      group: { name: "Tập thể Phòng Chất lượng Dịch vụ", subName: "Phòng Chất lượng Dịch vụ", img: "/images/tapthephong/Phòng Chất Lượng Dịch vụ.jpg" },
+      group: { name: "Tập thể Phòng Chất lượng Dịch vụ", subName: "Phòng Chất lượng Dịch vụ", img: "/images/tapthephong/phong_chat_luong_dich_vu.jpg" },
       deputies: [
-        { name: "Đồng chí Lê Duy Bách", role: "Trưởng phòng Chất lượng Dịch vụ", img: encodeURI("/images/tapthephong/tp-pp/chất lượng dvu/TP-Lê Duy Bách.jpg") }
+        { name: "Đồng chí Lê Duy Bách", role: "Trưởng phòng Chất lượng Dịch vụ", img: "/images/tapthephong/tp_pp/chat_luong_dvu/tp_le_duy_bach.jpg" }
       ]
     }
   },
   {
     name: "Phòng Tài chính Kế toán",
-    img: "/images/tapthephong/Phòng Tài chính kế toán.jpg",
+    img: "/images/tapthephong/phong_tai_chinh_ke_toan.jpg",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đồng chí Nguyễn Thị Nguyên", role: "Trưởng phòng Tài chính Kế toán", img: encodeURI("/images/tapthephong/tp-pp/tài chính/TP-Nguyễn Thị Nguyên.jpg") },
-      group: { name: "Tập thể Phòng Tài chính Kế toán", subName: "Phòng Tài chính Kế toán", img: "/images/tapthephong/Phòng Tài chính kế toán.jpg" },
+      leader: { name: "Đồng chí Nguyễn Thị Nguyên", role: "Trưởng phòng Tài chính Kế toán", img: "/images/tapthephong/tp_pp/tai_chinh/tp_nguyen_thi_nguyen.jpg" },
+      group: { name: "Tập thể Phòng Tài chính Kế toán", subName: "Phòng Tài chính Kế toán", img: "/images/tapthephong/phong_tai_chinh_ke_toan.jpg" },
       deputies: [
-        { name: "Đồng chí Trần Thị Nghĩa", role: "Phó phòng Tài chính Kế toán", img: encodeURI("/images/tapthephong/tp-pp/tài chính/PP-Trần Thị Nghĩa.jpg") },
-        { name: "Đồng chí Đỗ Thị Khánh Hòa", role: "Phó phòng Tài chính Kế toán", img: encodeURI("/images/tapthephong/tp-pp/tài chính/PP-Đỗ Thị Khánh Hòa.jpg"), objectPosition: "center 20%" }
+        { name: "Đồng chí Trần Thị Nghĩa", role: "Phó phòng Tài chính Kế toán", img: "/images/tapthephong/tp_pp/tai_chinh/pp_tran_thi_nghia.jpg" },
+        { name: "Đồng chí Đỗ Thị Khánh Hòa", role: "Phó phòng Tài chính Kế toán", img: "/images/tapthephong/tp_pp/tai_chinh/pp_do_thi_khanh_hoa.jpg", objectPosition: "center 20%" }
       ]
     }
   },
   {
     name: "Phòng Chính trị Nhân sự",
-    img: "/images/tapthephong/Phòng Chính trị Nhân sự.jpg",
+    img: "/images/tapthephong/phong_chinh_tri_nhan_su.jpg",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đồng chí Nguyễn Thị Hà Doan", role: "Trưởng phòng Chính trị Nhân sự", img: "/images/tapthephong/tp-pp/chính trị nhân sự/TP-Nguyễn Thị Hà Doan.jpg" },
-      group: { name: "Tập thể Phòng Chính trị Nhân sự", subName: "", img: "/images/tapthephong/Phòng Chính trị Nhân sự.jpg" },
+      leader: { name: "Đồng chí Nguyễn Thị Hà Doan", role: "Trưởng phòng Chính trị Nhân sự", img: "/images/Canhan5.JPG" },
+      group: { name: "Tập thể Phòng Chính trị Nhân sự", subName: "", img: "/images/tapthephong/phong_chinh_tri_nhan_su.jpg" },
       deputies: [
-        { name: "Đồng chí Ngô Quang Hiếu", role: "Phó phòng Chính trị Nhân sự", img: "/images/tapthephong/tp-pp/chính trị nhân sự/PP-Ngô Quang Hiếu.jpg" }
+        { name: "Đồng chí Ngô Quang Hiếu", role: "Phó phòng Chính trị Nhân sự", img: "/images/tapthephong/tp_pp/chinh_tri_nhan_su/pp_ngo_quang_hieu.jpg", objectPosition: "60% center" }
       ]
     }
   },
   {
     name: "Phòng Công nghệ Thông tin",
-    img: "/images/tapthephong/cntt.JPG",
+    img: "/images/tapthephong/cntt.jpg",
     gridScale: 1.15,
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đồng chí Đặng Thị Quỳnh Nga", role: "Trưởng phòng Công nghệ Thông tin", img: encodeURI("/images/tapthephong/tp-pp/cntt/TP-Đặng Thị Quỳnh Nga.jpg") },
-      group: { name: "Tập thể Phòng Công nghệ Thông tin", subName: "", img: "/images/tapthephong/cntt.JPG" },
+      leader: { name: "Đồng chí Đặng Thị Quỳnh Nga", role: "Trưởng phòng Công nghệ Thông tin", img: "/images/tapthephong/tp_pp/cntt/tp_dang_thi_quynh_nga.jpg" },
+      group: { name: "Tập thể Phòng Công nghệ Thông tin", subName: "", img: "/images/tapthephong/cntt.jpg" },
       deputies: [
-        { name: "Đồng chí Đinh Đăng Thiên", role: "Phó phòng Công nghệ Thông tin", img: encodeURI("/images/tapthephong/tp-pp/cntt/PP-Đinh Đăng Thiên.jpg") }
+        { name: "Đồng chí Đinh Đăng Thiên", role: "Phó phòng Công nghệ Thông tin", img: "/images/tapthephong/tp_pp/cntt/pp_dinh_dang_thien.jpg" }
       ]
     }
   },
   {
     name: "Phòng Kế hoạch và Kiểm soát\nBộ phận Kế Hoạch",
-    img: "/images/tapthephong/Bộ phận kế hoạch Tổng hợp.jpg",
+    img: "/images/tapthephong/bo_phan_ke_hoach_tong_hop.jpg",
     gridObjectPosition: "80% center",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đồng chí Phan Thị Ngọc Tú", role: "Trưởng phòng Bộ phận Kế hoạch", img: encodeURI("/images/tapthephong/tp-pp/bộ phận kế hoạch/TP-Phan Thị Ngọc Tú.jpg") },
-      group: { name: "Tập thể Bộ phận Kế hoạch", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/Bộ phận kế hoạch Tổng hợp.jpg" },
+      leader: { name: "Đồng chí Phan Thị Ngọc Tú", role: "Trưởng phòng Bộ phận Kế hoạch", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_ke_hoach/tp_phan_thi_ngoc_tu.jpg") },
+      group: { name: "Tập thể Bộ phận Kế hoạch", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/bo_phan_ke_hoach_tong_hop.jpg" },
       deputies: [
-        { name: "Đồng chí Phạm Anh Quân", role: "Phó phòng Bộ phận Kế hoạch", img: encodeURI("/images/tapthephong/tp-pp/bộ phận kế hoạch/PP-Phạm Anh Quân.jpg") }
+        { name: "Đồng chí Phạm Anh Quân", role: "Phó phòng Bộ phận Kế hoạch", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_ke_hoach/pp_pham_anh_quan.jpg") }
       ]
     }
   },
   {
     name: "Phòng Kế hoạch và Kiểm soát\nBộ phận Kiểm soát",
-    img: "/images/tapthephong/Bộ phận Kiểm soát.jpg",
+    img: "/images/tapthephong/bo_phan_kiem_soat.jpg",
     hasTextOnImage: false,
     details: {
-      group: { name: "Tập thể Bộ phận Kiểm soát", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/Bộ phận Kiểm soát.jpg" },
+      group: { name: "Tập thể Bộ phận Kiểm soát", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/bo_phan_kiem_soat.jpg" },
       deputies: [
-        { name: "Đồng chí Đoàn Chí Hiếu", role: "Phó phòng - Phụ trách bộ phận Kiểm soát", img: encodeURI("/images/tapthephong/tp-pp/bộ phận kiểm soát/PP-Đoàn Chí Hiếu.jpg") }
+        { name: "Đồng chí Đoàn Chí Hiếu", role: "Phó phòng - Phụ trách bộ phận Kiểm soát", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_kiem_soat/pp_doan_chi_hieu.jpg") }
       ]
     }
   },
@@ -279,19 +279,19 @@ export const departments: Department[] = [
 
 export const ecommerceChannel: Department = {
   name: "Kênh Thương mại Điện tử",
-  img: "/images/tapthephong/Kênh TMĐT.jpg",
+  img: "/images/tapthephong/kenh_tmdt.jpg",
   hasTextOnImage: false,
   details: {
-    group: { name: "Tập thể Kênh Thương mại Điện tử", subName: "Kênh Thương mại Điện tử", img: "/images/tapthephong/Kênh TMĐT.jpg" },
+    group: { name: "Tập thể Kênh Thương mại Điện tử", subName: "Kênh Thương mại Điện tử", img: "/images/tapthephong/kenh_tmdt.jpg" },
     deputies: [
-      { name: "Đồng chí Lê Thị Thanh Mai", role: "Phó giám đốc kênh Thương mại Điện tử", img: encodeURI("/images/tapthephong/tp-pp/kênh thương mại điện tử/Phó giám đốc -Lê Thị Thanh Mai.jpg") }
+      { name: "Đồng chí Lê Thị Thanh Mai", role: "Phó giám đốc kênh Thương mại Điện tử", img: encodeURI("/images/tapthephong/tp_pp/kenh_thuong_mai_dien_tu/pho_giam_doc_le_thi_thanh_mai.jpg") }
     ]
   }
 };
 
 export const supermarketChannel: Department = {
   name: "Quản lý vùng",
-  img: encodeURI("/tập thể qlv.jpg"),
+  img: "/images/tap_the_qlv.jpg",
   hasTextOnImage: false,
   details: {
     deputies: [],
@@ -299,49 +299,49 @@ export const supermarketChannel: Department = {
       {
         title: "QUẢN LÝ VÙNG",
         items: [
-          { img: encodeURI("/images/ảnh nhân sự/c36c2549b912de31f2ee7b038e17379c516c6727.jpg"), name: "Đồng chí Lê Đình Giáp", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/3452289c633053c6b3fe745eaf2f7d5a099f94c4.jpg"), name: "Đồng chí Phạm Duy Phố", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/92cde5e665f12890cab6b4bdf78b5017dbc0d33c.jpg"), name: "Đồng chí Nguyễn Đại Khiêm", role: "Quản lý vùng" }
+          { img: encodeURI("/images/anh_nhan_su/c36c2549b912de31f2ee7b038e17379c516c6727.jpg"), name: "Đồng chí Lê Đình Giáp", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/3452289c633053c6b3fe745eaf2f7d5a099f94c4.jpg"), name: "Đồng chí Phạm Duy Phố", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/92cde5e665f12890cab6b4bdf78b5017dbc0d33c.jpg"), name: "Đồng chí Nguyễn Đại Khiêm", role: "Quản lý vùng" }
         ]
       },
       {
         title: "QUẢN LÝ VÙNG",
         items: [
-          { img: encodeURI("/images/ảnh nhân sự/34bb5189995efad634242857370b4bbc6ee11e4d.jpg"), name: "Đồng chí Đinh Hồng Quân", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/b4bc0e5e5ca76b372afd88e8ae520dc8e9d35114.jpg"), name: "Đồng chí Quách Thị Thuý", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/22d31805f85f7a992ea00cf54ab3553fc50aa129.jpg"), name: "Đồng chí Phạm Đình Phong", role: "Quản lý vùng" }
+          { img: encodeURI("/images/anh_nhan_su/34bb5189995efad634242857370b4bbc6ee11e4d.jpg"), name: "Đồng chí Đinh Hồng Quân", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/b4bc0e5e5ca76b372afd88e8ae520dc8e9d35114.jpg"), name: "Đồng chí Quách Thị Thuý", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/22d31805f85f7a992ea00cf54ab3553fc50aa129.jpg"), name: "Đồng chí Phạm Đình Phong", role: "Quản lý vùng" }
         ]
       },
       {
         title: "QUẢN LÝ VÙNG",
         items: [
-          { img: encodeURI("/images/ảnh nhân sự/064a53ee4386709bb10fb44a62cf4c361b9f57ae.jpg"), name: "Đồng chí Nguyễn Xuân Thuỳ", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/b4114357a0d12811dd38ad78d948a5f7c0b25f57.jpg"), name: "Đồng chí Lê Thế Công", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/fa04ec1e9e02ec16e305122e9a88b52d79cbe903.jpg"), name: "Đồng chí Nguyễn Công Hưởng", role: "Quản lý vùng" }
+          { img: encodeURI("/images/anh_nhan_su/064a53ee4386709bb10fb44a62cf4c361b9f57ae.jpg"), name: "Đồng chí Nguyễn Xuân Thuỳ", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/b4114357a0d12811dd38ad78d948a5f7c0b25f57.jpg"), name: "Đồng chí Lê Thế Công", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/fa04ec1e9e02ec16e305122e9a88b52d79cbe903.jpg"), name: "Đồng chí Nguyễn Công Hưởng", role: "Quản lý vùng" }
         ]
       },
       {
         title: "QUẢN LÝ VÙNG",
         items: [
-          { img: encodeURI("/images/ảnh nhân sự/b507b621cf655996ecd369b151d16ffb69b66ef9.jpg"), name: "Đồng chí Phạm Minh Khánh", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/c9baf5fce77b0830df0d30ea3b68db90aad27746.jpg"), name: "Đồng chí Vũ Mạnh Tiến", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/2e9ffe8e2df08ab9c8ac1336a310393054c14541.jpg"), name: "Đồng chí Trịnh Xuân Hạnh", role: "Quản lý vùng" }
+          { img: encodeURI("/images/anh_nhan_su/b507b621cf655996ecd369b151d16ffb69b66ef9.jpg"), name: "Đồng chí Phạm Minh Khánh", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/c9baf5fce77b0830df0d30ea3b68db90aad27746.jpg"), name: "Đồng chí Vũ Mạnh Tiến", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/2e9ffe8e2df08ab9c8ac1336a310393054c14541.jpg"), name: "Đồng chí Trịnh Xuân Hạnh", role: "Quản lý vùng" }
         ]
       },
       {
         title: "QUẢN LÝ VÙNG",
         items: [
-          { img: encodeURI("/images/ảnh nhân sự/1.jpg"), name: "Đồng chí Trương Công Luân", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/2.jpg"), name: "Đồng chí Phan Minh Hải", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/3.jpg"), name: "Đồng chí Trương Minh Sang", role: "Quản lý vùng" }
+          { img: encodeURI("/images/anh_nhan_su/1.jpg"), name: "Đồng chí Trương Công Luân", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/2.jpg"), name: "Đồng chí Phan Minh Hải", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/3.jpg"), name: "Đồng chí Trương Minh Sang", role: "Quản lý vùng" }
         ]
       },
       {
         title: "QUẢN LÝ VÙNG",
         items: [
-          { img: encodeURI("/images/ảnh nhân sự/4.jpg"), name: "Đồng chí Diệp Nghĩa Trọng", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/5.jpg"), name: "Đồng chí Trần Quốc Việt", role: "Quản lý vùng" },
-          { img: encodeURI("/images/ảnh nhân sự/6.png"), name: "Đồng chí Đoàn Anh Thao", role: "Quản lý vùng" }
+          { img: encodeURI("/images/anh_nhan_su/4.jpg"), name: "Đồng chí Diệp Nghĩa Trọng", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/5.jpg"), name: "Đồng chí Trần Quốc Việt", role: "Quản lý vùng" },
+          { img: encodeURI("/images/anh_nhan_su/6.png"), name: "Đồng chí Đoàn Anh Thao", role: "Quản lý vùng" }
         ]
       }
     ]
@@ -470,11 +470,11 @@ export const partyGroups: Department[] = [
 export const branches: Branch[] = [
   {
     name: "Chi nhánh Bình Dương",
-    img: "/images/bình dương.jpg",
+    img: "/images/logo-viettel-store.png", // Fallback for missing Binh Duong image
     hasTextOnImage: false,
     details: {
       leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/logo-viettel-store.png" },
-      group: { name: "Tập thể Chi nhánh Bình Dương", subName: "Chi nhánh bán lẻ Bình Dương", img: "/images/bình dương.jpg" },
+      group: { name: "Tập thể Chi nhánh Bình Dương", subName: "Chi nhánh bán lẻ Bình Dương", img: "/images/logo-viettel-store.png" },
       deputies: [
         { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/logo-viettel-store.png" }
       ]
@@ -560,20 +560,20 @@ export const provinces: Province[] = [
 
   {
     name: "TUYÊN QUANG",
-    map: encodeURI("/images/provinces/tuyen_quang_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/tuyen_quang_thumb chữ.png"),
+    map: "/images/provinces/tuyen_quang_thumb.png",
+    mapWithText: "/images/provinces/tuyen_quang_thumb_chu.png",
     stores: [
       { id: "TQG01", img: "/images/hethongsieuthi/tuyenquang/tqg01.jpg", objectPosition: "center 100%", scale: 1.1, translateX: "-5%" },
       { id: "TQG02", img: "/images/hethongsieuthi/tuyenquang/tqg02.jpg", objectPosition: "center 55%", scale: 1.2, translateX: "-4%" },
-      { id: "TQG03", img: "/images/hethongsieuthi/tuyenquang/tqg03.jpg", objectPosition: "center 90%" },
+      { id: "TQG03", img: "/images/hethongsieuthi/tuyenquang/tqg03.jpg", objectPosition: "center 100%", scale: 1.3 },
       { id: "TQG04", img: "/images/hethongsieuthi/tuyenquang/tqg04.jpg" },
       { id: "TQG05", img: "/images/hethongsieuthi/tuyenquang/tqg05.jpg" },
     ]
   },
   {
     name: "CAO BẰNG",
-    map: encodeURI("/images/provinces/cao bằng.png"),
-    mapWithText: encodeURI("/images/provinces/cao bằng chữ.png"),
+    map: "/images/provinces/cao_bang.png",
+    mapWithText: "/images/provinces/cao_bang_chu.png",
     stores: [
       { id: "CBG01", img: "/images/hethongsieuthi/caobang/caobang-1.jpg" },
       { id: "CBG02", img: "/images/hethongsieuthi/caobang/caobang-2.jpg" },
@@ -582,16 +582,16 @@ export const provinces: Province[] = [
   },
   {
     name: "LAI CHÂU",
-    map: encodeURI("/images/provinces/lai_chau_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/lai_chau_thumb chữ.png"),
+    map: "/images/provinces/lai_chau_thumb.png",
+    mapWithText: "/images/provinces/lai_chau_thumb_chu.png",
     stores: [
       { id: "LCU01", img: "/images/hethongsieuthi/laichau/laichau-1.jpg" },
     ]
   },
   {
     name: "LÀO CAI",
-    map: encodeURI("/images/provinces/lao_cai_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/lao_cai_thumb chữ 2.png"),
+    map: "/images/provinces/lao_cai_thumb.png",
+    mapWithText: "/images/provinces/lao_cai_thumb_chu_2.png",
     stores: [
       { id: "LCI01", img: "/images/hethongsieuthi/laocai/laocai-1.jpg" },
       { id: "LCI02", img: "/images/hethongsieuthi/laocai/laocai-2.jpg" },
@@ -603,8 +603,8 @@ export const provinces: Province[] = [
   },
   {
     name: "THÁI NGUYÊN",
-    map: encodeURI("/images/provinces/thai_nguyen_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/thai_nguyen_thumb chữ.png"),
+    map: "/images/provinces/thai_nguyen_thumb.png",
+    mapWithText: "/images/provinces/thai_nguyen_thumb_chu.png",
     stores: [
       { id: "TNN01", img: "/images/hethongsieuthi/thainguyen/thainguyen-1.jpg" },
       { id: "TNN02", img: "/images/hethongsieuthi/thainguyen/thainguyen-2.jpg" },
@@ -612,7 +612,7 @@ export const provinces: Province[] = [
       { id: "TNN04", img: "/images/hethongsieuthi/thainguyen/thainguyen-4.jpg" },
       { id: "TNN05", img: "/images/hethongsieuthi/thainguyen/thainguyen-5.jpg" },
       { id: "TNN06", img: "/images/hethongsieuthi/thainguyen/thainguyen-6.jpg" },
-      { id: "TNN07", img: "/images/hethongsieuthi/thainguyen/thainguyen-7.jpg", objectPosition: "center 5%" },
+      { id: "TNN07", img: "/images/hethongsieuthi/thainguyen/thainguyen-7.jpg", objectPosition: "center 5%", scale: 1.05 },
       { id: "TNN08", img: "/images/hethongsieuthi/thainguyen/thainguyen-8.jpg" },
       { id: "TNN09", img: "/images/hethongsieuthi/thainguyen/thainguyen-9.jpg", objectPosition: "center 40%" },
       { id: "TNN10", img: "/images/hethongsieuthi/thainguyen/thainguyen-10.jpg" },
@@ -620,8 +620,8 @@ export const provinces: Province[] = [
   },
   {
     name: "ĐIỆN BIÊN",
-    map: encodeURI("/images/provinces/điện biên.png"),
-    mapWithText: encodeURI("/images/provinces/điện biên chữ.png"),
+    map: "/images/provinces/dien_bien.png",
+    mapWithText: "/images/provinces/dien_bien_chu.png",
     stores: [
       { id: "DBN01", img: "/images/hethongsieuthi/dienbien/dienbien-1.jpg", objectPosition: "center 30%" },
       { id: "DBN02", img: "/images/hethongsieuthi/dienbien/dienbien-2.jpg", objectPosition: "center 45%" },
@@ -629,8 +629,8 @@ export const provinces: Province[] = [
   },
   {
     name: "LẠNG SƠN",
-    map: encodeURI("/images/provinces/lang_son_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/lang_son_thumb chữ.png"),
+    map: "/images/provinces/lang_son_thumb.png",
+    mapWithText: "/images/provinces/lang_son_thumb_chu.png",
     stores: [
       { id: "LSN01", img: "/images/hethongsieuthi/langson/langson-2.jpg" },
       { id: "LSN02", img: "/images/hethongsieuthi/langson/langson-1.jpg", objectPosition: "center 40%" },
@@ -638,25 +638,25 @@ export const provinces: Province[] = [
   },
   {
     name: "SƠN LA",
-    map: encodeURI("/images/provinces/son_la_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/son_la_thumb chữ.png"),
+    map: "/images/provinces/son_la_thumb.png",
+    mapWithText: "/images/provinces/son_la_thumb_chu.png",
     stores: [
       { id: "SLA01", img: "/images/hethongsieuthi/sonla/sonla-3.jpg", objectPosition: "center 85%" },
       { id: "SLA02", img: "/images/hethongsieuthi/sonla/sonla-1.jpg", objectPosition: "center 85%", scale: "scale-140" },
-      { id: "SLA03", img: "/images/hethongsieuthi/sonla/sonla-4.jpg" },
+      { id: "SLA03", img: "/images/hethongsieuthi/sonla/sonla-4.jpg", translateX: "5%" },
       { id: "SLA04", img: "/images/hethongsieuthi/sonla/sonla-2.jpg", scale: "scale-150", objectPosition: "center 60%" },
     ]
   },
   {
     name: "PHÚ THỌ",
-    map: encodeURI("/images/provinces/phu_tho_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/phu_tho_thumb chữ.png"),
+    map: "/images/provinces/phu_tho_thumb.png",
+    mapWithText: "/images/provinces/phu_tho_thumb_chu.png",
     stores: [
       { id: "PTO01", img: "/images/hethongsieuthi/phutho/pt001.jpg" },
       { id: "PTO02", img: "/images/hethongsieuthi/phutho/pt002.jpg" },
       { id: "PTO03", img: "/images/hethongsieuthi/phutho/pt003.jpg" },
       { id: "PTO04", img: "/images/hethongsieuthi/phutho/pt004.jpg", objectPosition: "center 30%" },
-      { id: "PTO05", img: "/images/hethongsieuthi/phutho/pt005.jpg", scale: "scale-120", objectPosition: "60% center" },
+      { id: "PTO05", img: "/images/hethongsieuthi/phutho/pt005.jpg", scale: 1.1, objectPosition: "40% 5%" },
       { id: "PTO06", img: "/images/hethongsieuthi/phutho/pt006.jpg" },
       { id: "PTO07", img: "/images/hethongsieuthi/phutho/pt007.jpg" },
       { id: "PTO08", img: "/images/hethongsieuthi/phutho/pt008.png" },
@@ -668,39 +668,39 @@ export const provinces: Province[] = [
       { id: "PTO15", img: "/images/hethongsieuthi/phutho/pt015.jpg" },
       { id: "PTO16", img: "/images/hethongsieuthi/phutho/pt016.jpg" },
       { id: "PTO17", img: "/images/hethongsieuthi/phutho/pt017.jpg" },
-      { id: "PTO18", img: "/images/hethongsieuthi/phutho/pt018.jpg", objectPosition: "center 20%" },
+      { id: "PTO18", img: "/images/hethongsieuthi/phutho/pt018.jpg", objectPosition: "center 0%" },
       { id: "PTO19", img: "/images/hethongsieuthi/phutho/pt019.jpg" },
       { id: "PTO20", img: "/images/hethongsieuthi/phutho/pt020.jpg", objectPosition: "center 80%" },
       { id: "PTO21", img: "/images/hethongsieuthi/phutho/pt021.jpg" },
       { id: "PTO22", img: "/images/hethongsieuthi/phutho/pt022.jpg", objectPosition: "center 60%" },
       { id: "PTO-CH01", img: "/images/hethongsieuthi/phutho/pto-ch01.jpg", objectPosition: "center 80%" },
-      { id: "PTO-CH02", img: "/images/hethongsieuthi/phutho/pto-ch2.jpg" },
+      { id: "PTO-CH02", img: "/images/hethongsieuthi/phutho/pto-ch2.jpg", scale: 1.0 },
     ]
   },
   {
     name: "BẮC NINH",
-    map: encodeURI("/images/provinces/bắc nih.png"),
-    mapWithText: encodeURI("/images/provinces/bắc nih chữ.png"),
+    map: "/images/provinces/bac_nih.png",
+    mapWithText: "/images/provinces/bac_nih_chu.png",
     stores: [
-      { id: "BNH01", img: "/images/hethongsieuthi/bacninh/bnh01.jpg" },
+      { id: "BNH01", img: "/images/hethongsieuthi/bacninh/bnh01.jpg", scale: 1.0 },
       { id: "BNH02", img: "/images/hethongsieuthi/bacninh/bnh02.jpg", objectPosition: "center 30%" },
       { id: "BNH03", img: "/images/hethongsieuthi/bacninh/bnh03.jpg" },
-      { id: "BNH04", img: "/images/hethongsieuthi/bacninh/bnh04.jpg", scale: "scale-[1.5]", objectPosition: "center 80%" },
+      { id: "BNH04", img: "/images/hethongsieuthi/bacninh/bnh04.jpg", scale: 1.4, objectPosition: "center 100%", translateY: "2%" },
       { id: "BNH05", img: "/images/hethongsieuthi/bacninh/bnh05.jpg" },
       { id: "BNH06", img: "/images/hethongsieuthi/bacninh/bnh06.jpg", scale: "scale-110" },
       { id: "BNH07", img: "/images/hethongsieuthi/bacninh/bnh07.jpg" },
       { id: "BNH08", img: "/images/hethongsieuthi/bacninh/bnh08.jpg" },
-      { id: "BNH09", img: "/images/hethongsieuthi/bacninh/bnh09.jpg", objectPosition: "center 80%" },
+      { id: "BNH09", img: "/images/hethongsieuthi/bacninh/bnh09.jpg", objectPosition: "center 90%" },
       { id: "BNH10", img: "/images/hethongsieuthi/bacninh/bnh10.jpg", objectPosition: "center 90%" },
-      { id: "BNH11", img: "/images/hethongsieuthi/bacninh/bnh11.jpg", objectPosition: "42% center", scale: "scale-[1.2]" },
+      { id: "BNH11", img: "/images/hethongsieuthi/bacninh/bnh11.jpg", objectPosition: "center center", scale: "scale-[1.2]", translateX: "8%" },
       { id: "BNH12", img: "/images/hethongsieuthi/bacninh/bnh12.jpg", objectPosition: "center 70%" },
       { id: "BNH-CH01", img: "/images/hethongsieuthi/bacninh/bnh-ch01.jpg", objectPosition: "center 70%" },
     ]
   },
   {
     name: "QUẢNG NINH",
-    map: encodeURI("/images/provinces/quang_ninh_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/quang_ninh_thumb chữ.png"),
+    map: "/images/provinces/quang_ninh_thumb.png",
+    mapWithText: "/images/provinces/quang_ninh_thumb_chu.png",
     stores: [
       { id: "QNH01", img: "/images/hethongsieuthi/quangninh/qnh01.jpg" },
       { id: "QNH02", img: "/images/hethongsieuthi/quangninh/qnh02.jpg" },
@@ -716,29 +716,29 @@ export const provinces: Province[] = [
   },
   {
     name: "TP. HÀ NỘI",
-    map: encodeURI("/images/provinces/hà nội.png"),
-    mapWithText: encodeURI("/images/provinces/hà nội chữ.png"),
+    map: "/images/provinces/ha_noi.png",
+    mapWithText: "/images/provinces/ha_noi_chu.png",
     stores: [
       { id: "HNI01", img: "/images/hethongsieuthi/hanoi/hni01.jpg" },
       { id: "HNI02", img: "/images/hethongsieuthi/hanoi/hni02.jpg", scale: "scale-[1.6]", objectPosition: "center 90%" },
-      { id: "HNI03", img: "/images/hethongsieuthi/hanoi/hni03.jpg", objectPosition: "center 70%" },
-      { id: "HNI04", img: "/images/hethongsieuthi/hanoi/hni04.jpg", objectPosition: "center 40%" },
+      { id: "HNI03", img: "/images/hethongsieuthi/hanoi/hni03.jpg", objectPosition: "center 70%", scale: 1 },
+      { id: "HNI04", img: "/images/hethongsieuthi/hanoi/hni04.jpg", objectPosition: "center 40%", scale: 1.0 },
       { id: "HNI05", img: "/images/hethongsieuthi/hanoi/hni05.jpg" },
-      { id: "HNI06", img: "/images/hethongsieuthi/hanoi/hni06.jpg", objectPosition: "center 30%" },
+      { id: "HNI06", img: "/images/hethongsieuthi/hanoi/hni06.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "HNI07", img: "/images/hethongsieuthi/hanoi/hni07.jpg", objectPosition: "center 20%" },
-      { id: "HNI08", img: "/images/hethongsieuthi/hanoi/hni08.jpg", objectPosition: "center 70%" },
-      { id: "HNI09", img: "/images/hethongsieuthi/hanoi/hni09.jpg" },
+      { id: "HNI08", img: "/images/hethongsieuthi/hanoi/hni08.jpg", objectPosition: "center 70%", scale: 1.0 },
+      { id: "HNI09", img: "/images/hethongsieuthi/hanoi/hni09.jpg", scale: 1.0 },
       { id: "HNI10", img: "/images/hethongsieuthi/hanoi/hni010.jpg" },
-      { id: "HNI11", img: "/images/hethongsieuthi/hanoi/hni011.jpg" },
-      { id: "HNI12", img: "/images/hethongsieuthi/hanoi/hni012.jpg" },
+      { id: "HNI11", img: "/images/hethongsieuthi/hanoi/hni011.jpg", scale: 1.0 },
+      { id: "HNI12", img: "/images/hethongsieuthi/hanoi/hni012.jpg", scale: 1.0 },
       { id: "HNI13", img: "/images/hethongsieuthi/hanoi/hni013.jpg" },
       { id: "HNI14", img: "/images/hethongsieuthi/hanoi/hni014.jpg" },
       { id: "HNI15", img: "/images/hethongsieuthi/hanoi/hni015.jpg", objectPosition: "center 60%" },
       { id: "HNI16", img: "/images/hethongsieuthi/hanoi/hni016.jpg" },
       { id: "HNI17", img: "/images/hethongsieuthi/hanoi/hni017.jpg", objectPosition: "center 20%" },
       { id: "HNI18", img: "/images/hethongsieuthi/hanoi/hni018.png" },
-      { id: "HNI19", img: "/images/hethongsieuthi/hanoi/hni019.jpg" },
-      { id: "HNI21", img: "/images/hethongsieuthi/hanoi/hni021.jpg" },
+      { id: "HNI19", img: "/images/hethongsieuthi/hanoi/hni019.jpg", scale: 1.0 },
+      { id: "HNI21", img: "/images/hethongsieuthi/hanoi/hni021.jpg", scale: 1.0 },
       { id: "HNI22", img: "/images/hethongsieuthi/hanoi/hni022.jpg" },
       { id: "HNI23", img: "/images/hethongsieuthi/hanoi/hni023.jpg" },
       { id: "HNI24", img: "/images/hethongsieuthi/hanoi/hni024.jpg", scale: "scale-[1.4]" },
@@ -749,21 +749,21 @@ export const provinces: Province[] = [
       { id: "HNI-CH01", img: "/images/hethongsieuthi/hanoi/hni-ch01.png", objectPosition: "center 30%" },
       { id: "HNI-CH02", img: "/images/hethongsieuthi/hanoi/hni-ch02.jpg", objectPosition: "center 40%" },
       { id: "HNI-CH03", img: "/images/hethongsieuthi/hanoi/hni-ch03.jpg" },
-      { id: "HNI-CH04", img: "/images/hethongsieuthi/hanoi/hni-ch04.jpg", objectPosition: "center 10%" },
+      { id: "HNI-CH04", img: "/images/hethongsieuthi/hanoi/hni-ch04.jpg", objectPosition: "center 10%", scale: 1.0 },
       { id: "HNI-CH06", img: "/images/hethongsieuthi/hanoi/hni-ch06.jpg" },
       { id: "HNI-CH07", img: "/images/hethongsieuthi/hanoi/hni-ch07.jpg" },
-      { id: "HNI-CH11", img: "/images/hethongsieuthi/hanoi/hni-ch011.jpg", objectPosition: "center 40%" },
+      { id: "HNI-CH11", img: "/images/hethongsieuthi/hanoi/hni-ch011.jpg", objectPosition: "center 80%" },
       { id: "HNI-CH12", img: "/images/hethongsieuthi/hanoi/hni-ch012.jpg" },
       { id: "HNI-CH13", img: "/images/hethongsieuthi/hanoi/hni-ch013.jpg", objectPosition: "center 70%" },
-      { id: "HNI-CH14", img: "/images/hethongsieuthi/hanoi/hni-ch014.jpg", objectPosition: "center 40%" },
+      { id: "HNI-CH14", img: "/images/hethongsieuthi/hanoi/hni-ch014.jpg", objectPosition: "center 80%" },
       { id: "HNI-CH16", img: "/images/hethongsieuthi/hanoi/hni-ch016.jpg", objectPosition: "center 40%" },
       { id: "HNI-CH19", img: "/images/hethongsieuthi/hanoi/hni-ch019.jpg" },
     ]
   },
   {
     name: "TP. HẢI PHÒNG",
-    map: encodeURI("/images/provinces/hải phòng.png"),
-    mapWithText: encodeURI("/images/provinces/hải phòng chữ.png"),
+    map: "/images/provinces/hai_phong.png",
+    mapWithText: "/images/provinces/hai_phong_chu.png",
     stores: [
       { id: "HPG01", img: "/images/hethongsieuthi/haiphong/hpg01.jpg", objectPosition: "center 70%" },
       { id: "HPG02", img: "/images/hethongsieuthi/haiphong/hpg02.jpg" },
@@ -783,8 +783,8 @@ export const provinces: Province[] = [
   },
   {
     name: "HƯNG YÊN",
-    map: encodeURI("/images/provinces/hung_yen_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/hung_yen_thumb chữ.png"),
+    map: "/images/provinces/hung_yen_thumb.png",
+    mapWithText: "/images/provinces/hung_yen_thumb_chu.png",
     stores: [
       { id: "HYN01", img: "/images/hethongsieuthi/hungyen/hyn01.jpg" },
       { id: "HYN02", img: "/images/hethongsieuthi/hungyen/hyn02.jpg", objectPosition: "center 80%" },
@@ -804,8 +804,8 @@ export const provinces: Province[] = [
   },
   {
     name: "NINH BÌNH",
-    map: encodeURI("/images/provinces/ninh_binh_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/ninh_binh_thumb có chữ.png"),
+    map: "/images/provinces/ninh_binh_thumb.png",
+    mapWithText: "/images/provinces/ninh_binh_thumb_co_chu.png",
     stores: [
       { id: "NBH01", img: "/images/hethongsieuthi/ninhbinh/nbh01.jpg" },
       { id: "NBH02", img: "/images/hethongsieuthi/ninhbinh/nbh02.jpg" },
@@ -824,8 +824,8 @@ export const provinces: Province[] = [
   },
   {
     name: "THANH HOÁ",
-    map: encodeURI("/images/provinces/thanh_hoa_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/thanh_hoa_thumb chữ.png"),
+    map: "/images/provinces/thanh_hoa_thumb.png",
+    mapWithText: "/images/provinces/thanh_hoa_thumb_chu.png",
     stores: [
       { id: "THA01", img: "/images/hethongsieuthi/thanhhoa/tha01.jpg" },
       { id: "THA02", img: "/images/hethongsieuthi/thanhhoa/tha02.jpg", objectPosition: "center 60%" },
@@ -841,11 +841,11 @@ export const provinces: Province[] = [
   },
   {
     name: "NGHỆ AN",
-    map: encodeURI("/images/provinces/nghe_an_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/nghe_an_thumb chữ.png"),
+    map: "/images/provinces/nghe_an_thumb.png",
+    mapWithText: "/images/provinces/nghe_an_thumb_chu.png",
     stores: [
       { id: "NAN01", img: "/images/hethongsieuthi/nghean/nan01.jpg" },
-      { id: "NAN02", img: "/images/hethongsieuthi/nghean/nan02.jpg" },
+      { id: "NAN02", img: "/images/hethongsieuthi/nghean/nan02.jpg", translateX: "10%" },
       { id: "NAN03", img: "/images/hethongsieuthi/nghean/nan03.jpg", objectPosition: "center 60%" },
       { id: "NAN04", img: "/images/hethongsieuthi/nghean/nan04.jpg", objectPosition: "center 20%" },
       { id: "NAN05", img: "/images/hethongsieuthi/nghean/nan05.jpg" },
@@ -862,8 +862,8 @@ export const provinces: Province[] = [
   },
   {
     name: "HÀ TĨNH",
-    map: encodeURI("/images/provinces/ha_tinh_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/ha_tinh_thumb chữ.png"),
+    map: "/images/provinces/ha_tinh_thumb.png",
+    mapWithText: "/images/provinces/ha_tinh_thumb_chu.png",
     stores: [
       { id: "HTH01", img: "/images/hethongsieuthi/hatinh/hth01.jpg" },
       { id: "HTH02", img: "/images/hethongsieuthi/hatinh/hth02.jpg", objectPosition: "center 60%" },
@@ -875,8 +875,8 @@ export const provinces: Province[] = [
   },
   {
     name: "QUẢNG TRỊ",
-    map: encodeURI("/images/provinces/quang_tri_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/quang_tri_thumb chữ.png"),
+    map: "/images/provinces/quang_tri_thumb.png",
+    mapWithText: "/images/provinces/quang_tri_thumb_chu.png",
     stores: [
       { id: "QTI01", img: "/images/hethongsieuthi/quangtri/qti01.jpg" },
       { id: "QTI02", img: "/images/hethongsieuthi/quangtri/qti02.jpg" },
@@ -891,8 +891,8 @@ export const provinces: Province[] = [
   },
   {
     name: "TP. HUẾ",
-    map: encodeURI("/images/provinces/huế.png"),
-    mapWithText: encodeURI("/images/provinces/huế chữ.png"),
+    map: "/images/provinces/hue.png",
+    mapWithText: "/images/provinces/hue_chu.png",
     stores: [
       { id: "HUE01", img: "/images/hethongsieuthi/hue/hue01.jpg" },
       { id: "HUE02", img: "/images/hethongsieuthi/hue/hue02.jpg", objectPosition: "center 25%" },
@@ -902,7 +902,7 @@ export const provinces: Province[] = [
   },
   {
     name: "TP. ĐÀ NẴNG",
-    map: encodeURI("/images/provinces/đà nẵng.png"),
+    map: "/images/provinces/da_nang.png",
     mapWithText: "/images/danang_text3.png",
     stores: [
       { id: "DNG01", img: "/images/hethongsieuthi/danang/dng01.jpg", objectPosition: "center 60%" },
@@ -924,8 +924,8 @@ export const provinces: Province[] = [
   },
   {
     name: "QUẢNG NGÃI",
-    map: encodeURI("/images/provinces/quang_ngai_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/quang_ngai_thumb chữ.png"),
+    map: "/images/provinces/quang_ngai_thumb.png",
+    mapWithText: "/images/provinces/quang_ngai_thumb_chu.png",
     stores: [
       { id: "QNI01", img: "/images/hethongsieuthi/quangngai/QNI01.jpg" },
       { id: "QNI02", img: "/images/hethongsieuthi/quangngai/qni02.jpg", objectPosition: "center 80%" },
@@ -937,8 +937,8 @@ export const provinces: Province[] = [
   },
   {
     name: "GIA LAI",
-    map: encodeURI("/images/provinces/gia_lai_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/gia_lai_thumb chữ.png"),
+    map: "/images/provinces/gia_lai_thumb.png",
+    mapWithText: "/images/provinces/gia_lai_thumb_chu.png",
     stores: [
       { id: "GLI01", img: "/images/hethongsieuthi/gialai/gli01.jpg", scale: "scale-[1.0]", objectFit: "object-contain" },
       { id: "GLI02", img: "/images/hethongsieuthi/gialai/gli02.jpg" },
@@ -951,11 +951,11 @@ export const provinces: Province[] = [
   },
   {
     name: "ĐẮK LẮK",
-    map: encodeURI("/images/provinces/đắk lắk.png"),
-    mapWithText: encodeURI("/images/provinces/đắk lắk chữ.png"),
+    map: "/images/provinces/dak_lak.png",
+    mapWithText: "/images/provinces/dak_lak_chu.png",
     stores: [
       { id: "DLK01", img: "/images/hethongsieuthi/daklak/dlk01.png", objectPosition: "center 40%" },
-      { id: "DLK02", img: "/images/hethongsieuthi/daklak/dlk02.jpg", objectPosition: "center 60%" },
+      { id: "DLK02", img: "/images/hethongsieuthi/daklak/dlk02.jpg", objectPosition: "center 60%", translateX: "10%" },
       { id: "DLK03", img: "/images/hethongsieuthi/daklak/dlk03.jpg", objectPosition: "center 70%" },
       { id: "DLK04", img: "/images/hethongsieuthi/daklak/DLK04.jpg" },
       { id: "DLK05", img: "/images/hethongsieuthi/daklak/dlk05.jpg" },
@@ -967,11 +967,11 @@ export const provinces: Province[] = [
   },
   {
     name: "KHÁNH HOÀ",
-    map: encodeURI("/images/provinces/khanh_hoa_thumb.png"),
+    map: "/images/provinces/khanh_hoa_thumb.png",
     mapWithText: "/images/khanhhoa_text3.png",
     stores: [
       { id: "KHA01", img: "/images/hethongsieuthi/khanhhoa/kha01.jpg" },
-      { id: "KHA02", img: "/images/hethongsieuthi/khanhhoa/kha02.jpg" },
+      { id: "KHA02", img: "/images/hethongsieuthi/khanhhoa/kha02.jpg", scale: 1.0 },
       { id: "KHA03", img: "/images/hethongsieuthi/khanhhoa/KHA03.jpg", objectPosition: "center 80%" },
       { id: "KHA04", img: "/images/hethongsieuthi/khanhhoa/kha04.jpg" },
       { id: "KHA05", img: "/images/hethongsieuthi/khanhhoa/KHA05.jpg", objectPosition: "center 40%" },
@@ -980,8 +980,8 @@ export const provinces: Province[] = [
   },
   {
     name: "LÂM ĐỒNG",
-    map: encodeURI("/images/provinces/lam_dong_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/lam_dong_thumb chữ.png"),
+    map: "/images/provinces/lam_dong_thumb.png",
+    mapWithText: "/images/provinces/lam_dong_thumb_chu.png",
     stores: [
       { id: "LDG01", img: "/images/hethongsieuthi/lamdong/ldg01.jpg", objectPosition: "center 60%" },
       { id: "LDG02", img: "/images/hethongsieuthi/lamdong/LDG02.jpg", objectPosition: "center 40%" },
@@ -997,15 +997,15 @@ export const provinces: Province[] = [
   },
   {
     name: "TP. ĐỒNG NAI",
-    map: encodeURI("/images/provinces/đồng nai.png"),
-    mapWithText: encodeURI("/images/provinces/đồng nai chữ.png"),
+    map: "/images/provinces/dong_nai.png",
+    mapWithText: "/images/provinces/dong_nai_chu.png",
     stores: [
       { id: "DNI01", img: "/images/hethongsieuthi/dongnai/dni01.JPG" },
       { id: "DNI02", img: "/images/hethongsieuthi/dongnai/dni02.jpg", objectPosition: "center 60%" },
       { id: "DNI03", img: "/images/hethongsieuthi/dongnai/dni03.jpg", objectPosition: "center 40%" },
       { id: "DNI04", img: "/images/hethongsieuthi/dongnai/dni04.jpg", objectPosition: "center 20%" },
       { id: "DNI05", img: "/images/hethongsieuthi/dongnai/dni05.jpg", objectPosition: "center 20%" },
-      { id: "DNI06", img: "/images/hethongsieuthi/dongnai/dni06.png", objectPosition: "center 20%" },
+      { id: "DNI06", img: "/images/hethongsieuthi/dongnai/dni06.png", objectPosition: "center 20%", scale: 1.0 },
       { id: "DNI07", img: "/images/hethongsieuthi/dongnai/dni07.png" },
       { id: "DNI08", img: "/images/hethongsieuthi/dongnai/dni08.jpeg", objectPosition: "center 80%", scale: 1.2, translateX: "-5%" },
       { id: "DNI09", img: "/images/hethongsieuthi/dongnai/dni09.jpg" },
@@ -1022,13 +1022,13 @@ export const provinces: Province[] = [
   },
   {
     name: "TÂY NINH",
-    map: encodeURI("/images/provinces/tay_ninh_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/tay_ninh_thumb chữ.png"),
+    map: "/images/provinces/tay_ninh_thumb.png",
+    mapWithText: "/images/provinces/tay_ninh_thumb_chu.png",
     stores: [
       { id: "TNH01", img: "/images/hethongsieuthi/tayninh/tnh01.jpg", objectPosition: "center 60%" },
       { id: "TNH02", img: "/images/hethongsieuthi/tayninh/tnh02.jpg", objectPosition: "center 40%" },
       { id: "TNH03", img: "/images/hethongsieuthi/tayninh/tnh03.jpg", objectPosition: "center 10%" },
-      { id: "TNH04", img: "/images/hethongsieuthi/tayninh/tnh04.jpg", objectPosition: "center 30%" },
+      { id: "TNH04", img: "/images/hethongsieuthi/tayninh/tnh04.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "TNH05", img: "/images/hethongsieuthi/tayninh/tnh05.jpg", objectPosition: "center 5%" },
       { id: "TNH06", img: "/images/hethongsieuthi/tayninh/tnh06.jpg" },
       { id: "TNH07", img: "/images/hethongsieuthi/tayninh/tnh07.jpg", objectPosition: "center 40%" },
@@ -1038,19 +1038,19 @@ export const provinces: Province[] = [
   },
   {
     name: "TP. HỒ CHÍ MINH",
-    map: encodeURI("/images/provinces/sài gòn.png"),
-    mapWithText: encodeURI("/images/provinces/sài gòn chữ.png"),
+    map: "/images/provinces/sai_gon.png",
+    mapWithText: "/images/provinces/sai_gon_chu.png",
     stores: [
       { id: "HCM01", img: "/images/hethongsieuthi/hcm/hcm01.jpg" },
       { id: "HCM02", img: "/images/hethongsieuthi/hcm/hcm02.jpg", objectPosition: "center 30%" },
       { id: "HCM03", img: "/images/hethongsieuthi/hcm/hcm03.JPG" },
       { id: "HCM04", img: "/images/hethongsieuthi/hcm/hcm04.jpg" },
-      { id: "HCM05", img: "/images/hethongsieuthi/hcm/HCM05.jpg", objectPosition: "center 30%" },
+      { id: "HCM05", img: "/images/hethongsieuthi/hcm/HCM05.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "HCM06", img: "/images/hethongsieuthi/hcm/hcm06.jpg", objectPosition: "center 70%" },
       { id: "HCM07", img: "/images/hethongsieuthi/hcm/hcm07.jpg" },
       { id: "HCM08", img: "/images/hethongsieuthi/hcm/hcm08.jpg", objectPosition: "center 40%" },
       { id: "HCM09", img: "/images/hethongsieuthi/hcm/HCM09.jpg", objectPosition: "center 60%" },
-      { id: "HCM10", img: "/images/hethongsieuthi/hcm/hcm10.jpg", objectPosition: "center 30%" },
+      { id: "HCM10", img: "/images/hethongsieuthi/hcm/hcm10.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "HCM11", img: "/images/hethongsieuthi/hcm/hcm11.jpg", objectPosition: "center 40%" },
       { id: "HCM12", img: "/images/hethongsieuthi/hcm/hcm12.jpg" },
       { id: "HCM13", img: "/images/hethongsieuthi/hcm/hcm13.jpg" },
@@ -1060,7 +1060,7 @@ export const provinces: Province[] = [
       { id: "HCM19", img: "/images/hethongsieuthi/hcm/hcm19.jpg" },
       { id: "HCM20", img: "/images/hethongsieuthi/hcm/hcm20.jpg" },
       { id: "HCM21", img: "/images/hethongsieuthi/hcm/hcm21.jpg" },
-      { id: "HCM22", img: "/images/hethongsieuthi/hcm/hcm22.jpg", objectPosition: "center 30%" },
+      { id: "HCM22", img: "/images/hethongsieuthi/hcm/hcm22.jpg", objectPosition: "center 30%", scale: 1.0 },
       { id: "HCM23", img: "/images/hethongsieuthi/hcm/hcm23.jpg" },
       { id: "HCM24", img: "/images/hethongsieuthi/hcm/hcm24.jpg" },
       { id: "HCM25", img: "/images/hethongsieuthi/hcm/hcm25.jpg" },
@@ -1083,13 +1083,13 @@ export const provinces: Province[] = [
       { id: "HCM42", img: "/images/hethongsieuthi/hcm/HCM42.jpg" },
       { id: "HCM43", img: "/images/hethongsieuthi/hcm/hcm43.jpg", objectPosition: "center 60%" },
       { id: "HCM44", img: "/images/hethongsieuthi/hcm/hcm44.jpg" },
-      { id: "HCM45", img: "/images/hethongsieuthi/hcm/HCM45.jpg" },
+      { id: "HCM45", img: "/images/hethongsieuthi/hcm/HCM45.jpg", scale: 1.0 },
       { id: "HCM46", img: "/images/hethongsieuthi/hcm/hcm46.jpg", objectPosition: "center 70%" },
       { id: "HCM47", img: "/images/hethongsieuthi/hcm/hcm47.jpg" },
       { id: "HCM48", img: "/images/hethongsieuthi/hcm/hcm48.jpg" },
       { id: "HCM49", img: "/images/hethongsieuthi/hcm/hcm49.jpg" },
       { id: "HCM50", img: "/images/hethongsieuthi/hcm/HCM50.jpeg", objectPosition: "center 30%" },
-      { id: "HCM51", img: "/images/hethongsieuthi/hcm/HCM51.jpg" },
+      { id: "HCM51", img: "/images/hethongsieuthi/hcm/HCM51.jpg", scale: 1.0 },
       { id: "HCM53", img: "/images/hethongsieuthi/hcm/hcm53.jpg" },
       { id: "HCM-CH01", img: "/images/hethongsieuthi/hcm/hcm-ch01.jpg" },
       { id: "HCM-CH02", img: "/images/hethongsieuthi/hcm/hcm-ch02.jpg" },
@@ -1113,10 +1113,10 @@ export const provinces: Province[] = [
   },
   {
     name: "ĐỒNG THÁP",
-    map: encodeURI("/images/provinces/dong_thap_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/dong_thap_thumb chữ.png"),
+    map: "/images/provinces/dong_thap_thumb.png",
+    mapWithText: "/images/provinces/dong_thap_thumb_chu.png",
     stores: [
-      { id: "DTP01", img: "/images/hethongsieuthi/dongthap/dtp01.jpg" },
+      { id: "DTP01", img: "/images/hethongsieuthi/dongthap/dtp01.jpg", translateX: "5%" },
       { id: "DTP02", img: "/images/hethongsieuthi/dongthap/dtp02.jpg" },
       { id: "DTP03", img: "/images/hethongsieuthi/dongthap/dtp03.jpg" },
       { id: "DTP04", img: "/images/hethongsieuthi/dongthap/dtp04.jpg" },
@@ -1129,24 +1129,24 @@ export const provinces: Province[] = [
   },
   {
     name: "AN GIANG",
-    map: encodeURI("/images/provinces/an giang_.png"),
-    mapWithText: encodeURI("/images/provinces/an giang chữ.png"),
+    map: "/images/provinces/an_giang.png",
+    mapWithText: "/images/provinces/an_giang_chu.png",
     stores: [
-      { id: "AGG01", img: "/images/hethongsieuthi/angiang/sthi agg01.jpg" },
-      { id: "AGG02", img: "/images/hethongsieuthi/angiang/sthi agg02.jpg" },
-      { id: "AGG03", img: "/images/hethongsieuthi/angiang/sthi agg03.jpg" },
-      { id: "AGG04", img: "/images/hethongsieuthi/angiang/sthi agg04.jpg" },
-      { id: "AGG05", img: "/images/hethongsieuthi/angiang/sthi agg05.jpg" },
-      { id: "AGG06", img: "/images/hethongsieuthi/angiang/sthi agg06.jpg", objectPosition: "center 30%" },
-      { id: "AGG07", img: "/images/hethongsieuthi/angiang/sthi agg07.jpg" },
-      { id: "AGG-CH01", img: "/images/hethongsieuthi/angiang/agg ch01.jpg", objectPosition: "center 30%" },
-      { id: "AGG-CH03", img: "/images/hethongsieuthi/angiang/agg ch03.jpg" },
+      { id: "AGG01", img: "/images/hethongsieuthi/angiang/sthi_agg01.jpg" },
+      { id: "AGG02", img: "/images/hethongsieuthi/angiang/sthi_agg02.jpg" },
+      { id: "AGG03", img: "/images/hethongsieuthi/angiang/sthi_agg03.jpg" },
+      { id: "AGG04", img: "/images/hethongsieuthi/angiang/sthi_agg04.jpg" },
+      { id: "AGG05", img: "/images/hethongsieuthi/angiang/sthi_agg05.jpg" },
+      { id: "AGG06", img: "/images/hethongsieuthi/angiang/sthi_agg06.jpg", objectPosition: "center 30%" },
+      { id: "AGG07", img: "/images/hethongsieuthi/angiang/sthi_agg07.jpg" },
+      { id: "AGG-CH01", img: "/images/hethongsieuthi/angiang/agg_ch01.jpg", objectPosition: "center 30%" },
+      { id: "AGG-CH03", img: "/images/hethongsieuthi/angiang/agg_ch03.jpg" },
     ]
   },
   {
     name: "VĨNH LONG",
-    map: encodeURI("/images/provinces/vinh_long_thumb.png"),
-    mapWithText: encodeURI("/images/provinces/vinh_long_thumb chữ.png"),
+    map: "/images/provinces/vinh_long_thumb.png",
+    mapWithText: "/images/provinces/vinh_long_thumb_chu.png",
     stores: [
       { id: "VLG01", img: "/images/hethongsieuthi/vinhlong/vlg01.jpg" },
       { id: "VLG02", img: "/images/hethongsieuthi/vinhlong/vlg02.jpg", objectPosition: "center 40%" },
@@ -1161,8 +1161,8 @@ export const provinces: Province[] = [
   },
   {
     name: "TP. CẦN THƠ",
-    map: encodeURI("/images/provinces/cần thơ.png"),
-    mapWithText: encodeURI("/images/provinces/cần thơ chữ.png"),
+    map: "/images/provinces/can_tho.png",
+    mapWithText: "/images/provinces/can_tho_chu.png",
     stores: [
       { id: "CTO01", img: "/images/hethongsieuthi/cto/cto01.jpg" },
       { id: "CTO02", img: "/images/hethongsieuthi/cto/cto02.jpg" },
@@ -1178,13 +1178,13 @@ export const provinces: Province[] = [
   },
   {
     name: "CÀ MAU",
-    map: encodeURI("/images/provinces/cà mau.png"),
-    mapWithText: encodeURI("/images/provinces/cà mau chữ.png"),
+    map: "/images/provinces/ca_mau.png",
+    mapWithText: "/images/provinces/ca_mau_chu.png",
     stores: [
       { id: "CMU01", img: "/images/hethongsieuthi/camau/cmu01.jpg" },
-      { id: "CMU02", img: "/images/hethongsieuthi/camau/cmu02.jpg", objectPosition: "center 20%" },
+      { id: "CMU02", img: "/images/hethongsieuthi/camau/cmu02.jpg", objectPosition: "center 20%", scale: 1.0 },
       { id: "CMU03", img: "/images/hethongsieuthi/camau/cmu03.jpg", objectPosition: "center 20%" },
-      { id: "CMU04", img: "/images/hethongsieuthi/camau/cmu04.JPEG", objectPosition: "center 40%" },
+      { id: "CMU04", img: "/images/hethongsieuthi/camau/cmu04.JPEG", objectPosition: "center 40%", scale: 1.0 },
       { id: "CMU05", img: "/images/hethongsieuthi/camau/cmu05.jpg" },
     ]
   },

@@ -98,7 +98,7 @@ const LongServiceSection = ({
                     {/* Front side */}
                     <div className="absolute inset-0 w-full h-full z-20 rounded-[40px] overflow-hidden shadow-2xl bg-transparent" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
                       <Image 
-                        src={person.img} 
+                        src={encodeURI(person.img)} 
                         fill 
                         sizes="(max-width: 640px) 95vw, (max-width: 1024px) 50vw, 350px"
                         className="object-cover transition-transform duration-1000 group-hover:scale-105 rounded-[40px]" 
@@ -119,7 +119,7 @@ const LongServiceSection = ({
                       <div className="relative z-10 flex flex-col h-full w-full justify-between py-2">
                         <div className="flex flex-col items-center shrink-0">
                           <div className="w-14 h-14 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white mb-2 shadow-md">
-                            <Image src={person.img} fill sizes="64px" className="object-cover" alt={person.name} />
+                            <Image src={encodeURI(person.img)} fill sizes="64px" className="object-cover" alt={person.name} />
                           </div>
                           <h2 className="text-white text-4xl md:text-4xl font-beausans font-black mb-1 drop-shadow-lg uppercase tracking-tighter leading-none">{person.years} NĂM</h2>
                           <p className="text-white/90 text-sm md:text-xs font-beausans font-bold">cống hiến</p>

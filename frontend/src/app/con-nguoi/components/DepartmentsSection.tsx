@@ -89,7 +89,7 @@ const DepartmentsSection = ({
                           onClick={() => onSelectDept(dept)}
                         >
                           <Image
-                            src={dept.img}
+                            src={encodeURI(dept.img)}
                             fill
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 750px"
                             className="transition-transform duration-1000 group-hover:scale-105"

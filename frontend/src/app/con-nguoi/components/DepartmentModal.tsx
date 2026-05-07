@@ -40,19 +40,19 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
         <button onClick={onClose} className="sticky top-0 self-end text-white/50 hover:text-white z-[60] p-2 hover:bg-white/10 rounded-full cursor-pointer transition-all mb-0">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
         </button>
-        <h2 className="relative z-50 font-beausans font-black text-xl md:text-4xl uppercase mb-8 md:mb-16 tracking-wider text-center px-4" style={{ color: '#FFFFFF' }}>
+        <h2 className="relative z-50 font-beausans font-black text-xl md:text-4xl uppercase mb-6 md:mb-10 tracking-wider text-center px-4" style={{ color: '#FFFFFF' }}>
           {dept.name}
         </h2>
 
         <div className="w-full">
           {isMobile ? (
             // Mobile Layout: Stack everything vertically
-            <div className="flex flex-col gap-12 w-full pb-10">
+            <div className="flex flex-col gap-8 w-full pb-10">
               {/* Main Section */}
               {hasMainContent && (
                 <div className="w-full">
                   {(dept.details.use2x2Layout || dept.details.useCollageStaggered4) && dept.details.mainItems ? (
-                    <div className="flex flex-col gap-6 w-full px-4">
+                    <div className="flex flex-col gap-4 w-full px-4">
                       {dept.details.mainItems.map((item, i) => (
                         <div key={i} className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-lg">
                           <Image quality={75} src={encodeURI(item.img)} fill sizes="100vw" className="object-cover" alt="" />
@@ -60,7 +60,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       ))}
                     </div>
                   ) : dept.details.useStaggeredOnMain && dept.details.mainItems ? (
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-4">
                       {dept.details.mainItems.map((item, i) => (
                         <div key={i} className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10">
                           <Image quality={75} src={encodeURI(item.img)} fill sizes="100vw" className="object-cover" alt="" />
@@ -68,7 +68,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       ))}
                     </div>
                   ) : (
-                    <div className="flex flex-col gap-10">
+                    <div className="flex flex-col gap-8">
                       {dept.details.leader && (
                         <div className="flex flex-col items-center">
                           <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden border border-white/10">
@@ -142,7 +142,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
               {hasMainContent && currentPage === 0 ? (
                 <div className="w-full animate-in fade-in duration-500">
                   {dept.details.use2x2Layout && dept.details.mainItems ? (
-                    <div className="grid grid-cols-2 gap-8 h-[620px] max-w-[1000px] mx-auto w-full">
+                    <div className="grid grid-cols-2 gap-8 h-[min(620px,68vh)] max-w-[1000px] mx-auto w-full">
                       {dept.details.mainItems.slice(0, 4).map((item, i) => (
                         <div key={i} className="relative rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
                           <Image quality={75} src={encodeURI(item.img)} fill sizes="500px" className="object-cover transition-transform duration-1000 group-hover:scale-110" style={{ objectPosition: item.objectPosition || 'center', transform: item.scale ? `scale(${item.scale})` : 'none' }} alt="" />
@@ -150,7 +150,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       ))}
                     </div>
                   ) : dept.details.useCollageStaggered4 && dept.details.mainItems ? (
-                    <div className="flex gap-8 w-full h-[620px] max-w-[1200px] mx-auto">
+                    <div className="flex gap-8 w-full h-[min(620px,68vh)] max-w-[1200px] mx-auto">
                       <div className="relative flex-[1.4] rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl group">
                         <Image quality={75} src={encodeURI(dept.details.mainItems[0].img)} fill sizes="800px" className="transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[0].objectPosition || 'center', objectFit: dept.details.mainItems[0].objectFit || 'cover', transform: `scale(${dept.details.mainItems[0].scale || 1}) scaleX(${dept.details.mainItems[0].scaleX || 1})` }} alt="" />
                       </div>
@@ -169,8 +169,8 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       </div>
                     </div>
                   ) : dept.details.useStaggeredOnMain && dept.details.mainItems ? (
-                    <div className="w-full space-y-6">
-                      <div className="flex gap-6 h-[300px]">
+                    <div className="w-full space-y-4">
+                      <div className="flex gap-4 h-[min(300px,32vh)]">
                         <div className="relative flex-[1.6] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
                           <Image quality={75} src={encodeURI(dept.details.mainItems[0].img)} fill sizes="800px" className="object-cover" alt="" />
                         </div>
@@ -181,7 +181,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                           <Image quality={75} src={encodeURI(dept.details.mainItems[2].img)} fill sizes="600px" className="object-cover" alt="" />
                         </div>
                       </div>
-                      <div className="flex gap-6 h-[300px]">
+                      <div className="flex gap-4 h-[min(300px,32vh)]">
                         <div className="relative flex-[1] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
                           <Image quality={75} src={encodeURI(dept.details.mainItems[3].img)} fill sizes="500px" className="object-cover" alt="" />
                         </div>
@@ -196,29 +196,25 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                   ) : (
                     <div className="w-full flex flex-row items-start justify-center gap-6 lg:gap-12 px-4">
                       {/* Left Column: Leader */}
-                      <div className="w-[300px] xl:w-[350px] shrink-0 flex flex-col items-center group">
-                        {dept.details.leader ? (
-                          <>
-                            <div className="relative w-full h-[450px] xl:h-[550px] rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-2xl">
-                              <Image quality={75} src={encodeURI(dept.details.leader.img)} fill sizes="350px" className="object-cover" style={{ objectPosition: dept.details.leader.objectPosition || 'center' }} alt="leader" />
+                      {dept.details.leader && (
+                        <div className="w-[300px] xl:w-[350px] shrink-0 flex flex-col items-center group">
+                          <div className="relative w-full h-[min(450px,50vh)] xl:h-[min(550px,60vh)] rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-2xl">
+                            <Image quality={75} src={encodeURI(dept.details.leader.img)} fill sizes="350px" className="object-cover" style={{ objectPosition: dept.details.leader.objectPosition || 'center' }} alt="leader" />
+                          </div>
+                          {!hideComradeLabel && (
+                            <div className="mt-6 text-center">
+                              <h4 className="text-white font-bold text-xl uppercase tracking-wide">Đồng chí {dept.details.leader.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
+                              <p className="mt-2 text-gray-200 text-lg font-medium opacity-80">{dept.details.leader.role}</p>
                             </div>
-                            {!hideComradeLabel && (
-                              <div className="mt-6 text-center">
-                                <h4 className="text-white font-bold text-xl uppercase tracking-wide">Đồng chí {dept.details.leader.name.replace(/Đồng chí |ĐỒNG CHÍ /ig, '')}</h4>
-                                <p className="mt-2 text-gray-200 text-lg font-medium opacity-80">{dept.details.leader.role}</p>
-                              </div>
-                            )}
-                          </>
-                        ) : (
-                          <div className="w-full h-[450px] xl:h-[550px]"></div> // Placeholder to keep symmetry
-                        )}
-                      </div>
+                          )}
+                        </div>
+                      )}
 
                       {/* Middle Column: Group Photo */}
                       {dept.details.group && (
-                        <div className="flex-1 flex flex-col items-center group min-w-[300px]">
-                          <div className="relative w-full h-[450px] xl:h-[550px] rounded-[3rem] overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all duration-500 shadow-2xl">
-                            <Image quality={75} src={encodeURI(dept.details.group.img)} fill sizes="800px" className="object-cover" alt="group" />
+                        <div className={`flex flex-col items-center group ${(!dept.details.leader && (!dept.details.deputies || dept.details.deputies.length === 0)) ? 'w-full max-w-[1200px]' : 'flex-1 min-w-[300px]'}`}>
+                          <div className={`relative w-full rounded-[3rem] overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all duration-500 shadow-2xl ${(!dept.details.leader && (!dept.details.deputies || dept.details.deputies.length === 0)) ? 'h-[min(650px,75vh)]' : 'h-[min(450px,50vh)] xl:h-[min(550px,60vh)]'}`}>
+                            <Image quality={75} src={encodeURI(dept.details.group.img)} fill sizes="1200px" className="object-cover" alt="group" />
                           </div>
                           <div className="mt-6 text-center">
                             <h3 className="text-white font-bold text-xl uppercase tracking-wide opacity-60">{dept.details.group.name}</h3>
@@ -227,11 +223,11 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       )}
 
                       {/* Right Column: Deputies */}
-                      <div className="w-[300px] xl:w-[350px] shrink-0 flex flex-col justify-start gap-10">
-                        {dept.details.deputies && dept.details.deputies.length > 0 ? (
-                          dept.details.deputies.map((deputy, i) => (
+                      {dept.details.deputies && dept.details.deputies.length > 0 && (
+                        <div className="w-[300px] xl:w-[350px] shrink-0 flex flex-col justify-start gap-10">
+                          {dept.details.deputies.map((deputy, i) => (
                             <div key={i} className="flex flex-col items-center group">
-                              <div className="relative w-full h-[450px] xl:h-[550px] rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-xl">
+                              <div className="relative w-full h-[min(450px,50vh)] xl:h-[min(550px,60vh)] rounded-[2.5rem] overflow-hidden border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500 shadow-xl">
                                 <Image quality={75} src={encodeURI(deputy.img)} fill sizes="350px" className="object-cover" style={{ objectPosition: deputy.objectPosition || 'center' }} alt="deputy" />
                               </div>
                               {!hideComradeLabel && (
@@ -241,11 +237,9 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                                 </div>
                               )}
                             </div>
-                          ))
-                        ) : (
-                          <div className="w-full h-[450px] xl:h-[550px]"></div> // Placeholder to keep symmetry
-                        )}
-                      </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
@@ -259,15 +253,15 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                         {page && page.title && <h3 className="text-white font-bold text-2xl uppercase tracking-wider mb-12 opacity-50">{page.title}</h3>}
                         
                         {page && page.layout === 'collage-staggered-4' ? (
-                          <div className="flex gap-8 w-full h-[620px] max-w-[1300px]">
+                          <div className="flex gap-4 w-full h-[min(620px,68vh)] max-w-[1300px]">
                             {/* Left Column: 1 Large Image */}
                             <div className="relative flex-[1.4] rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl group">
                               <Image quality={75} src={encodeURI(page.items[0].img)} fill sizes="800px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: page.items[0].objectPosition || 'center', transform: `scale(${page.items[0].scale || 1}) scaleX(${page.items[0].scaleX || 1})` }} alt="" />
                             </div>
                             
                             {/* Right Column: 3 Images staggered */}
-                            <div className="flex-[1.6] flex flex-col gap-8">
-                              <div className="flex-[0.4] flex gap-8">
+                            <div className="flex-[1.6] flex flex-col gap-4">
+                              <div className="flex-[0.4] flex gap-4">
                                 <div className="relative flex-[0.8] rounded-[2.5rem] overflow-hidden border-2 border-white/10 shadow-xl group">
                                   <Image quality={75} src={encodeURI(page.items[1].img)} fill sizes="400px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: page.items[1].objectPosition || 'center', transform: page.items[1].scale ? `scale(${page.items[1].scale})` : 'none' }} alt="" />
                                 </div>
@@ -281,7 +275,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                             </div>
                           </div>
                         ) : page && page.layout === 'collage-1-2' ? (
-                          <div className="flex gap-8 w-full h-[620px] max-w-[1200px]">
+                          <div className="flex gap-8 w-full h-[min(620px,68vh)] max-w-[1200px]">
                             {/* Left Column: 1 Large Image */}
                             <div className="relative flex-[1.4] rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl group">
                               <Image quality={75} src={encodeURI(page.items[0].img)} fill sizes="800px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ transform: page.items[0].scale ? `scale(${page.items[0].scale})` : 'none' }} alt="" />
@@ -298,7 +292,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                             </div>
                           </div>
                         ) : page && page.layout === 'grid-2x2' ? (
-                          <div className="grid grid-cols-2 gap-8 h-[620px] max-w-[1000px] mx-auto w-full">
+                          <div className="grid grid-cols-2 gap-8 h-[min(620px,68vh)] max-w-[1000px] mx-auto w-full">
                             {page.items.slice(0, 4).map((item, i) => (
                               <div key={i} className="relative rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
                                 <Image quality={75} src={encodeURI(item.img)} fill sizes="500px" className="object-cover transition-transform duration-1000 group-hover:scale-110" style={{ objectPosition: item.objectPosition || 'center', transform: item.scale ? `scale(${item.scale})` : 'none' }} alt="" />

@@ -245,8 +245,8 @@ export default function ConNguoiPage() {
               {/* New Section for Ecommerce Channel */}
               <section className="pb-12 bg-transparent">
                 <div className="container mx-auto px-4">
-                  <h2 className="text-[#4A4A4A] font-beausans font-black text-2xl md:text-5xl uppercase mb-12 md:mb-16 text-center tracking-tight px-4">
-                    KÊNH THƯƠNG MẠI ĐIỆN TỬ
+                  <h2 className="text-[#4A4A4A] font-beausans font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 md:mb-16 text-center tracking-tight px-4 leading-tight">
+                    Kênh Thương mại Điện tử
                   </h2>
                   <div className="max-w-4xl mx-auto flex justify-center">
                     <div 
@@ -254,7 +254,7 @@ export default function ConNguoiPage() {
                       onClick={() => setSelectedDept(ecommerceChannel)}
                     >
                       <Image
-                        src={ecommerceChannel.img}
+                        src={encodeURI(ecommerceChannel.img)}
                         fill
                         sizes="(max-width: 640px) 100vw, 400px"
                         className="transition-transform duration-1000 group-hover:scale-105 object-cover object-center"
@@ -262,7 +262,7 @@ export default function ConNguoiPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-6 md:p-8">
                         <div className="text-white">
-                          <h3 className="text-sm md:text-base font-bold leading-tight drop-shadow-md whitespace-pre-line uppercase">
+                          <h3 className="text-sm md:text-base font-bold leading-tight drop-shadow-md whitespace-pre-line">
                             {ecommerceChannel.name}
                           </h3>
                         </div>
@@ -275,8 +275,8 @@ export default function ConNguoiPage() {
               {/* New Section for Supermarket Channel */}
               <section className="pb-24 bg-transparent">
                 <div className="container mx-auto px-4">
-                  <h2 className="text-[#4A4A4A] font-beausans font-black text-2xl md:text-5xl uppercase mb-12 md:mb-16 text-center tracking-tight px-4">
-                    KÊNH SIÊU THỊ
+                  <h2 className="text-[#4A4A4A] font-beausans font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 md:mb-16 text-center tracking-tight px-4 leading-tight">
+                    Kênh Siêu thị
                   </h2>
                   <div className="max-w-4xl mx-auto flex justify-center">
                     <div 
@@ -284,7 +284,7 @@ export default function ConNguoiPage() {
                       onClick={() => setSelectedDept(supermarketChannel)}
                     >
                       <Image
-                        src={supermarketChannel.img}
+                        src={encodeURI(supermarketChannel.img)}
                         fill
                         sizes="(max-width: 640px) 100vw, 400px"
                         className="transition-transform duration-1000 group-hover:scale-105 object-cover object-center"
@@ -292,7 +292,7 @@ export default function ConNguoiPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-6 md:p-8">
                         <div className="text-white">
-                          <h3 className="text-sm md:text-base font-bold leading-tight drop-shadow-md whitespace-pre-line uppercase">
+                          <h3 className="text-sm md:text-base font-bold leading-tight drop-shadow-md whitespace-pre-line">
                             {supermarketChannel.name}
                           </h3>
                         </div>

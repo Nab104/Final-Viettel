@@ -68,11 +68,11 @@ const ProvinceModal = ({
         backgroundPosition: 'center',
         touchAction: 'pan-y'
       }}
-      className="fixed inset-0 z-[2147483647] flex flex-col items-center justify-center py-6 md:py-10 px-4 backdrop-blur-md font-beausans"
+      className="fixed inset-0 z-[2147483647] backdrop-blur-md font-beausans overflow-y-auto"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none fixed">
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-white/[0.03] rounded-full blur-[120px]"></div>
         <div className="absolute -top-[20%] -left-[10%] w-[600px] h-[600px] bg-[#EE0033]/[0.07] rounded-full blur-[100px]"></div>
@@ -80,22 +80,24 @@ const ProvinceModal = ({
         <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
       </div>
 
-      <div className="relative z-50 w-full text-center mb-4 md:mb-6 pt-12 md:pt-0">
+      <div className="relative z-50 min-h-full w-full flex flex-col items-center justify-center py-12 md:py-20 px-4">
+
+      <div className="w-full text-center mb-6 md:mb-10">
         {/* Inside Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-0 right-6 md:right-10 z-[60] text-white/50 hover:text-[#EE0033] transition-all hover:scale-110 duration-300 p-2 md:p-3 bg-white/5 hover:bg-white/20 rounded-full cursor-pointer shadow-xl border border-white/10 backdrop-blur-md"
+        <button 
+        onClick={onClose}
+        className="fixed top-6 right-6 md:top-10 md:right-10 z-[2147483648] w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-[#EE0033] transition-all group shadow-xl"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
         </button>
-        <h2 className="font-beausans font-black text-base md:text-2xl lg:text-3xl uppercase tracking-[0.1em] px-4 leading-tight opacity-80" style={{ color: '#FFFFFF' }}>
+        <h2 className="font-beausans font-black text-sm md:text-xl lg:text-2xl uppercase tracking-tight px-4 leading-tight opacity-80" style={{ color: '#FFFFFF' }}>
           {currentStore.id.includes('CH')
             ? `TẬP THỂ CÁC CỬA HÀNG TẠI TỈNH ${province.name}`
             : `TẬP THỂ CÁC SIÊU THỊ TẠI TỈNH ${province.name}`}
         </h2>
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center gap-y-4 md:gap-y-8 w-full animate-in fade-in zoom-in-90 duration-1000 delay-200 overflow-hidden">
+      <div className="flex flex-col items-center justify-center gap-y-4 md:gap-y-8 w-full animate-in fade-in zoom-in-90 duration-1000 delay-200">
         <div className="relative flex items-center justify-center w-full max-w-[1600px] px-4 md:px-0">
           {province.stores.length > 1 && (
             <>
@@ -117,8 +119,10 @@ const ProvinceModal = ({
           <div 
             className="relative rounded-[2.5rem] overflow-hidden isolation-isolate transform translate-z-0 flex items-center justify-center shadow-[0_0_120px_rgba(0,0,0,0.8)] border border-white/10 bg-black/40 group"
             style={{ 
-              width: 'min(1400px, 96vw)', 
-              height: isMobile ? 'clamp(320px, 50vh, 500px)' : 'clamp(400px, 68vh, 750px)',
+              width: 'min(1100px, 80vw)', 
+              aspectRatio: isMobile ? '1 / 1' : '3 / 2',
+              height: 'auto',
+              maxHeight: isMobile ? '60vh' : '75vh',
               borderRadius: '2.5rem',
               position: 'relative'
             }}
@@ -190,16 +194,15 @@ const ProvinceModal = ({
           </div>
         </div>
 
-        <div className="w-full text-center mt-2 md:mt-3">
-          <h3 className="relative z-50 font-beausans font-bold text-xl md:text-4xl tracking-wide opacity-60 text-white">
-            {currentStore.id.includes('CH')
-              ? `Cửa hàng ${currentStore.id}`
-              : `Siêu thị ${currentStore.id}`}
-          </h3>
+          <div className="w-full text-center mt-4 md:mt-6">
+            <h3 className="relative z-50 font-beausans font-bold text-xl md:text-2xl lg:text-4xl tracking-tight opacity-60 text-white">
+              {currentStore.id.includes('CH')
+                ? `Cửa hàng ${currentStore.id}`
+                : `Siêu thị ${currentStore.id}`}
+            </h3>
+          </div>
         </div>
       </div>
-
-
     </div>
   );
 };

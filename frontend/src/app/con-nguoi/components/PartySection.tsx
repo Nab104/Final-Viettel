@@ -95,7 +95,7 @@ const PartySection = ({
                           onClick={() => onSelect(group)}
                         >
                           <Image
-                            src={group.img}
+                            src={encodeURI(group.img)}
                             fill
                             quality={60}
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 750px"
